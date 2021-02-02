@@ -33,6 +33,9 @@
                     <a class="nav-link active" href="index.html">Presensi</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="akun.html">Detail Akun</a>
                 </li>
                 <li class="nav-item">
@@ -101,6 +104,41 @@
             <hr>
         </div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC6hyl-k9rVuAs8JYD8KUtcVXsMwqZTQI0",
+            authDomain: "presensi-puskesmas-kasiman.firebaseapp.com",
+            projectId: "presensi-puskesmas-kasiman",
+            // storageBucket: "presensi-puskesmas-kasiman.appspot.com",
+            // messagingSenderId: "53532156353",
+            appId: "1:53532156353:web:175ee96b8b4c9b126d0f40",
+            measurementId: "G-304DP9WZW3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // update firestore settings
+        // db.settings({
+        //     timestampsInSnapshots: true
+        // });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Presensi Puskesmas Kasiman | Daftar Akun</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo-puskesmas.png" width="30" height="30" class="d-inline-block align-top" alt=""
+                loading="lazy">
+            Aplikasi Presensi Puskesmas Kasiman
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <li class="nav-item active">
+                    <span class="text-white nav-link">Selamat Datang, Nama</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akun.html">Detail Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Logout</a>
+                </li>
+                <!-- <li class="nav-item logged-in">
+                    <a class="nav-link modal-trigger" data-target="modal-riwayat" href="riwayat.html">Riwayat</a>
+                </li> -->
+                <!-- <li class="nav-item logged-in">
+                    <a href="#" class="nav-link modal-trigger" data-target="modal-create">Presensi</a>
+                </li> -->
+                <!-- <li class="nav-item logged-out">
+                    <a class="nav-link modal-trigger" data-target="modal-login" href="riwayat.html">Login</a>
+                </li>
+                <li class="nav-item logged-out">
+                    <a class="nav-link modal-trigger" data-target="modal-signup" href="daftar.html">Daftar</a>
+                </li> -->
+            </div>
+        </div>
+        <!-- <button type="button" class="btn btn-danger ml-auto mr-1">Keluar</button> -->
+    </nav>
+
+    <div class=" container-fluid mt-3">
+        <div class="container-md mb-3">
+            <div class="bg-white rounded">
+                <button class="btn btn-link btn-block text-white bg-success" type="button" data-toggle="collapse"
+                    data-target="#collapseTambah" aria-expanded="true" aria-controls="collapseTambah">
+                    <strong class="h5">Tambah Akun</strong>
+                </button>
+                <div class="container-fluid">
+                    <div id="collapseTambah" class="collapse pt-3 pb-3">
+                        <form id="login-form">
+                            <label for="Username">Nama : </label>
+                            <input type="text" id="signup-nama" required class="form-control"
+                                placeholder="Masukkan Nama">
+                            <label for="Username" class="mt-2">NIP : </label>
+                            <input type="text" id="signup-nip" required class="form-control" placeholder="Masukkan NIP">
+                            <label for="Username" class="mt-2">Email : </label>
+                            <input type="email" id="signup-email" required class="form-control"
+                                placeholder="Masukkan Username">
+                            <label for="Password" class="mt-2">Password : </label>
+                            <input type="password" name="password" id="signup-password" required class="form-control"
+                                placeholder="Masukkan Password">
+                            <div class="text-right">
+                                <button class="btn btn-primary mt-3">Tambah</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-white mt-3 pt-1 pb-1 rounded-corner">
+            <hr>
+            <h2 class="text-center">Daftar Akun</h2>
+            <hr>
+            <table class="table table-stirped">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">NIP</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@mdo</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC6hyl-k9rVuAs8JYD8KUtcVXsMwqZTQI0",
+            authDomain: "presensi-puskesmas-kasiman.firebaseapp.com",
+            projectId: "presensi-puskesmas-kasiman",
+            // storageBucket: "presensi-puskesmas-kasiman.appspot.com",
+            // messagingSenderId: "53532156353",
+            appId: "1:53532156353:web:175ee96b8b4c9b126d0f40",
+            measurementId: "G-304DP9WZW3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // update firestore settings
+        // db.settings({
+        //     timestampsInSnapshots: true
+        // });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
+
+<!-- 
+<div id="modal-signup" class="modal">
+    <div class="modal-content">
+        <h4>Daftar</h4><br />
+        <form id="signup-form">
+            <div class="input-field">
+                <input type="email" id="signup-email" required />
+                <label for="signup-email">Masukkan alamat email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="signup-password" required />
+                <label for="signup-password">Masukkan password</label>
+            </div>
+            <button class="btn yellow">Daftar</button>
+        </form>
+    </div>
+</div>
+
+<div id="modal-login" class="modal">
+    <div class="modal-content">
+        <h4>Login</h4><br />
+        <form id="login-form">
+            <div class="input-field">
+                <input type="email" id="login-email" required />
+                <label for="login-email">Masukkan alamat email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="login-password" required />
+                <label for="login-password">Masukkan password</label>
+            </div>
+            <button class="btn yellow">Login</button>
+        </form>
+    </div>
+</div>
+
+<div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+        <h4>Account details</h4><br />
+        <div class="account-details"></div>
+    </div>
+</div>
+
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <h4>Melakukan Presensi</h4><br />
+        <form id="create-form">
+            <div class="input-field">
+                <input type="text" id="title" required>
+                <label for="title">Guide Title</label>
+            </div>
+            <div class="input-field">
+                <textarea id="content" class="materialize-textarea" required></textarea>
+                <label for="content">Guide Content</label>
+            </div>
+            <button class="btn yellow darken-2 z-depth-0">Create</button>
+        </form>
+    </div>
+</div> -->
