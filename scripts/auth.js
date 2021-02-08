@@ -1,3 +1,12 @@
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        console.log('user logged in: ', user);
+    } else {
+        console.log('user logged out');
+    }
+})
+
 // sign up
 const signupForm = document.querySelector('#signup-form');
 if (signupForm) {
@@ -22,10 +31,10 @@ const logout = document.querySelector('#logout');
 if (logout) {
     logout.addEventListener('click', (e) => {
         // e.preventDefault();
-        auth.signOut().then(() => {
-            console.log('user signed out');
-            window.location.href = "login.html";
-        });
+        // auth.signOut().then(() => {
+        //     window.location.href = "login.html";
+        // });
+        auth.signOut();
     })
 }
 
@@ -38,8 +47,6 @@ if (loginForm) {
         const password = loginForm['login-password'].value;
 
         auth.signInWithEmailAndPassword(email, password).then(cred => {
-            console.log(cred.user)
-            // masuk ke halaman utama
             window.location.href = "index.html";
         })
     })
