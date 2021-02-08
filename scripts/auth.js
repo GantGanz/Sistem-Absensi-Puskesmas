@@ -8,7 +8,10 @@ auth.onAuthStateChanged(user => {
     if (user) {
         console.log('user logged in: ', user);
     } else {
-        console.log('user logged out');
+        if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
+            console.log(window.location.pathname);
+            window.location.href = "login.html";
+        };
     }
 })
 
