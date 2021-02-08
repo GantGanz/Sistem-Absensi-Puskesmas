@@ -1,3 +1,8 @@
+// get data
+db.collection('presensi').get().then(snapshot => {
+    setupPresensi(snapshot.docs);
+})
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
