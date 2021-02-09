@@ -3,6 +3,29 @@ db.collection('presensi').get().then(snapshot => {
     setupPresensi(snapshot.docs);
 })
 
+//  create new presensi
+const addPresensi = document.querySelector('#add-Presensi');
+if (addPresensi) {
+    addPresensi.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log("melakukan presensi");
+
+        var today = new Date();
+        var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + ' ' + time;
+
+        db.collection('presensi').add({
+            email: 'email user',
+            foto: 'foto user',
+            level: 'level user',
+            nama: 'nama user',
+            nip: 'nip user',
+            waktu: dateTime
+        }).catch(err => console.log(err.message));
+    })
+}
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
