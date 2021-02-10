@@ -1,7 +1,9 @@
 // get data
 db.collection('presensi').get().then(snapshot => {
-    setupPresensi(snapshot.docs);
-})
+    if (typeof setupPresensi !== "undefined") {
+        setupPresensi(snapshot.docs);
+    }
+}).catch(err => console.log(err.message));
 
 //  create new presensi
 const addPresensi = document.querySelector('#add-Presensi');
@@ -50,10 +52,24 @@ if (signupForm) {
         const email = signupForm['signup-email'].value;
         const password = signupForm['signup-password'].value;
 
-        // signup the user
-        auth.createUserWithEmailAndPassword(email, password).then(cred => {
+        // signup the user without log in
+        var config = {
+            apiKey: "apiKey",
+            authDomain: "projectId.firebaseapp.com",
+            databaseURL: "https://databaseName.firebaseio.com"
+        };
+        var secondaryApp = firebase.initializeApp(config, "Secondary");
+
+        secondaryApp.auth().createUserWithEmailAndPassword(email, password).then(function (firebaseUser) {
+            console.log("User " + firebaseUser.uid + " created successfully!");
+            //I don't know if the next statement is necessary 
+            secondaryApp.auth().signOut();
             signupForm.reset();
         });
+
+        // auth.createUserWithEmailAndPassword(email, password).then(cred => {
+        //     signupForm.reset();
+        // });
     });
 }
 
