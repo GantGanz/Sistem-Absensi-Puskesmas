@@ -64,8 +64,10 @@ if (signupForm) {
             console.log("User " + firebaseUser.uid + " created successfully!");
             //I don't know if the next statement is necessary 
             secondaryApp.auth().signOut();
+            secondaryApp.delete();
             signupForm.reset();
         });
+
 
         // auth.createUserWithEmailAndPassword(email, password).then(cred => {
         //     signupForm.reset();
