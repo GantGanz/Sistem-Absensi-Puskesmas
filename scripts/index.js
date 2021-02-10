@@ -17,6 +17,8 @@ const setupPresensi = (data) => {
         html += td;
         // row++;
     });
-    presensiList.innerHTML = html;
+    if (presensiList) {
+        presensiList.innerHTML = html;
+    }
 }
 // }

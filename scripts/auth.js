@@ -1,9 +1,11 @@
 // get data
-db.collection('presensi').get().then(snapshot => {
+db.collection('presensi').onSnapshot(snapshot => {
     if (typeof setupPresensi !== "undefined") {
         setupPresensi(snapshot.docs);
     }
-}).catch(err => console.log(err.message));
+}, error => {
+    console.log(error)
+});
 
 //  create new presensi
 const addPresensi = document.querySelector('#add-Presensi');
@@ -60,8 +62,8 @@ if (signupForm) {
         };
         var secondaryApp = firebase.initializeApp(config, "Secondary");
 
-        secondaryApp.auth().createUserWithEmailAndPassword(email, password).then(function (firebaseUser) {
-            console.log("User " + firebaseUser.uid + " created successfully!");
+        secondaryApp.auth().createUserWithEmailAndPassword(email, password).then(function () {
+            console.log("User created successfully!");
             //I don't know if the next statement is necessary 
             secondaryApp.auth().signOut();
             secondaryApp.delete();
