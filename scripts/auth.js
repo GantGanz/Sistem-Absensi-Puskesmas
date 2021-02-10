@@ -10,7 +10,6 @@ const addPresensi = document.querySelector('#add-Presensi');
 if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log("melakukan presensi");
 
         var today = new Date();
         var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
@@ -24,7 +23,8 @@ if (addPresensi) {
             nama: 'nama user',
             nip: 'nip user',
             waktu: dateTime
-        }).catch(err => console.log(err.message));
+        }).then(
+            console.log("melakukan presensi")).catch(err => console.log(err.message));
     })
 }
 
@@ -54,9 +54,9 @@ if (signupForm) {
 
         // signup the user without log in
         var config = {
-            apiKey: "apiKey",
-            authDomain: "projectId.firebaseapp.com",
-            databaseURL: "https://databaseName.firebaseio.com"
+            apiKey: "AIzaSyC6hyl-k9rVuAs8JYD8KUtcVXsMwqZTQI0",
+            authDomain: "presensi-puskesmas-kasiman.firebaseapp.com",
+            // databaseURL: "https://databaseName.firebaseio.com"
         };
         var secondaryApp = firebase.initializeApp(config, "Secondary");
 
