@@ -1,3 +1,17 @@
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        console.log('user logged in: ', user);
+        setupAccountDetails(user);
+    } else {
+        // setupPresensi([]);
+        if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
+            console.log(window.location.pathname);
+            window.location.href = "login.html";
+        };
+    }
+})
+
 // get data
 db.collection('presensi').onSnapshot(snapshot => {
     if (typeof setupPresensi !== "undefined") {
@@ -29,18 +43,6 @@ if (addPresensi) {
             console.log("melakukan presensi")).catch(err => console.log(err.message));
     })
 }
-
-// listen for auth status changes
-auth.onAuthStateChanged(user => {
-    if (user) {
-        console.log('user logged in: ', user);
-    } else {
-        if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
-            console.log(window.location.pathname);
-            window.location.href = "login.html";
-        };
-    }
-})
 
 // sign up
 const signupForm = document.querySelector('#signup-form');
