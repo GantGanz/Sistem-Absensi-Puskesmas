@@ -1,8 +1,10 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
-        console.log('user logged in: ', user);
-        setupAccountDetails(user);
+        console.log('user logged in: ', user.email);
+        if (typeof setupAccountDetails !== "undefined") {
+            setupAccountDetails(user);
+        }
     } else {
         // setupPresensi([]);
         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
@@ -55,6 +57,7 @@ if (signupForm) {
         const nip = signupForm['signup-nip'].value;
         const email = signupForm['signup-email'].value;
         const password = signupForm['signup-password'].value;
+        const level = signupForm['signup-level'].value;
 
         // signup the user without log in
         var config = {
@@ -64,11 +67,17 @@ if (signupForm) {
         };
         var secondaryApp = firebase.initializeApp(config, "Secondary");
 
-        secondaryApp.auth().createUserWithEmailAndPassword(email, password).then(function () {
-            console.log("User created successfully!");
-            //I don't know if the next statement is necessary 
+        secondaryApp.auth().createUserWithEmailAndPassword(email, password).then(cred => {
+
             secondaryApp.auth().signOut();
             secondaryApp.delete();
+            return db.collection('users').doc(cred.user.uid).set({
+                nama: nama,
+                nip: nip,
+                level: level
+            });
+        }).then(() => {
+            console.log("User created successfully!");
             signupForm.reset();
         });
 
