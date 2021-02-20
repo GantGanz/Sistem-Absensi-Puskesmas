@@ -4,7 +4,10 @@ auth.onAuthStateChanged(user => {
         console.log('user logged in: ', user.email);
         if (typeof setupAccountDetails !== "undefined") {
             setupAccountDetails(user);
-        }
+        };
+        // if (typeof allAccountDetails !== "undefined") {
+        //     allAccountDetails();
+        // };
     } else {
         // setupPresensi([]);
         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
@@ -14,7 +17,7 @@ auth.onAuthStateChanged(user => {
     }
 })
 
-// get data
+// get data presensi
 db.collection('presensi').onSnapshot(snapshot => {
     if (typeof setupPresensi !== "undefined") {
         setupPresensi(snapshot.docs);
@@ -22,6 +25,15 @@ db.collection('presensi').onSnapshot(snapshot => {
 }, error => {
     console.log(error)
 });
+
+// get all account data
+// db.collection('users').onSnapshot(snapshot => {
+//     if (typeof allAccountDetails !== "undefined") {
+//         allAccountDetails(snapshot.docs);
+//     }
+// }, error => {
+//     console.log(error)
+// });
 
 //  create new presensi
 const addPresensi = document.querySelector('#add-Presensi');

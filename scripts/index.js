@@ -1,7 +1,7 @@
 const presensiList = document.querySelector('.presensiList');
 const accountDetails = document.querySelector('.account-details');
+// const allAccounts = document.querySelector('.all-accounts');
 const nameNavbar = document.querySelector('.name-navbar');
-
 
 // show account
 const setupAccountDetails = (user) => {
@@ -41,6 +41,34 @@ const setupAccountDetails = (user) => {
     }
 }
 
+// // show all account
+// const allAccountDetails = () => {
+//     db.collection('users').get().then(docs => {
+//         let html = '';
+//         docs.forEach(user => {
+//             const userData = doc.data();
+//             const tr = `
+//                     <tr>
+//                         <th scope="row">1</th>
+//                         <td>Mark</td>
+//                         <td>Otto</td>
+//                         <td>@mdo</td>
+//                         <td>@mdo</td>
+//                         <td>@mdo</td>
+//                     </tr>
+//                     `;
+//             html += tr;
+//         });
+//         if (allAccounts) {
+//             allAccounts.innerHTML = html;
+//         }
+//     });
+// } else {
+//     if (allAccounts) {
+//         allAccounts.innerHTML = '';
+//     }
+// }
+
 // setup presensi
 // if (presensiList) {
 const setupPresensi = (data) => {
@@ -61,3 +89,5 @@ const setupPresensi = (data) => {
     }
 }
 // }
+
+// add admin role
