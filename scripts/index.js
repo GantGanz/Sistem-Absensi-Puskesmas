@@ -4,26 +4,43 @@ const allAccounts = document.querySelector('.all-accounts');
 const nameNavbar = document.querySelector('.name-navbar');
 
 // show account
-const setupAccountDetails = (user) => {
-    if (user) {
-        db.collection('users').doc(user.uid).get().then(doc => {
+const setupAccountDetails = (username) => {
+    if (username) {
+        db.collection('users').doc(username).get().then(doc => {
             //show name on navbar
-            const htmlNav = `Selamat Datang, <span class="text-success">${doc.data().nama}</span>`;
+            const htmlNav = `Selamat Datang, <span class="text-success">${doc.data().username}</span>`;
             //show account details
-            const htmlDetails = `
+            if (doc.data().level == 'admin') {
+                const htmlDetails = `
                 <hr>
                 <div class="text-center pb-3" id="foto-user">
                     <img class="img-thumbnail rounded-circle" src="img/selfie.png" alt="Foto User" loading="lazy"
                         width="250" height="250">
                 </div>
                 <h2 class="text-center">${doc.data().nama}</h2>
-                <h4 class="text-center">${user.email}</h4>
+                <h4 class="text-center">${doc.data().username}</h4>
                 <h5 class="text-center">${doc.data().nip}</h5>
                 <p class="text-center">Level: ${doc.data().level}</p>
                 <hr>
                 <div class="text-center mb-3">
-                    <button type="button" class="btn btn-success mx-auto">Edit</button>
+                    <p class="text-center">Untuk mengedit data, masuk ke halaman 'Daftar Akun' dan tekan edit</p>
                 </div>`;
+            } else {
+                const htmlDetails = `
+                    <hr>
+                    <div class="text-center pb-3" id="foto-user">
+                        <img class="img-thumbnail rounded-circle" src="img/selfie.png" alt="Foto User" loading="lazy"
+                            width="250" height="250">
+                    </div>
+                    <h2 class="text-center">${doc.data().nama}</h2>
+                    <h4 class="text-center">${doc.data().username}</h4>
+                    <h5 class="text-center">${doc.data().nip}</h5>
+                    <p class="text-center">Level: ${doc.data().level}</p>
+                    <hr>
+                    <div class="text-center mb-3">
+                        <p class="text-center">Hubungi admin jika ada kesalahan data</p>
+                    </div>`;
+            }
             if (nameNavbar) {
                 nameNavbar.innerHTML = htmlNav;
             }

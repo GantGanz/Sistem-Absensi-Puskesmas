@@ -1,21 +1,21 @@
 // listen for auth status changes
-auth.onAuthStateChanged(user => {
-    if (user) {
-        console.log('user logged in: ', user.email);
-        if (typeof setupAccountDetails !== "undefined") {
-            setupAccountDetails(user);
-        };
-        if (typeof allAccountDetails !== "undefined") {
-            allAccountDetails();
-        };
-    } else {
-        // setupPresensi([]);
-        if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
-            console.log(window.location.pathname);
-            window.location.href = "login.html";
-        };
-    }
-})
+// auth.onAuthStateChanged(user => {
+//     if (user) {
+//         console.log('user logged in: ', user.username);
+//         if (typeof setupAccountDetails !== "undefined") {
+//             setupAccountDetails(user);
+//         };
+//         if (typeof allAccountDetails !== "undefined") {
+//             allAccountDetails();
+//         };
+//     } else {
+//         // setupPresensi([]);
+//         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
+//             console.log(window.location.pathname);
+//             window.location.href = "login.html";
+//         };
+//     }
+// })
 
 // get data presensi
 db.collection('presensi').onSnapshot(snapshot => {
@@ -47,7 +47,7 @@ if (addPresensi) {
         var dateTime = date + ' ' + time;
 
         db.collection('presensi').add({
-            email: 'username',
+            username: 'username',
             foto: 'foto user',
             // level: 'level user',
             nama: 'nama user',
