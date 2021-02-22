@@ -5,9 +5,9 @@ auth.onAuthStateChanged(user => {
         if (typeof setupAccountDetails !== "undefined") {
             setupAccountDetails(user);
         };
-        // if (typeof allAccountDetails !== "undefined") {
-        //     allAccountDetails();
-        // };
+        if (typeof allAccountDetails !== "undefined") {
+            allAccountDetails();
+        };
     } else {
         // setupPresensi([]);
         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
@@ -27,13 +27,13 @@ db.collection('presensi').onSnapshot(snapshot => {
 });
 
 // get all account data
-// db.collection('users').onSnapshot(snapshot => {
-//     if (typeof allAccountDetails !== "undefined") {
-//         allAccountDetails(snapshot.docs);
-//     }
-// }, error => {
-//     console.log(error)
-// });
+db.collection('users').onSnapshot(snapshot => {
+    if (typeof allAccountDetails !== "undefined") {
+        allAccountDetails(snapshot.docs);
+    }
+}, error => {
+    console.log(error)
+});
 
 //  create new presensi
 const addPresensi = document.querySelector('#add-Presensi');
@@ -47,9 +47,9 @@ if (addPresensi) {
         var dateTime = date + ' ' + time;
 
         db.collection('presensi').add({
-            email: 'email user',
+            email: 'username',
             foto: 'foto user',
-            level: 'level user',
+            // level: 'level user',
             nama: 'nama user',
             nip: 'nip user',
             waktu: dateTime
@@ -67,36 +67,20 @@ if (signupForm) {
         // get account info
         const nama = signupForm['signup-nama'].value;
         const nip = signupForm['signup-nip'].value;
-        const email = signupForm['signup-email'].value;
+        const username = signupForm['signup-username'].value;
         const password = signupForm['signup-password'].value;
         const level = signupForm['signup-level'].value;
 
-        // signup the user without log in
-        var config = {
-            apiKey: "AIzaSyC6hyl-k9rVuAs8JYD8KUtcVXsMwqZTQI0",
-            authDomain: "presensi-puskesmas-kasiman.firebaseapp.com",
-            // databaseURL: "https://databaseName.firebaseio.com"
-        };
-        var secondaryApp = firebase.initializeApp(config, "Secondary");
-
-        secondaryApp.auth().createUserWithEmailAndPassword(email, password).then(cred => {
-
-            secondaryApp.auth().signOut();
-            secondaryApp.delete();
-            return db.collection('users').doc(cred.user.uid).set({
-                nama: nama,
-                nip: nip,
-                level: level
-            });
+        db.collection('users').add({
+            username: username,
+            nama: nama,
+            nip: nip,
+            password: password,
+            level: level
         }).then(() => {
             console.log("User created successfully!");
             signupForm.reset();
-        });
-
-
-        // auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        //     signupForm.reset();
-        // });
+        }).catch(err => console.log(err.message));
     });
 }
 
@@ -108,7 +92,7 @@ if (logout) {
         // auth.signOut().then(() => {
         //     window.location.href = "login.html";
         // });
-        auth.signOut();
+        // auth.signOut();
     })
 }
 
@@ -117,11 +101,18 @@ const loginForm = document.querySelector('#login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = loginForm['login-email'].value;
+        const username = loginForm['login-username'].value;
         const password = loginForm['login-password'].value;
 
-        auth.signInWithEmailAndPassword(email, password).then(cred => {
-            window.location.href = "index.html";
-        })
+        db.collection("users").where("username", "==", username).where("password", "==", password).get().then(doc => {
+            if (doc.exists) {
+                // console.log("Document data:", doc.data());
+                window.location.href = "index.html";
+            } else {
+                console.log("No such document!");
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
     })
 }

@@ -1,10 +1,7 @@
 const presensiList = document.querySelector('.presensiList');
 const accountDetails = document.querySelector('.account-details');
-// const allAccounts = document.querySelector('.all-accounts');
+const allAccounts = document.querySelector('.all-accounts');
 const nameNavbar = document.querySelector('.name-navbar');
-
-// const admin = require('firebase-admin');
-// admin.initializeApp();
 
 // show account
 const setupAccountDetails = (user) => {
@@ -44,40 +41,36 @@ const setupAccountDetails = (user) => {
     }
 }
 
-// // show all account
-// const allAccountDetails = () => {
-//     db.collection('users').get().then(docs => {
-//         let html = '';
-//         let row = 1;
-//         docs.forEach(account => {
-//             // console.log(account.id, " => ", account.data());
-//             const userData = account.data();
-//             admin.getUser(account.id).then((userRecord) => {
-//                 console.log(userRecord.email);
-//             })
-//             const tr = `
-//                     <tr>
-//                         <th scope="row">${row}</th>
-//                         <td>${userData.nama}</td>
-//                         <td>${userData.nip}</td>
-//                         <td></td>
-//                         <td></td>
-//                         <td>${userData.level}</td>
-//                         <td>Edit | Delete</td>
-//                     </tr>
-//                     `;
-//             html += tr;
-//             row++;
-//         });
-//         if (allAccounts) {
-//             allAccounts.innerHTML = html;
-//         } else {
-//             if (allAccounts) {
-//                 allAccounts.innerHTML = '';
-//             }
-//         }
-//     });
-// };
+// show all account
+const allAccountDetails = () => {
+    db.collection('users').get().then(docs => {
+        let html = '';
+        let row = 1;
+        docs.forEach(account => {
+            const userData = account.data();
+            const tr = `
+                    <tr>
+                        <th scope="row">${row}</th>
+                        <td>${userData.username}</td>
+                        <td>${userData.nama}</td>
+                        <td>${userData.nip}</td>
+                        <td>${userData.password}</td>
+                        <td>${userData.level}</td>
+                        <td>Edit | Delete</td>
+                    </tr>
+                    `;
+            html += tr;
+            row++;
+        });
+        if (allAccounts) {
+            allAccounts.innerHTML = html;
+        } else {
+            if (allAccounts) {
+                allAccounts.innerHTML = '';
+            }
+        }
+    });
+};
 
 // setup presensi
 // if (presensiList) {
