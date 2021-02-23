@@ -79,7 +79,7 @@ if (localStorage.getItem("Level") == "Admin") {
 
 // get data presensi
 if (presensiList) {
-    db.collection('presensi').where("username", "==", localStorage.getItem("Username")).onSnapshot(data => {
+    db.collection('presensi').where("username", "==", localStorage.getItem("Username")).orderBy("waktu", "desc").onSnapshot(data => {
         let html = '';
         // let row = 1;
         data.forEach(doc => {
