@@ -1,42 +1,9 @@
-// listen for auth status changes
-// auth.onAuthStateChanged(user => {
-//     if (user) {
-//         console.log('user logged in: ', user.username);
-//         if (typeof setupAccountDetails !== "undefined") {
-//             setupAccountDetails(user);
-//         };
-//         if (typeof allAccountDetails !== "undefined") {
-//             allAccountDetails();
-//         };
-//     } else {
-//         // setupPresensi([]);
-//         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
-//             console.log(window.location.pathname);
-//             window.location.href = "login.html";
-//         };
-//     }
-// })
-
-// get data presensi
-db.collection('presensi').onSnapshot(snapshot => {
-    if (typeof setupPresensi !== "undefined") {
-        setupPresensi(snapshot.docs);
-    }
-}, error => {
-    console.log(error)
-});
-
-// get all account data
-db.collection('users').onSnapshot(snapshot => {
-    if (typeof allAccountDetails !== "undefined") {
-        allAccountDetails(snapshot.docs);
-    }
-}, error => {
-    console.log(error)
-});
+const addPresensi = document.querySelector('#add-Presensi');
+const signupForm = document.querySelector('#signup-form');
+const logout = document.querySelector('#logout');
+const loginForm = document.querySelector('#login-form');
 
 //  create new presensi
-const addPresensi = document.querySelector('#add-Presensi');
 if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
         e.preventDefault();
@@ -47,11 +14,11 @@ if (addPresensi) {
         var dateTime = date + ' ' + time;
 
         db.collection('presensi').add({
-            username: 'username',
+            username: localStorage.getItem("Username"),
             foto: 'foto user',
             // level: 'level user',
-            nama: 'nama user',
-            nip: 'nip user',
+            nama: localStorage.getItem("Nama"),
+            nip: localStorage.getItem("NIP"),
             waktu: dateTime
         }).then(
             console.log("melakukan presensi")).catch(err => console.log(err.message));
@@ -59,7 +26,6 @@ if (addPresensi) {
 }
 
 // sign up
-const signupForm = document.querySelector('#signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -85,19 +51,19 @@ if (signupForm) {
 }
 
 // logout
-const logout = document.querySelector('#logout');
 if (logout) {
     logout.addEventListener('click', (e) => {
         // e.preventDefault();
-        // auth.signOut().then(() => {
-        //     window.location.href = "login.html";
-        // });
-        // auth.signOut();
+        localStorage.removeItem("Username");
+        localStorage.removeItem("Nama");
+        localStorage.removeItem("NIP");
+        localStorage.removeItem("Password");
+        localStorage.removeItem("Level");
+        window.location.href = "login.html";
     })
 }
 
 // login
-const loginForm = document.querySelector('#login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -105,8 +71,12 @@ if (loginForm) {
         const password = loginForm['login-password'].value;
 
         db.collection("users").where("username", "==", username).where("password", "==", password).get().then(doc => {
-            if (doc.exists) {
-                // console.log("Document data:", doc.data());
+            if (doc.size > 0) {
+                localStorage.setItem("Username", doc.docs[0].data().username);
+                localStorage.setItem("Nama", doc.docs[0].data().nama);
+                localStorage.setItem("NIP", doc.docs[0].data().nip);
+                localStorage.setItem("Password", doc.docs[0].data().password);
+                localStorage.setItem("Level", doc.docs[0].data().level);
                 window.location.href = "index.html";
             } else {
                 console.log("No such document!");
@@ -115,4 +85,29 @@ if (loginForm) {
             console.log("Error getting document:", error);
         });
     })
+} else {
+    // cek autentikasi
+    if (!localStorage.getItem("Username")) {
+        // window.location.href = "login.html";
+        console.log('login dulu oi');
+    }
 }
+
+// listen for auth status changes
+// auth.onAuthStateChanged(user => {
+//     if (user) {
+//         console.log('user logged in: ', user.username);
+//         if (typeof setupAccountDetails !== "undefined") {
+//             setupAccountDetails(user);
+//         };
+//         if (typeof allAccountDetails !== "undefined") {
+//             allAccountDetails();
+//         };
+//     } else {
+//         // setupPresensi([]);
+//         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
+//             console.log(window.location.pathname);
+//             window.location.href = "login.html";
+//         };
+//     }
+// })
