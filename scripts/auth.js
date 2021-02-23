@@ -20,34 +20,36 @@ if (addPresensi) {
             nama: localStorage.getItem("Nama"),
             nip: localStorage.getItem("NIP"),
             waktu: dateTime
-        }).then(
-            console.log("melakukan presensi")).catch(err => console.log(err.message));
+        }).catch(err => console.log(err.message));
     })
 }
 
-// sign up
-if (signupForm) {
-    signupForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+// fitur Khusus Admin
+if (localStorage.getItem("Level") == "Admin") {
+    // sign up
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        // get account info
-        const nama = signupForm['signup-nama'].value;
-        const nip = signupForm['signup-nip'].value;
-        const username = signupForm['signup-username'].value;
-        const password = signupForm['signup-password'].value;
-        const level = signupForm['signup-level'].value;
+            // get account info
+            const nama = signupForm['signup-nama'].value;
+            const nip = signupForm['signup-nip'].value;
+            const username = signupForm['signup-username'].value;
+            const password = signupForm['signup-password'].value;
+            const level = signupForm['signup-level'].value;
 
-        db.collection('users').add({
-            username: username,
-            nama: nama,
-            nip: nip,
-            password: password,
-            level: level
-        }).then(() => {
-            console.log("User created successfully!");
-            signupForm.reset();
-        }).catch(err => console.log(err.message));
-    });
+            db.collection('users').add({
+                username: username,
+                nama: nama,
+                nip: nip,
+                password: password,
+                level: level
+            }).then(() => {
+                console.log("User created successfully!");
+                signupForm.reset();
+            }).catch(err => console.log(err.message));
+        });
+    }
 }
 
 // logout
@@ -88,8 +90,7 @@ if (loginForm) {
 } else {
     // cek autentikasi
     if (!localStorage.getItem("Username")) {
-        // window.location.href = "login.html";
-        console.log('login dulu oi');
+        window.location.href = "login.html";
     }
 }
 

@@ -3,6 +3,7 @@ const accountDetails = document.querySelector('.account-details');
 const allAccounts = document.querySelector('.all-accounts');
 const nameNavbar = document.querySelector('.name-navbar');
 const accountIsAdmin = document.querySelector('.account-isAdmin');
+const adminMenu = document.querySelector('.admin-menu');
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -26,39 +27,63 @@ if (localStorage.getItem("Username")) {
     };
 }
 
-// show all account
-if (allAccounts) {
-    db.collection('users').get().then(docs => {
-        let html = '';
-        let row = 1;
-        docs.forEach(account => {
-            const userData = account.data();
-            const tr = `
-                    <tr>
-                        <th scope="row">${row}</th>
-                        <td>${userData.username}</td>
-                        <td>${userData.nama}</td>
-                        <td>${userData.nip}</td>
-                        <td>${userData.password}</td>
-                        <td>${userData.level}</td>
-                        <td>Edit | Delete</td>
-                    </tr>
-                    `;
-            html += tr;
-            row++;
+// Mencegah anggota masuk ke fitur admin
+if (localStorage.getItem("Level") == "Anggota" && allAccounts) {
+    window.location.href = "index.html";
+}
+
+// Fitur Khusus Admin
+if (localStorage.getItem("Level") == "Admin") {
+    if (adminMenu) {
+        if (allAccounts) {
+            adminMenu.innerHTML = `
+                <li class="nav-item">
+                    <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+            `;
+        } else {
+            adminMenu.innerHTML = `
+                <li class="nav-item">
+                    <a class="nav-link" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+            `;
+        }
+    }
+    // show all account
+    if (allAccounts) {
+        db.collection('users').onSnapshot(docs => {
+            let html = '';
+            let row = 1;
+            docs.forEach(account => {
+                const userData = account.data();
+                const tr = `
+                        <tr>
+                            <th scope="row">${row}</th>
+                            <td>${userData.username}</td>
+                            <td>${userData.nama}</td>
+                            <td>${userData.nip}</td>
+                            <td>${userData.password}</td>
+                            <td>${userData.level}</td>
+                            <td>Edit | Delete</td>
+                        </tr>
+                        `;
+                html += tr;
+                row++;
+            });
+            allAccounts.innerHTML = html;
+        }, error => {
+            console.log(error)
         });
-        allAccounts.innerHTML = html;
-    });
+    }
 }
 
 // get data presensi
 if (presensiList) {
-    db.collection('presensi').where("username", "==", localStorage.getItem("Username")).get().then(data => {
+    db.collection('presensi').where("username", "==", localStorage.getItem("Username")).onSnapshot(data => {
         let html = '';
         // let row = 1;
         data.forEach(doc => {
             const presensi = doc.data();
-            console.log(presensi);
             const td = `
             <tr>
                 <td>${presensi.tanggal}</td>
@@ -69,9 +94,9 @@ if (presensiList) {
             // row++;
         });
         presensiList.innerHTML = html;
-    }), error => {
+    }, error => {
         console.log(error)
-    };
+    });
 }
 
 // show account
