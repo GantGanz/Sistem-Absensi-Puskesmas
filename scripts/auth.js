@@ -73,6 +73,7 @@ if (loginForm) {
         const password = loginForm['login-password'].value;
 
         db.collection("users").where("username", "==", username).where("password", "==", password).get().then(doc => {
+            document.getElementById("login-loading").style.display = "block";
             if (doc.size > 0) {
                 localStorage.setItem("Username", doc.docs[0].data().username);
                 localStorage.setItem("Nama", doc.docs[0].data().nama);
@@ -80,8 +81,10 @@ if (loginForm) {
                 localStorage.setItem("Password", doc.docs[0].data().password);
                 localStorage.setItem("Level", doc.docs[0].data().level);
                 window.location.href = "index.html";
+                document.getElementById("login-loading").style.display = "none";
             } else {
-                console.log("No such document!");
+                document.getElementById("login-loading").style.display = "none";
+                document.getElementById("alert-login").style.display = "block";
             }
         }).catch(function (error) {
             console.log("Error getting document:", error);
