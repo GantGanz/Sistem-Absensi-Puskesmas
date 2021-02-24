@@ -90,8 +90,8 @@ if (loginForm) {
                 document.getElementById("alert-login").style.display = "block";
             }
         }).catch(function (error) {
-            document.querySelector('#pesan-login').innerHTML = "Maaf, koneksi anda bermasalah atau server down";
             console.log("Error getting document:", error);
+            document.querySelector('#pesan-login').innerHTML = "Maaf, koneksi anda bermasalah atau server down";
             document.getElementById("loader").style.display = "none";
             document.getElementById("bg-loader").style.display = "none";
             document.getElementById("alert-login").style.display = "block";
