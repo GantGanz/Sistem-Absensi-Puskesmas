@@ -81,8 +81,6 @@ if (loginForm) {
                 localStorage.setItem("NIP", doc.docs[0].data().nip);
                 localStorage.setItem("Password", doc.docs[0].data().password);
                 localStorage.setItem("Level", doc.docs[0].data().level);
-                document.getElementById("loader").style.display = "none";
-                document.getElementById("bg-loader").style.display = "none";
                 window.location.href = "index.html";
             } else {
                 document.getElementById("loader").style.display = "none";
