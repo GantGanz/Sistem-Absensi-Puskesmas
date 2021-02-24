@@ -15,9 +15,10 @@ if (localStorage.getItem("Username")) {
             <div class="text-center pb-3" id="foto-user">
                 <img class="img-thumbnail rounded-circle" src="img/selfie.png" alt="Foto User" loading="lazy" width="250" height="250">
             </div>
-            <h2 class="text-center">${localStorage.getItem("Nama")}</h2>
-            <h4 class="text-center">Username: ${localStorage.getItem("Username")}</h4>
-            <h5 class="text-center">Password: ${localStorage.getItem("NIP")}</h5>
+            <h3 class="text-center">${localStorage.getItem("Nama")}</h3>
+            <h4 class="text-center">NIP: ${localStorage.getItem("NIP")}</h4>
+            <h5 class="text-center">Username: ${localStorage.getItem("Username")}</h5>
+            <h5 class="text-center">Password: ${localStorage.getItem("Password")}</h5>
             <p class="text-center">Level: ${localStorage.getItem("Level")}</p>`;
         if (localStorage.getItem("Level") == "Admin") {
             accountIsAdmin.innerHTML = `<p class="text-center">Untuk mengedit data-data, masuk ke halaman 'Daftar Akun' dan tekan edit</p>`;
