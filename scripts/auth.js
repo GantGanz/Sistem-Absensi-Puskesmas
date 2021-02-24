@@ -68,26 +68,33 @@ if (logout) {
 // login
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
+        document.getElementById("loader").style.display = "block";
+        document.getElementById("bg-loader").style.display = "block";
         e.preventDefault();
         const username = loginForm['login-username'].value;
         const password = loginForm['login-password'].value;
 
         db.collection("users").where("username", "==", username).where("password", "==", password).get().then(doc => {
-            document.getElementById("login-loading").style.display = "block";
             if (doc.size > 0) {
                 localStorage.setItem("Username", doc.docs[0].data().username);
                 localStorage.setItem("Nama", doc.docs[0].data().nama);
                 localStorage.setItem("NIP", doc.docs[0].data().nip);
                 localStorage.setItem("Password", doc.docs[0].data().password);
                 localStorage.setItem("Level", doc.docs[0].data().level);
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("bg-loader").style.display = "none";
                 window.location.href = "index.html";
-                document.getElementById("login-loading").style.display = "none";
             } else {
-                document.getElementById("login-loading").style.display = "none";
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("bg-loader").style.display = "none";
                 document.getElementById("alert-login").style.display = "block";
             }
         }).catch(function (error) {
+            document.querySelector('#pesan-login').innerHTML = "Maaf, koneksi anda bermasalah atau server down";
             console.log("Error getting document:", error);
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("bg-loader").style.display = "none";
+            document.getElementById("alert-login").style.display = "block";
         });
     })
 } else {
