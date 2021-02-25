@@ -4,6 +4,7 @@ const allAccounts = document.querySelector('.all-accounts');
 const nameNavbar = document.querySelector('.name-navbar');
 const accountIsAdmin = document.querySelector('.account-isAdmin');
 const adminMenu = document.querySelector('.admin-menu');
+const allPresensi = document.querySelector('.all-presensi');
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -37,15 +38,30 @@ if (localStorage.getItem("Level") == "Anggota" && allAccounts) {
 if (localStorage.getItem("Level") == "Admin") {
     if (adminMenu) {
         if (allAccounts) {
-            adminMenu.innerHTML = `
+            adminMenu.innerHTML += `
                 <li class="nav-item">
                     <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
                 </li>
-            `;
-        } else {
-            adminMenu.innerHTML = `
                 <li class="nav-item">
-                    <a class="nav-link" href="daftar-akun.html">Daftar Akun</a>
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+            `;
+        } else if (allPresensi) {
+            adminMenu.innerHTML += `
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="daftar-presensi.html">Daftar Presensi</a>
+            </li>
+        `;
+        } else {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
                 </li>
             `;
         }
@@ -72,6 +88,32 @@ if (localStorage.getItem("Level") == "Admin") {
                 row++;
             });
             allAccounts.innerHTML = html;
+        }, error => {
+            console.log(error)
+        });
+    }
+
+    // show all presensi
+    if (allPresensi) {
+        db.collection('presensi').onSnapshot(docs => {
+            let html = '';
+            let row = 1;
+            docs.forEach(presensi => {
+                const presensiData = presensi.data();
+                const tr = `
+                        <tr>
+                            <th scope="row">${row}</th>
+                            <td>tanggal</td>
+                            <td>${presensiData.username}</td>
+                            <td>${presensiData.nama}</td>
+                            <td>${presensiData.nip}</td>
+                            <td>${presensiData.waktu}</td>
+                        </tr>
+                        `;
+                html += tr;
+                row++;
+            });
+            allPresensi.innerHTML = html;
         }, error => {
             console.log(error)
         });
