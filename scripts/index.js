@@ -5,6 +5,7 @@ const nameNavbar = document.querySelector('.name-navbar');
 const accountIsAdmin = document.querySelector('.account-isAdmin');
 const adminMenu = document.querySelector('.admin-menu');
 const allPresensi = document.querySelector('.all-presensi');
+const filterForm = document.querySelector('#filter-form');
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -116,6 +117,41 @@ if (localStorage.getItem("Level") == "Admin") {
             allPresensi.innerHTML = html;
         }, error => {
             console.log(error)
+        });
+
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const awal = filterForm['filter-awal'].value;
+            const akhir = filterForm['filter-akhir'].value;
+            console.log(awal);
+            console.log(akhir);
+            const awalFormat = awal + " " + "00:0:00";
+            const akhirFormat = akhir + " " + "23:59:59";
+            console.log(awalFormat);
+            console.log(akhirFormat);
+
+            db.collection("presensi").where("waktu", ">=", awalFormat).where("waktu", "<=", akhirFormat).onSnapshot(docs => {
+                let html = '';
+                let row = 1;
+                docs.forEach(presensi => {
+                    const presensiData = presensi.data();
+                    const tr = `
+                        <tr>
+                            <th scope="row">${row}</th>
+                            <td>tanggal</td>
+                            <td>${presensiData.username}</td>
+                            <td>${presensiData.nama}</td>
+                            <td>${presensiData.nip}</td>
+                            <td>${presensiData.waktu}</td>
+                        </tr>
+                        `;
+                    html += tr;
+                    row++;
+                });
+                allPresensi.innerHTML = html;
+            }, error => {
+                console.log(error)
+            });
         });
     }
 }
