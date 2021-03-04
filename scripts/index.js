@@ -96,19 +96,28 @@ if (localStorage.getItem("Level") == "Admin") {
 
     // show all presensi
     if (allPresensi) {
-        db.collection('presensi').onSnapshot(docs => {
+        db.collection('presensi').orderBy("waktu", "desc").onSnapshot(docs => {
             let html = '';
             let row = 1;
             docs.forEach(presensi => {
                 const presensiData = presensi.data();
+                let date = presensiData.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth();
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
                 const tr = `
                         <tr>
                             <th scope="row">${row}</th>
-                            <td>tanggal</td>
+                            <td>${date}</td>
                             <td>${presensiData.username}</td>
                             <td>${presensiData.nama}</td>
                             <td>${presensiData.nip}</td>
-                            <td>${presensiData.waktu}</td>
+                            <td>${hour}</td>
                         </tr>
                         `;
                 html += tr;
@@ -123,26 +132,30 @@ if (localStorage.getItem("Level") == "Admin") {
             e.preventDefault();
             const awal = filterForm['filter-awal'].value;
             const akhir = filterForm['filter-akhir'].value;
-            console.log(awal);
-            console.log(akhir);
-            const awalFormat = awal + " " + "00:0:00";
-            const akhirFormat = akhir + " " + "23:59:59";
-            console.log(awalFormat);
-            console.log(akhirFormat);
 
-            db.collection("presensi").where("waktu", ">=", awalFormat).where("waktu", "<=", akhirFormat).onSnapshot(docs => {
+            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
                 let html = '';
                 let row = 1;
                 docs.forEach(presensi => {
                     const presensiData = presensi.data();
+                    let date = presensiData.waktu.toDate();
+                    let dd = date.getDate();
+                    let mm = date.getMonth();
+                    let yyyy = date.getFullYear();
+                    let hh = date.getHours();
+                    let mi = date.getMinutes();
+                    let se = date.getSeconds();
+                    date = dd + '/' + mm + '/' + yyyy;
+                    hour = hh + ':' + mi + ':' + se;
+
                     const tr = `
                         <tr>
                             <th scope="row">${row}</th>
-                            <td>tanggal</td>
+                            <td>${date}</td>
                             <td>${presensiData.username}</td>
                             <td>${presensiData.nama}</td>
                             <td>${presensiData.nip}</td>
-                            <td>${presensiData.waktu}</td>
+                            <td>${hour}</td>
                         </tr>
                         `;
                     html += tr;
@@ -163,10 +176,22 @@ if (presensiList) {
         // let row = 1;
         data.forEach(doc => {
             const presensi = doc.data();
+
+            let date = presensi.waktu.toDate();
+            let dd = date.getDate();
+            let mm = date.getMonth();
+            let yyyy = date.getFullYear();
+            let hh = date.getHours();
+            let mi = date.getMinutes();
+            let se = date.getSeconds();
+            date = dd + '/' + mm + '/' + yyyy;
+            hour = hh + ':' + mi + ':' + se;
+            // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
+
             const td = `
             <tr>
-                <td>${presensi.tanggal}</td>
-                <td>${presensi.waktu}</td>
+                <td>${date}</td>
+                <td>${hour}</td>
                 <td>${presensi.foto}</td>
             </tr>`;
             html += td;
@@ -177,58 +202,3 @@ if (presensiList) {
         console.log(error)
     });
 }
-
-// show account
-// const setupAccountDetails = (username) => {
-//     if (username) {
-//         db.collection('users').doc(username).get().then(doc => {
-//             //show name on navbar
-//             const htmlNav = `Selamat Datang, <span class="text-success">${doc.data().username}</span>`;
-//             //show account details
-//             if (doc.data().level == 'admin') {
-//                 const htmlDetails = `
-//                 <hr>
-//                 <div class="text-center pb-3" id="foto-user">
-//                     <img class="img-thumbnail rounded-circle" src="img/selfie.png" alt="Foto User" loading="lazy"
-//                         width="250" height="250">
-//                 </div>
-//                 <h2 class="text-center">${doc.data().nama}</h2>
-//                 <h4 class="text-center">${doc.data().username}</h4>
-//                 <h5 class="text-center">${doc.data().nip}</h5>
-//                 <p class="text-center">Level: ${doc.data().level}</p>
-//                 <hr>
-//                 <div class="text-center mb-3">
-//                     <p class="text-center">Untuk mengedit data, masuk ke halaman 'Daftar Akun' dan tekan edit</p>
-//                 </div>`;
-//             } else {
-//                 const htmlDetails = `
-//                     <hr>
-//                     <div class="text-center pb-3" id="foto-user">
-//                         <img class="img-thumbnail rounded-circle" src="img/selfie.png" alt="Foto User" loading="lazy"
-//                             width="250" height="250">
-//                     </div>
-//                     <h2 class="text-center">${doc.data().nama}</h2>
-//                     <h4 class="text-center">${doc.data().username}</h4>
-//                     <h5 class="text-center">${doc.data().nip}</h5>
-//                     <p class="text-center">Level: ${doc.data().level}</p>
-//                     <hr>
-//                     <div class="text-center mb-3">
-//                         <p class="text-center">Hubungi admin jika ada kesalahan data</p>
-//                     </div>`;
-//             }
-//             if (nameNavbar) {
-//                 nameNavbar.innerHTML = htmlNav;
-//             }
-//             if (accountDetails) {
-//                 accountDetails.innerHTML = htmlDetails;
-//             }
-//         });
-//     } else {
-//         if (nameNavbar) {
-//             nameNavbar.innerHTML = '';
-//         }
-//         if (accountDetails) {
-//             accountDetails.innerHTML = '';
-//         }
-//     }
-// }

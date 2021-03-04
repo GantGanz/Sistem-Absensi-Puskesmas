@@ -8,10 +8,10 @@ if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
         e.preventDefault();
 
-        var today = new Date();
-        var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date + ' ' + time;
+        // var today = new Date();
+        // var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+        // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        // var dateTime = date + ' ' + time;
 
         db.collection('presensi').add({
             username: localStorage.getItem("Username"),
@@ -19,7 +19,7 @@ if (addPresensi) {
             // level: 'level user',
             nama: localStorage.getItem("Nama"),
             nip: localStorage.getItem("NIP"),
-            waktu: dateTime
+            waktu: firebase.firestore.Timestamp.now()
         }).catch(err => console.log(err.message));
     })
 }
