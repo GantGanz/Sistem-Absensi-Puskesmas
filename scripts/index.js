@@ -130,8 +130,8 @@ if (localStorage.getItem("Level") == "Admin") {
 
         filterForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const awal = filterForm['filter-awal'].value;
-            const akhir = filterForm['filter-akhir'].value;
+            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
+            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
 
             db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
                 let html = '';
