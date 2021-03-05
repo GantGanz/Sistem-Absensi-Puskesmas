@@ -8,19 +8,22 @@ if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // var today = new Date();
-        // var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-        // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        // var dateTime = date + ' ' + time;
-
+        waktuSekarang = firebase.firestore.Timestamp.now();
+        // db.collection("presensi").orderBy("waktu").equalTo(waktuSekarang).once("value", snapshot => {
+        //     if (snapshot.exists()) {
+        //         console.log("sudah presensi!");
+        //     } else {
         db.collection('presensi').add({
             username: localStorage.getItem("Username"),
             foto: 'foto user',
             // level: 'level user',
             nama: localStorage.getItem("Nama"),
             nip: localStorage.getItem("NIP"),
-            waktu: firebase.firestore.Timestamp.now()
+            waktu: waktuSekarang
         }).catch(err => console.log(err.message));
+        //     }
+        // });
+
     })
 }
 
@@ -101,22 +104,3 @@ if (loginForm) {
         window.location.href = "login.html";
     }
 }
-
-// listen for auth status changes
-// auth.onAuthStateChanged(user => {
-//     if (user) {
-//         console.log('user logged in: ', user.username);
-//         if (typeof setupAccountDetails !== "undefined") {
-//             setupAccountDetails(user);
-//         };
-//         if (typeof allAccountDetails !== "undefined") {
-//             allAccountDetails();
-//         };
-//     } else {
-//         // setupPresensi([]);
-//         if (window.location.pathname != "/Sistem-Absensi-Puskesmas/login.html") {
-//             console.log(window.location.pathname);
-//             window.location.href = "login.html";
-//         };
-//     }
-// })
