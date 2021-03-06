@@ -69,7 +69,7 @@ if (localStorage.getItem("Level") == "Admin") {
     }
     // show all account
     if (allAccounts) {
-        db.collection('users').onSnapshot(docs => {
+        db.collection('users').orderBy("username").onSnapshot(docs => {
             let html = '';
             let row = 1;
             docs.forEach(account => {
