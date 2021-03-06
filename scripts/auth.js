@@ -41,16 +41,24 @@ if (localStorage.getItem("Level") == "Admin") {
             const password = signupForm['signup-password'].value;
             const level = signupForm['signup-level'].value;
 
-            db.collection('users').add({
-                username: username,
-                nama: nama,
-                nip: nip,
-                password: password,
-                level: level
-            }).then(() => {
-                console.log("User created successfully!");
-                signupForm.reset();
-            }).catch(err => console.log(err.message));
+            db.collection("users").where("username", "==", username).get().then(doc => {
+                if (doc.size > 0) {
+                    return console.log("Username sudah ada");
+                } else {
+                    db.collection('users').add({
+                        username: username,
+                        nama: nama,
+                        nip: nip,
+                        password: password,
+                        level: level
+                    }).then(() => {
+                        console.log("User created successfully!");
+                        signupForm.reset();
+                    }).catch(err => console.log(err.message));
+                }
+            }).catch((err) => {
+                console.log("Error checking document", err);
+            });
         });
     }
 }
