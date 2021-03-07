@@ -240,3 +240,19 @@ function exportTableToCSV(filename) {
 }
 
 // export to pdf
+window.onload = function () {
+    document.getElementById("print_pdf")
+        .addEventListener("click", () => {
+            const invoice = this.document.getElementById("tabel_presensi");
+            var opt = {
+                margin: 0.3,
+                filename: 'daftar-presensi.pdf',
+                jsPDF: {
+                    unit: 'in',
+                    format: 'letter',
+                    orientation: 'portrait'
+                }
+            };
+            html2pdf().set(opt).from(invoice).save();
+        })
+}
