@@ -6,6 +6,7 @@ const accountIsAdmin = document.querySelector('.account-isAdmin');
 const adminMenu = document.querySelector('.admin-menu');
 const allPresensi = document.querySelector('.all-presensi');
 const filterForm = document.querySelector('#filter-form');
+const print_pdf = document.getElementById("print_pdf");
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -240,19 +241,18 @@ function exportTableToCSV(filename) {
 }
 
 // export to pdf
-window.onload = function () {
-    document.getElementById("print_pdf")
-        .addEventListener("click", () => {
-            const invoice = this.document.getElementById("tabel_presensi");
-            var opt = {
-                margin: 0.3,
-                filename: 'daftar-presensi.pdf',
-                jsPDF: {
-                    unit: 'in',
-                    format: 'letter',
-                    orientation: 'portrait'
-                }
-            };
-            html2pdf().set(opt).from(invoice).save();
-        })
+if (print_pdf) {
+    print_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("tabel_presensi");
+        var opt = {
+            margin: 0.3,
+            filename: 'daftar-presensi.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
 }
