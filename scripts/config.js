@@ -4,8 +4,8 @@ var firebaseConfig = {
     apiKey: "AIzaSyC6hyl-k9rVuAs8JYD8KUtcVXsMwqZTQI0",
     authDomain: "presensi-puskesmas-kasiman.firebaseapp.com",
     projectId: "presensi-puskesmas-kasiman",
-    // storageBucket: "presensi-puskesmas-kasiman.appspot.com",
-    // messagingSenderId: "53532156353",
+    storageBucket: "presensi-puskesmas-kasiman.appspot.com",
+    messagingSenderId: "53532156353",
     appId: "1:53532156353:web:175ee96b8b4c9b126d0f40",
     measurementId: "G-304DP9WZW3"
 };

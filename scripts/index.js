@@ -256,3 +256,11 @@ if (print_pdf) {
         html2pdf().set(opt).from(invoice).save();
     })
 }
+
+// Infinite scroll pagination
+const getNextPresensi = async () => {
+
+}
+
+// wait DOM content to load
+window.addEventListener('DOMContentLoaded', () => getNextPresensi());
