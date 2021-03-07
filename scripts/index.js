@@ -129,6 +129,7 @@ if (localStorage.getItem("Level") == "Admin") {
             console.log(error)
         });
 
+        // filter presensi
         filterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
@@ -170,39 +171,39 @@ if (localStorage.getItem("Level") == "Admin") {
     }
 }
 
-// get data presensi
-if (presensiList) {
-    db.collection('presensi').where("username", "==", localStorage.getItem("Username")).orderBy("waktu", "desc").onSnapshot(data => {
-        let html = '';
-        // let row = 1;
-        data.forEach(doc => {
-            const presensi = doc.data();
+// // get data presensi
+// if (presensiList) {
+//     db.collection('presensi').where("username", "==", localStorage.getItem("Username")).orderBy("waktu", "desc").onSnapshot(data => {
+//         let html = '';
+//         // let row = 1;
+//         data.forEach(doc => {
+//             const presensi = doc.data();
 
-            let date = presensi.waktu.toDate();
-            let dd = date.getDate();
-            let mm = date.getMonth();
-            let yyyy = date.getFullYear();
-            let hh = date.getHours();
-            let mi = date.getMinutes();
-            let se = date.getSeconds();
-            date = dd + '/' + mm + '/' + yyyy;
-            hour = hh + ':' + mi + ':' + se;
-            // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
+//             let date = presensi.waktu.toDate();
+//             let dd = date.getDate();
+//             let mm = date.getMonth();
+//             let yyyy = date.getFullYear();
+//             let hh = date.getHours();
+//             let mi = date.getMinutes();
+//             let se = date.getSeconds();
+//             date = dd + '/' + mm + '/' + yyyy;
+//             hour = hh + ':' + mi + ':' + se;
+//             // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
 
-            const td = `
-            <tr>
-                <td>${date}</td>
-                <td>${hour}</td>
-                <td>${presensi.foto}</td>
-            </tr>`;
-            html += td;
-            // row++;
-        });
-        presensiList.innerHTML = html;
-    }, error => {
-        console.log(error)
-    });
-}
+//             const td = `
+//             <tr>
+//                 <td>${date}</td>
+//                 <td>${hour}</td>
+//                 <td>${presensi.foto}</td>
+//             </tr>`;
+//             html += td;
+//             // row++;
+//         });
+//         presensiList.innerHTML = html;
+//     }, error => {
+//         console.log(error)
+//     });
+// }
 
 // Export to CSV
 function downloadCSV(csv, filename) {
@@ -258,9 +259,100 @@ if (print_pdf) {
 }
 
 // Infinite scroll pagination
-const getNextPresensi = async () => {
+// store last document
+let latestDoc = null;
 
+const getNextPresensi = () => {
+    // get data presensi
+    if (presensiList) {
+        const data = db.collection('presensi')
+            .where("username", "==", localStorage.getItem("Username"))
+            .orderBy("waktu", "desc")
+            // .startAfter(latestDoc || 0)
+            .limit(3);
+
+        // output docs
+        data.onSnapshot(data => {
+            let html = '';
+            // let row = 1;
+            data.forEach(doc => {
+                const presensi = doc.data();
+
+                let date = presensi.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth();
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
+                // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
+
+                html += `
+                <tr>
+                    <td>${date}</td>
+                    <td>${hour}</td>
+                    <td>${presensi.foto}</td>
+                </tr>`;
+                // row++;
+            });
+            presensiList.innerHTML += html;
+
+            // update latest doc
+            latestDoc = data.docs[data.docs.length - 1];
+
+            // unattach event listener if no more docs
+            if (data.empty) {
+                loadMore.removeEventListener('click', handleClick);
+            }
+        }, error => {
+            console.log(error)
+        });
+    }
 }
 
 // wait DOM content to load
 window.addEventListener('DOMContentLoaded', () => getNextPresensi());
+
+// load more docs (button)
+const loadMore = document.querySelector('.load-more button');
+
+const handleClick = () => {
+    getNextPresensi();
+}
+
+loadMore.addEventListener('click', handleClick);
+
+// // get data presensi
+// if (presensiList) {
+//     const ref = db.collection('presensi').where("username", "==", localStorage.getItem("Username")).orderBy("waktu", "desc").limit(3);
+//     const data = await ref.get();
+
+//     let html = '';
+//     // let row = 1;
+//     data.docs.forEach(doc => {
+//         const presensi = doc.data();
+
+//         let date = presensi.waktu.toDate();
+//         let dd = date.getDate();
+//         let mm = date.getMonth();
+//         let yyyy = date.getFullYear();
+//         let hh = date.getHours();
+//         let mi = date.getMinutes();
+//         let se = date.getSeconds();
+//         date = dd + '/' + mm + '/' + yyyy;
+//         hour = hh + ':' + mi + ':' + se;
+//         // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
+
+//         html += `
+//         <tr>
+//             <td>${date}</td>
+//             <td>${hour}</td>
+//             <td>${presensi.foto}</td>
+//         </tr>`;
+//         // row++;
+//     });
+//     presensiList.innerHTML += html;
+// }
+// console.log('get masuk');
