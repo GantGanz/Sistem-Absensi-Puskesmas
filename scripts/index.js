@@ -238,3 +238,5 @@ function exportTableToCSV(filename) {
     // Download CSV file
     downloadCSV(csv.join("\n"), filename);
 }
+
+// export to pdf
