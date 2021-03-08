@@ -260,7 +260,7 @@ if (print_pdf) {
 
 // Infinite scroll pagination
 // store last document
-let latestDoc = null;
+let latestDoc = firebase.firestore.Timestamp.now();
 
 const getNextPresensi = () => {
     // get data presensi
@@ -268,7 +268,7 @@ const getNextPresensi = () => {
         const data = db.collection('presensi')
             .where("username", "==", localStorage.getItem("Username"))
             .orderBy("waktu", "desc")
-            // .startAfter(latestDoc || 0)
+            .startAfter(latestDoc)
             .limit(3);
 
         // output docs
