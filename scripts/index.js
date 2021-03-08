@@ -265,14 +265,14 @@ let latestDoc = firebase.firestore.Timestamp.now();
 const getNextPresensi = () => {
     // get data presensi
     if (presensiList) {
-        const data = db.collection('presensi')
+        const query = db.collection('presensi')
             .where("username", "==", localStorage.getItem("Username"))
             .orderBy("waktu", "desc")
             .startAfter(latestDoc)
-            .limit(3);
+            .limit(10);
 
         // output docs
-        data.onSnapshot(data => {
+        query.onSnapshot(data => {
             let html = '';
             // let row = 1;
             data.forEach(doc => {
@@ -304,7 +304,8 @@ const getNextPresensi = () => {
 
             // unattach event listener if no more docs
             if (data.empty) {
-                loadMore.removeEventListener('click', handleClick);
+                window.removeEventListener('scroll', handleScroll);
+                // loadMore.removeEventListener('click', handleClick);
             }
         }, error => {
             console.log(error)
@@ -315,44 +316,21 @@ const getNextPresensi = () => {
 // wait DOM content to load
 window.addEventListener('DOMContentLoaded', () => getNextPresensi());
 
-// load more docs (button)
-const loadMore = document.querySelector('.load-more button');
-
-const handleClick = () => {
-    getNextPresensi();
+// load more docs (scroll)
+const handleScroll = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    if (Math.ceil(scrolled) == scrollable) {
+        getNextPresensi();
+    }
 }
+window.addEventListener('scroll', handleScroll);
 
-loadMore.addEventListener('click', handleClick);
-
-// // get data presensi
-// if (presensiList) {
-//     const ref = db.collection('presensi').where("username", "==", localStorage.getItem("Username")).orderBy("waktu", "desc").limit(3);
-//     const data = await ref.get();
-
-//     let html = '';
-//     // let row = 1;
-//     data.docs.forEach(doc => {
-//         const presensi = doc.data();
-
-//         let date = presensi.waktu.toDate();
-//         let dd = date.getDate();
-//         let mm = date.getMonth();
-//         let yyyy = date.getFullYear();
-//         let hh = date.getHours();
-//         let mi = date.getMinutes();
-//         let se = date.getSeconds();
-//         date = dd + '/' + mm + '/' + yyyy;
-//         hour = hh + ':' + mi + ':' + se;
-//         // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
-
-//         html += `
-//         <tr>
-//             <td>${date}</td>
-//             <td>${hour}</td>
-//             <td>${presensi.foto}</td>
-//         </tr>`;
-//         // row++;
-//     });
-//     presensiList.innerHTML += html;
+// // load more docs (button)
+// const loadMore = document.querySelector('.load-more button');
+// const handleClick = () => {
+//     getNextPresensi();
 // }
-// console.log('get masuk');
+// if (loadMore) {
+//     loadMore.addEventListener('click', handleClick);
+// }

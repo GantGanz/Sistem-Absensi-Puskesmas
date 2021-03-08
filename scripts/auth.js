@@ -6,8 +6,7 @@ const loginForm = document.querySelector('#login-form');
 //  create new presensi
 if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
-        e.preventDefault();
-
+        // e.preventDefault();
         waktuSekarang = firebase.firestore.Timestamp.now();
         // db.collection("presensi").orderBy("waktu").equalTo(waktuSekarang).once("value", snapshot => {
         //     if (snapshot.exists()) {
@@ -23,7 +22,7 @@ if (addPresensi) {
         }).catch(err => console.log(err.message));
         //     }
         // });
-
+        location.reload();
     })
 }
 
