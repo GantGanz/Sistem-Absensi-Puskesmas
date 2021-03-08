@@ -69,3 +69,11 @@ hr {
         transform: rotate(360deg);
     }
 }
+
+.presensi_loader {
+    display: none;
+}
+
+.presensi_loader.active {
+    display: block;
+}

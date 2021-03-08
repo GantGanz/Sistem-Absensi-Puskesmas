@@ -6,6 +6,7 @@ const accountIsAdmin = document.querySelector('.account-isAdmin');
 const adminMenu = document.querySelector('.admin-menu');
 const allPresensi = document.querySelector('.all-presensi');
 const filterForm = document.querySelector('#filter-form');
+const presensi_loader = document.querySelector('.presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
 
 // menampilkan nama dan detail akun
@@ -171,40 +172,6 @@ if (localStorage.getItem("Level") == "Admin") {
     }
 }
 
-// // get data presensi
-// if (presensiList) {
-//     db.collection('presensi').where("username", "==", localStorage.getItem("Username")).orderBy("waktu", "desc").onSnapshot(data => {
-//         let html = '';
-//         // let row = 1;
-//         data.forEach(doc => {
-//             const presensi = doc.data();
-
-//             let date = presensi.waktu.toDate();
-//             let dd = date.getDate();
-//             let mm = date.getMonth();
-//             let yyyy = date.getFullYear();
-//             let hh = date.getHours();
-//             let mi = date.getMinutes();
-//             let se = date.getSeconds();
-//             date = dd + '/' + mm + '/' + yyyy;
-//             hour = hh + ':' + mi + ':' + se;
-//             // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
-
-//             const td = `
-//             <tr>
-//                 <td>${date}</td>
-//                 <td>${hour}</td>
-//                 <td>${presensi.foto}</td>
-//             </tr>`;
-//             html += td;
-//             // row++;
-//         });
-//         presensiList.innerHTML = html;
-//     }, error => {
-//         console.log(error)
-//     });
-// }
-
 // Export to CSV
 function downloadCSV(csv, filename) {
     var csvFile;
@@ -265,6 +232,7 @@ let latestDoc = firebase.firestore.Timestamp.now();
 const getNextPresensi = () => {
     // get data presensi
     if (presensiList) {
+        presensi_loader.classList.add('active');
         const query = db.collection('presensi')
             .where("username", "==", localStorage.getItem("Username"))
             .orderBy("waktu", "desc")
@@ -298,6 +266,7 @@ const getNextPresensi = () => {
                 // row++;
             });
             presensiList.innerHTML += html;
+            presensi_loader.classList.remove('active');
 
             // update latest doc
             latestDoc = data.docs[data.docs.length - 1];
