@@ -19,10 +19,9 @@ if (addPresensi) {
             nama: localStorage.getItem("Nama"),
             nip: localStorage.getItem("NIP"),
             waktu: waktuSekarang
-        }).catch(err => console.log(err.message));
+        }).then(() => location.reload()).catch(err => console.log(err.message));
         //     }
         // });
-        location.reload();
     })
 }
 
