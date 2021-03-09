@@ -6,7 +6,8 @@ const accountIsAdmin = document.querySelector('.account-isAdmin');
 const adminMenu = document.querySelector('.admin-menu');
 const allPresensi = document.querySelector('.all-presensi');
 const filterForm = document.querySelector('#filter-form');
-const presensi_loader = document.querySelector('.presensi_loader');
+// const presensi_loader = document.querySelector('.presensi_loader');
+// const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
 
 // menampilkan nama dan detail akun
@@ -38,6 +39,61 @@ if (localStorage.getItem("Level") == "Anggota" && allAccounts) {
 }
 
 // Fitur Khusus Admin
+// store last document of allpresensi
+let latestDocAll = firebase.firestore.Timestamp.now();
+let row = null;
+// show all presensi
+const getNextAllPresensi = () => {
+    if (allPresensi && (localStorage.getItem("Level") == "Admin")) {
+        document.getElementById("loader").style.display = "block";
+        // all_presensi_loader.classList.add('active');
+        const query = db.collection('presensi').orderBy("waktu", "desc").startAfter(latestDocAll).limit(30);
+        query.onSnapshot(data => {
+            let html = '';
+            if (row === null) {
+                row = 1;
+            }
+            data.forEach(presensi => {
+                const presensiData = presensi.data();
+                let date = presensiData.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth();
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
+                html += `
+                    <tr>
+                        <th scope="row">${row}</th>
+                        <td>${date}</td>
+                        <td>${presensiData.username}</td>
+                        <td>${presensiData.nama}</td>
+                        <td>${presensiData.nip}</td>
+                        <td>${hour}</td>
+                    </tr>
+                    `;
+                row++;
+                console.log(presensi);
+            });
+            allPresensi.innerHTML += html;
+            document.getElementById("loader").style.display = "none";
+            // all_presensi_loader.classList.remove('active');
+
+            // update latest doc
+            latestDocAll = data.docs[data.docs.length - 1];
+
+            // unattach event listener if no more docs
+            if (data.empty) {
+                window.removeEventListener('scroll', handleScroll);
+                console.log('data kosong?');
+            }
+        }, error => {
+            console.log(error)
+        });
+    }
+}
 if (localStorage.getItem("Level") == "Admin") {
     if (adminMenu) {
         if (allAccounts) {
@@ -96,43 +152,12 @@ if (localStorage.getItem("Level") == "Admin") {
         });
     }
 
-    // show all presensi
     if (allPresensi) {
-        db.collection('presensi').orderBy("waktu", "desc").onSnapshot(docs => {
-            let html = '';
-            let row = 1;
-            docs.forEach(presensi => {
-                const presensiData = presensi.data();
-                let date = presensiData.waktu.toDate();
-                let dd = date.getDate();
-                let mm = date.getMonth();
-                let yyyy = date.getFullYear();
-                let hh = date.getHours();
-                let mi = date.getMinutes();
-                let se = date.getSeconds();
-                date = dd + '/' + mm + '/' + yyyy;
-                hour = hh + ':' + mi + ':' + se;
-                const tr = `
-                        <tr>
-                            <th scope="row">${row}</th>
-                            <td>${date}</td>
-                            <td>${presensiData.username}</td>
-                            <td>${presensiData.nama}</td>
-                            <td>${presensiData.nip}</td>
-                            <td>${hour}</td>
-                        </tr>
-                        `;
-                html += tr;
-                row++;
-            });
-            allPresensi.innerHTML = html;
-        }, error => {
-            console.log(error)
-        });
-
         // filter presensi
         filterForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+
             const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
             const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
 
@@ -225,19 +250,20 @@ if (print_pdf) {
     })
 }
 
-// Infinite scroll pagination
 // store last document
 let latestDoc = firebase.firestore.Timestamp.now();
-
+// Infinite scroll pagination
 const getNextPresensi = () => {
     // get data presensi
     if (presensiList) {
-        presensi_loader.classList.add('active');
+        // presensi_loader.classList.add('active');
+        document.getElementById("loader").style.display = "block";
+
         const query = db.collection('presensi')
             .where("username", "==", localStorage.getItem("Username"))
             .orderBy("waktu", "desc")
             .startAfter(latestDoc)
-            .limit(10);
+            .limit(30);
 
         // output docs
         query.onSnapshot(data => {
@@ -266,7 +292,8 @@ const getNextPresensi = () => {
                 // row++;
             });
             presensiList.innerHTML += html;
-            presensi_loader.classList.remove('active');
+            // presensi_loader.classList.remove('active');
+            document.getElementById("loader").style.display = "none";
 
             // update latest doc
             latestDoc = data.docs[data.docs.length - 1];
@@ -284,6 +311,7 @@ const getNextPresensi = () => {
 
 // wait DOM content to load
 window.addEventListener('DOMContentLoaded', () => getNextPresensi());
+window.addEventListener('DOMContentLoaded', () => getNextAllPresensi());
 
 // load more docs (scroll)
 const handleScroll = () => {
@@ -291,6 +319,7 @@ const handleScroll = () => {
     const scrolled = window.scrollY;
     if (Math.ceil(scrolled) == scrollable) {
         getNextPresensi();
+        getNextAllPresensi();
     }
 }
 window.addEventListener('scroll', handleScroll);

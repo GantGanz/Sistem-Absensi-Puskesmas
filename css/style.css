@@ -25,7 +25,7 @@ hr {
 
 /* loading animation */
 #loader {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     z-index: 2;
@@ -70,10 +70,18 @@ hr {
     }
 }
 
-.presensi_loader {
+/* .presensi_loader {
     display: none;
 }
 
 .presensi_loader.active {
-    display: block;
+    display: none;
 }
+
+.all_presensi_loader {
+    display: none;
+}
+
+.all_presensi_loader.active {
+    display: none;
+} */
