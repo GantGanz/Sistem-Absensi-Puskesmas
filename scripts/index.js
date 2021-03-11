@@ -9,6 +9,8 @@ const filterForm = document.querySelector('#filter-form');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
+const edit_button = document.getElementById("edit_button");
+const delete_button = document.getElementById("delete_button");
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -139,10 +141,10 @@ if (localStorage.getItem("Level") == "Admin") {
                             <td>${userData.password}</td>
                             <td>${userData.level}</td>
                             <td class="text-center">
-                                <button id="edit_button" class="btn btn-info" onclick="editAccount(${account.id})">Edit</button> 
+                                <button id="edit_button" class="btn btn-info" onclick="editAccount('${account.id}')">Edit</button> 
                             </td>
                             <td class="text-center">
-                                <button id="delete_button" class="btn btn-danger" onclick="deleteAccount(${account.id})">Delete</button> 
+                                <button id="delete_button" class="btn btn-danger" onclick="deleteAccount('${account.id}')">Delete</button> 
                             </td>
                         </tr>
                         `;
@@ -208,6 +210,30 @@ function deleteAccount(id) {
         console.error("Error removing document: ", error);
     });
 };
+
+// if (delete_button) {
+//     delete_button.addEventListener("click", () => {
+//         console.log("fungsi masok!");
+//         console.log(delete_button.value);
+//         db.collection("users").doc(delete_button.value).delete().then(() => {
+//             console.log("Document successfully deleted!");
+//         }).catch((error) => {
+//             console.error("Error removing document: ", error);
+//         });
+//     })
+// }
+
+// if (edit_button) {
+//     edit_button.addEventListener("click", () => {
+//         console.log("fungsi masok!");
+//         console.log(edit_button.value);
+//         // db.collection("users").doc(delete_button.value).delete().then(() => {
+//         //     console.log("Document successfully deleted!");
+//         // }).catch((error) => {
+//         //     console.error("Error removing document: ", error);
+//         // });
+//     })
+// }
 
 // Export to CSV
 function downloadCSV(csv, filename) {
