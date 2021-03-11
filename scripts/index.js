@@ -9,8 +9,9 @@ const filterForm = document.querySelector('#filter-form');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
-const edit_button = document.getElementById("edit_button");
 const delete_button = document.getElementById("delete_button");
+const updateForm = document.getElementById('update-form');
+const update_button = document.getElementById("update_button");
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -141,7 +142,7 @@ if (localStorage.getItem("Level") == "Admin") {
                             <td>${userData.password}</td>
                             <td>${userData.level}</td>
                             <td class="text-center">
-                                <button id="edit_button" class="btn btn-info" onclick="editAccount('${account.id}')">Edit</button> 
+                                <button class="btn btn-info" data-toggle="modal" data-target="#updateModal" onclick="updateAccount('${account.id}')">Edit</button> 
                             </td>
                             <td class="text-center">
                                 <button id="delete_button" class="btn btn-danger" onclick="deleteAccount('${account.id}')">Delete</button> 
@@ -205,10 +206,49 @@ if (localStorage.getItem("Level") == "Admin") {
 function deleteAccount(id) {
     var con = confirm("Apakah anda yakin akan menghapus user?");
     if (con == true) {
-        db.collection("users").doc(id).delete().catch((error) => {
+        db.collection("users").doc(id).delete().then(() => {
+            document.querySelector('#pesan-signup').innerHTML = "Akun berhasil dihapus";
+            document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+            document.getElementById("alert-signup").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("alert-signup").style.display = "none";
+            }, 3000);
+        }).catch((error) => {
             console.error("Error removing document: ", error);
         });
     }
+};
+
+function updateAccount(id) {
+    db.collection("users").doc(id).get().then(doc => {
+        document.getElementById("update-username").value = doc.data().username;
+        document.getElementById("update-nama").value = doc.data().nama;
+        document.getElementById("update-nip").value = doc.data().nip;
+        document.getElementById("update-password").value = doc.data().password;
+        document.getElementById("update-level").value = doc.data().level;
+    }).catch(function (error) {
+        console.log("Error getting document:", error);
+    });
+    update_button.addEventListener("click", (e) => {
+        e.preventDefault();
+        db.collection("users").doc(id).update({
+            username: updateForm['update-username'].value,
+            nama: updateForm['update-nama'].value,
+            nip: updateForm['update-nip'].value,
+            password: updateForm['update-password'].value,
+            level: updateForm['update-level'].value
+        }).then(() => {
+            $('#updateModal').modal('hide');
+            document.querySelector('#pesan-signup').innerHTML = "Data akun berhasil diperbarui";
+            document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+            document.getElementById("alert-signup").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("alert-signup").style.display = "none";
+            }, 3000);
+        }).catch((error) => {
+            console.error("Error editing document: ", error);
+        });
+    })
 };
 
 // Export to CSV

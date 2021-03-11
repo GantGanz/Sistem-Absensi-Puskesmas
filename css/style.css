@@ -77,6 +77,12 @@ hr {
     z-index: 2;
 }
 
+#alert-signup {
+    display: none;
+    position: fixed;
+    width: 100%;
+}
+
 /* .presensi_loader {
     display: none;
 }
