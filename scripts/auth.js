@@ -17,14 +17,6 @@ if (addPresensi) {
         akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
         db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(data => {
             data.forEach(presensi => {
-                console.log(awal.valueOf());
-                console.log(presensi.data().waktu.toDate().valueOf());
-                console.log(akhir.valueOf());
-                console.log('----------------');
-                console.log(awal);
-                console.log(presensi.data().waktu.toDate());
-                console.log(akhir);
-                console.log('===============');
                 if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
                     if (ada == 1) {
                         document.getElementById("alert-presensi").style.display = "block";
