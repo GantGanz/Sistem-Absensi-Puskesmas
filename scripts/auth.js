@@ -8,20 +8,31 @@ if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
         // e.preventDefault();
         waktuSekarang = firebase.firestore.Timestamp.now();
-        // db.collection("presensi").orderBy("waktu").equalTo(waktuSekarang).once("value", snapshot => {
-        //     if (snapshot.exists()) {
-        //         console.log("sudah presensi!");
-        //     } else {
-        db.collection('presensi').add({
-            username: localStorage.getItem("Username"),
-            foto: 'foto user',
-            // level: 'level user',
-            nama: localStorage.getItem("Nama"),
-            nip: localStorage.getItem("NIP"),
-            waktu: waktuSekarang
-        }).then(() => location.reload()).catch(err => console.log(err.message));
-        //     }
-        // });
+        let date = waktuSekarang.toDate();
+        let dd = date.getDate();
+        let mm = date.getMonth() + 1;
+        let yyyy = date.getFullYear();
+        awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
+        akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+        db.collection("presensi").get().then(data => {
+            data.forEach(presensi => {
+                if ((presensi.data().waktu.toDate() >= awal.valueOf()) && (presensi.data().waktu.toDate() <= akhir.valueOf())) {
+                    console.log("presensi sudah ada");
+                } else {
+                    // db.collection('presensi').add({
+                    //     username: localStorage.getItem("Username"),
+                    //     foto: 'foto user',
+                    //     // level: 'level user',
+                    //     nama: localStorage.getItem("Nama"),
+                    //     nip: localStorage.getItem("NIP"),
+                    //     waktu: waktuSekarang
+                    // }).then(() => location.reload();
+                    // }).catch(err => console.log(err.message));
+                }
+            });
+        }).catch((err) => {
+            console.log("Error checking document", err);
+        });
     })
 }
 

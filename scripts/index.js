@@ -47,7 +47,7 @@ const getNextAllPresensi = () => {
     if (allPresensi && (localStorage.getItem("Level") == "Admin")) {
         document.getElementById("loader").style.display = "block";
         // all_presensi_loader.classList.add('active');
-        const query = db.collection('presensi').orderBy("waktu", "desc").startAfter(latestDocAll).limit(30);
+        const query = db.collection('presensi').orderBy("waktu", "desc").startAfter(latestDocAll).limit(20);
         query.onSnapshot(data => {
             let html = '';
             if (row === null) {
@@ -57,7 +57,7 @@ const getNextAllPresensi = () => {
                 const presensiData = presensi.data();
                 let date = presensiData.waktu.toDate();
                 let dd = date.getDate();
-                let mm = date.getMonth();
+                let mm = date.getMonth() + 1;
                 let yyyy = date.getFullYear();
                 let hh = date.getHours();
                 let mi = date.getMinutes();
@@ -166,7 +166,7 @@ if (localStorage.getItem("Level") == "Admin") {
                     const presensiData = presensi.data();
                     let date = presensiData.waktu.toDate();
                     let dd = date.getDate();
-                    let mm = date.getMonth();
+                    let mm = date.getMonth() + 1;
                     let yyyy = date.getFullYear();
                     let hh = date.getHours();
                     let mi = date.getMinutes();
@@ -261,7 +261,7 @@ const getNextPresensi = () => {
             .where("username", "==", localStorage.getItem("Username"))
             .orderBy("waktu", "desc")
             .startAfter(latestDoc)
-            .limit(30);
+            .limit(20);
 
         // output docs
         query.onSnapshot(data => {
@@ -272,7 +272,7 @@ const getNextPresensi = () => {
 
                 let date = presensi.waktu.toDate();
                 let dd = date.getDate();
-                let mm = date.getMonth();
+                let mm = date.getMonth() + 1;
                 let yyyy = date.getFullYear();
                 let hh = date.getHours();
                 let mi = date.getMinutes();
