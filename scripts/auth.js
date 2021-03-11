@@ -27,7 +27,10 @@ if (addPresensi) {
                 console.log('===============');
                 if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
                     if (ada == 1) {
-                        console.log("presensi sudah ada");
+                        document.getElementById("alert-presensi").style.display = "block";
+                        setTimeout(() => {
+                            document.getElementById("alert-presensi").style.display = "none";
+                        }, 3000);
                         ada++;
                     };
                 }
