@@ -8,28 +8,41 @@ if (addPresensi) {
     addPresensi.addEventListener('click', (e) => {
         // e.preventDefault();
         waktuSekarang = firebase.firestore.Timestamp.now();
+        let ada = 1;
         let date = waktuSekarang.toDate();
         let dd = date.getDate();
         let mm = date.getMonth() + 1;
         let yyyy = date.getFullYear();
         awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
         akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
-        db.collection("presensi").get().then(data => {
+        db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(data => {
             data.forEach(presensi => {
-                if ((presensi.data().waktu.toDate() >= awal.valueOf()) && (presensi.data().waktu.toDate() <= akhir.valueOf())) {
-                    console.log("presensi sudah ada");
-                } else {
-                    // db.collection('presensi').add({
-                    //     username: localStorage.getItem("Username"),
-                    //     foto: 'foto user',
-                    //     // level: 'level user',
-                    //     nama: localStorage.getItem("Nama"),
-                    //     nip: localStorage.getItem("NIP"),
-                    //     waktu: waktuSekarang
-                    // }).then(() => location.reload();
-                    // }).catch(err => console.log(err.message));
+                console.log(awal.valueOf());
+                console.log(presensi.data().waktu.toDate().valueOf());
+                console.log(akhir.valueOf());
+                console.log('----------------');
+                console.log(awal);
+                console.log(presensi.data().waktu.toDate());
+                console.log(akhir);
+                console.log('===============');
+                if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
+                    if (ada == 1) {
+                        console.log("presensi sudah ada");
+                        ada++;
+                    };
                 }
             });
+            if (ada == 1) {
+                console.log("melakukan presensi");
+                db.collection('presensi').add({
+                    username: localStorage.getItem("Username"),
+                    foto: 'foto user',
+                    // level: 'level user',
+                    nama: localStorage.getItem("Nama"),
+                    nip: localStorage.getItem("NIP"),
+                    waktu: waktuSekarang
+                }).then(() => location.reload());
+            };
         }).catch((err) => {
             console.log("Error checking document", err);
         });
