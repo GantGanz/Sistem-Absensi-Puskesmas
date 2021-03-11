@@ -75,6 +75,7 @@ const getNextAllPresensi = () => {
                         <td>${presensiData.nama}</td>
                         <td>${presensiData.nip}</td>
                         <td>${hour}</td>
+                        <td>${presensiData.foto}</td>
                     </tr>
                     `;
                 row++;
@@ -190,6 +191,7 @@ if (localStorage.getItem("Level") == "Admin") {
                             <td>${presensiData.nama}</td>
                             <td>${presensiData.nip}</td>
                             <td>${hour}</td>
+                            <td>${presensiData.foto}</td>
                         </tr>
                         `;
                     html += tr;
