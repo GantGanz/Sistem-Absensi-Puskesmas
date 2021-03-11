@@ -203,37 +203,13 @@ if (localStorage.getItem("Level") == "Admin") {
 };
 
 function deleteAccount(id) {
-    console.log("fungsi masok!");
-    db.collection("users").doc(id).delete().then(() => {
-        console.log("Document successfully deleted!");
-    }).catch((error) => {
-        console.error("Error removing document: ", error);
-    });
+    var con = confirm("Apakah anda yakin akan menghapus user?");
+    if (con == true) {
+        db.collection("users").doc(id).delete().catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
 };
-
-// if (delete_button) {
-//     delete_button.addEventListener("click", () => {
-//         console.log("fungsi masok!");
-//         console.log(delete_button.value);
-//         db.collection("users").doc(delete_button.value).delete().then(() => {
-//             console.log("Document successfully deleted!");
-//         }).catch((error) => {
-//             console.error("Error removing document: ", error);
-//         });
-//     })
-// }
-
-// if (edit_button) {
-//     edit_button.addEventListener("click", () => {
-//         console.log("fungsi masok!");
-//         console.log(edit_button.value);
-//         // db.collection("users").doc(delete_button.value).delete().then(() => {
-//         //     console.log("Document successfully deleted!");
-//         // }).catch((error) => {
-//         //     console.error("Error removing document: ", error);
-//         // });
-//     })
-// }
 
 // Export to CSV
 function downloadCSV(csv, filename) {
