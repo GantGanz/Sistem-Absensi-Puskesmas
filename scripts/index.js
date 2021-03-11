@@ -231,23 +231,35 @@ function updateAccount(id) {
     });
     update_button.addEventListener("click", (e) => {
         e.preventDefault();
-        db.collection("users").doc(id).update({
-            username: updateForm['update-username'].value,
-            nama: updateForm['update-nama'].value,
-            nip: updateForm['update-nip'].value,
-            password: updateForm['update-password'].value,
-            level: updateForm['update-level'].value
-        }).then(() => {
-            $('#updateModal').modal('hide');
-            document.querySelector('#pesan-signup').innerHTML = "Data akun berhasil diperbarui";
-            document.getElementById("alert-signup").className = "alert alert-success mx-auto";
-            document.getElementById("alert-signup").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("alert-signup").style.display = "none";
-            }, 3000);
-        }).catch((error) => {
-            console.error("Error editing document: ", error);
-        });
+        db.collection("users").where("username", "==", updateForm['update-username'].value).get().then(doc => {
+            if (doc.size > 0) {
+                $('#updateModal').modal('hide');
+                document.querySelector('#pesan-signup').innerHTML = "Maaf Username sudah digunakan";
+                document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
+                document.getElementById("alert-signup").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("alert-signup").style.display = "none";
+                }, 3000);
+            } else {
+                db.collection("users").doc(id).update({
+                    username: updateForm['update-username'].value,
+                    nama: updateForm['update-nama'].value,
+                    nip: updateForm['update-nip'].value,
+                    password: updateForm['update-password'].value,
+                    level: updateForm['update-level'].value
+                }).then(() => {
+                    $('#updateModal').modal('hide');
+                    document.querySelector('#pesan-signup').innerHTML = "Data akun berhasil diperbarui";
+                    document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+                    document.getElementById("alert-signup").style.display = "block";
+                    setTimeout(() => {
+                        document.getElementById("alert-signup").style.display = "none";
+                    }, 3000);
+                }).catch((error) => {
+                    console.error("Error editing document: ", error);
+                });
+            }
+        })
     })
 };
 
