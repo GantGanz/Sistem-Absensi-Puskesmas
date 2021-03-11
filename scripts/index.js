@@ -75,7 +75,6 @@ const getNextAllPresensi = () => {
                     </tr>
                     `;
                 row++;
-                console.log(presensi);
             });
             allPresensi.innerHTML += html;
             document.getElementById("loader").style.display = "none";
@@ -87,7 +86,6 @@ const getNextAllPresensi = () => {
             // unattach event listener if no more docs
             if (data.empty) {
                 window.removeEventListener('scroll', handleScroll);
-                console.log('data kosong?');
             }
         }, error => {
             console.log(error)
