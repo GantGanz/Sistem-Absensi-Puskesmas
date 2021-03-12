@@ -1,6 +1,6 @@
 {
     "name": "Presensi Puskesmas Kasiman",
-    "short_name": "PresensiPuskesmasKasiman",
+    "short_name": "Presensi Puskesmas Kasiman",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#AEF359",
