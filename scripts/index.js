@@ -21,7 +21,7 @@ if (localStorage.getItem("Username")) {
     if (accountDetails) {
         accountDetails.innerHTML = `
             <div class="text-center pb-3" id="foto-user">
-                <img class="img-thumbnail rounded-circle" src="img/selfie.png" alt="Foto User" loading="lazy" width="250" height="250">
+                <img class="img-thumbnail rounded-circle" src="img/selfie-512.png" alt="Foto User" loading="lazy" width="250" height="250">
             </div>
             <h3 class="text-center">${localStorage.getItem("Nama")}</h3>
             <h4 class="text-center">NIP: ${localStorage.getItem("NIP")}</h4>

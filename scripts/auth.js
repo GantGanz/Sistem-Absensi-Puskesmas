@@ -28,7 +28,6 @@ if (addPresensi) {
                 }
             });
             if (ada == 1) {
-                console.log("melakukan presensi");
                 db.collection('presensi').add({
                     username: localStorage.getItem("Username"),
                     foto: 'foto user',
