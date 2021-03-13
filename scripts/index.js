@@ -12,6 +12,7 @@ const print_pdf = document.getElementById("print_pdf");
 const delete_button = document.getElementById("delete_button");
 const updateForm = document.getElementById('update-form');
 const update_button = document.getElementById("update_button");
+let id_update = null;
 let username_update = null;
 
 // menampilkan nama dan detail akun
@@ -225,6 +226,7 @@ function deleteAccount(id) {
 function updateAccount(id) {
     db.collection("users").doc(id).get().then(doc => {
         username_update = doc.data().username;
+        id_update = doc.id;
         document.getElementById("update-username").value = doc.data().username;
         document.getElementById("update-nama").value = doc.data().nama;
         document.getElementById("update-nip").value = doc.data().nip;
@@ -233,6 +235,8 @@ function updateAccount(id) {
     }).catch(function (error) {
         console.log("Error getting document:", error);
     });
+};
+if (update_button) {
     update_button.addEventListener("click", (e) => {
         e.preventDefault();
         db.collection("users").where("username", "==", updateForm['update-username'].value).get().then(doc => {
@@ -241,12 +245,11 @@ function updateAccount(id) {
                 document.querySelector('#pesan-signup').innerHTML = "Maaf Username sudah digunakan";
                 document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
                 document.getElementById("alert-signup").style.display = "block";
-                username_update = null;
                 setTimeout(() => {
                     document.getElementById("alert-signup").style.display = "none";
                 }, 3000);
             } else {
-                db.collection("users").doc(id).update({
+                db.collection("users").doc(id_update).update({
                     username: updateForm['update-username'].value,
                     nama: updateForm['update-nama'].value,
                     nip: updateForm['update-nip'].value,
@@ -266,7 +269,7 @@ function updateAccount(id) {
             }
         })
     })
-};
+}
 
 // Export to CSV
 function downloadCSV(csv, filename) {
