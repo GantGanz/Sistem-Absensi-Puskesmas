@@ -12,6 +12,7 @@ const print_pdf = document.getElementById("print_pdf");
 const delete_button = document.getElementById("delete_button");
 const updateForm = document.getElementById('update-form');
 const update_button = document.getElementById("update_button");
+let username_update = null;
 
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
@@ -223,6 +224,7 @@ function deleteAccount(id) {
 
 function updateAccount(id) {
     db.collection("users").doc(id).get().then(doc => {
+        username_update = doc.data().username;
         document.getElementById("update-username").value = doc.data().username;
         document.getElementById("update-nama").value = doc.data().nama;
         document.getElementById("update-nip").value = doc.data().nip;
@@ -234,11 +236,12 @@ function updateAccount(id) {
     update_button.addEventListener("click", (e) => {
         e.preventDefault();
         db.collection("users").where("username", "==", updateForm['update-username'].value).get().then(doc => {
-            if (doc.size > 0) {
+            if ((doc.size > 0) && (username_update != updateForm['update-username'].value)) {
                 $('#updateModal').modal('hide');
                 document.querySelector('#pesan-signup').innerHTML = "Maaf Username sudah digunakan";
                 document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
                 document.getElementById("alert-signup").style.display = "block";
+                username_update = null;
                 setTimeout(() => {
                     document.getElementById("alert-signup").style.display = "none";
                 }, 3000);
