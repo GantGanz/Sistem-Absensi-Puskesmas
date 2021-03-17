@@ -50,8 +50,8 @@ if (localStorage.getItem("Level") == "Admin") {
         signupForm.addEventListener('submit', (e) => {
             e.preventDefault();
             document.getElementById("alert-signup").style.display = "none";
-            document.getElementById("loader").style.display = "block";
-            document.getElementById("bg-loader").style.display = "block";
+            // document.getElementById("loader").style.display = "block";
+            // document.getElementById("bg-loader").style.display = "block";
 
             // get account info
             const nama = signupForm['signup-nama'].value;
@@ -62,8 +62,8 @@ if (localStorage.getItem("Level") == "Admin") {
 
             db.collection("users").where("username", "==", username).get().then(doc => {
                 if (doc.size > 0) {
-                    document.getElementById("loader").style.display = "none";
-                    document.getElementById("bg-loader").style.display = "none";
+                    // document.getElementById("loader").style.display = "none";
+                    // document.getElementById("bg-loader").style.display = "none";
                     document.getElementById("alert-signup").style.display = "block";
                     document.querySelector('#pesan-signup').innerHTML = "Maaf, Username sudah terdaftar";
                     document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
@@ -80,8 +80,8 @@ if (localStorage.getItem("Level") == "Admin") {
                         password: password,
                         level: level
                     }).then(() => {
-                        document.getElementById("loader").style.display = "none";
-                        document.getElementById("bg-loader").style.display = "none";
+                        // document.getElementById("loader").style.display = "none";
+                        // document.getElementById("bg-loader").style.display = "none";
                         document.querySelector('#pesan-signup').innerHTML = "Akun berhasil didaftarkan";
                         document.getElementById("alert-signup").className = "alert alert-success mx-auto";
                         document.getElementById("alert-signup").style.display = "block";
@@ -94,8 +94,8 @@ if (localStorage.getItem("Level") == "Admin") {
             }).catch((err) => {
                 console.log("Error checking document", err);
                 document.querySelector('#pesan-signup').innerHTML = "Maaf, koneksi anda bermasalah atau server down";
-                document.getElementById("loader").style.display = "none";
-                document.getElementById("bg-loader").style.display = "none";
+                // document.getElementById("loader").style.display = "none";
+                // document.getElementById("bg-loader").style.display = "none";
             });
         });
     }
