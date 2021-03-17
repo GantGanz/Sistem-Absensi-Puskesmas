@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v2';
-const dynamicCacheName = 'site-dynamic-v2';
+const staticCacheName = 'site-static-v5';
+const dynamicCacheName = 'site-dynamic-v5';
 const assets = [
     '/',
     'css/bootstrap.min.css',
@@ -8,6 +8,7 @@ const assets = [
     'img/logo-puskesmas-ori.png',
     'img/logo-puskesmas.png',
     'img/selfie-384.png',
+    'img/selfie-96.png',
     'scripts/app.js',
     'scripts/auth.js',
     'scripts/bootstrap.min.js',
