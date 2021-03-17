@@ -1,4 +1,5 @@
-const staticCacheName = 'site-static-v3';
+const staticCacheName = 'site-static-v10';
+const dynamicCacheName = 'site-dynamic-v10';
 const assets = [
     '/',
     'css/bootstrap.min.css',
@@ -14,12 +15,14 @@ const assets = [
     'scripts/html2pdf.min.js',
     'scripts/index.js',
     'scripts/jquery.min.js',
+    'index.html',
     'akun.html',
     'daftar-akun.html',
     'daftar-presensi.html',
-    'index.html',
     'login.html',
+    'fallback.html'
 ];
+
 
 // install service worker
 self.addEventListener('install', evt => {
@@ -39,7 +42,7 @@ self.addEventListener('activate', evt => {
     evt.waitUntil(
         caches.keys().then(keys => {
             return Promise.all(keys
-                .filter(key => key !== staticCacheName)
+                .filter(key => key !== staticCacheName && key !== dynamicCacheName)
                 .map(key => caches.delete(key))
             )
         })
@@ -49,9 +52,15 @@ self.addEventListener('activate', evt => {
 // fetch event
 self.addEventListener('fetch', evt => {
     console.log('fetch event', evt);
-    // evt.respondWith(
-    //     caches.match(evt.request).then(cacheRes => {
-    //         return cacheRes || fetch(evt.request);
-    //     })
-    // )
+    evt.respondWith(
+        caches.match(evt.request).then(cacheRes => {
+            console.log(cacheRes);
+            return cacheRes || fetch(evt.request).then(fetchRes => {
+                return caches.open(dynamicCacheName).then(cache => {
+                    cache.put(evt.request.url, fetchRes.clone());
+                    return fetchRes;
+                });
+            });
+        }).catch(() => caches.match('fallback.html'))
+    )
 });
