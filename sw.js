@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v5';
-const dynamicCacheName = 'site-dynamic-v5';
+const staticCacheName = 'site-static-v1';
+const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
     '/',
     'css/bootstrap.min.css',
@@ -16,6 +16,7 @@ const assets = [
     'scripts/html2pdf.min.js',
     'scripts/index.js',
     'scripts/jquery.min.js',
+    'manifest.json',
     'index.html',
     'akun.html',
     'daftar-akun.html',
@@ -24,6 +25,16 @@ const assets = [
     'fallback.html'
 ];
 
+// cache size limit function
+const limitCacheSize = (name, size) => {
+    caches.open(name).then(cache => {
+        cache.keys().then(keys => {
+            if (keys.length > size) {
+                cache.delete(keys[0]).then(limitCacheSize(name, size));
+            }
+        })
+    })
+}
 
 // install service worker
 self.addEventListener('install', evt => {
@@ -59,6 +70,7 @@ self.addEventListener('fetch', evt => {
             return cacheRes || fetch(evt.request).then(fetchRes => {
                 return caches.open(dynamicCacheName).then(cache => {
                     cache.put(evt.request.url, fetchRes.clone());
+                    limitCacheSize(dynamicCacheName, 30);
                     return fetchRes;
                 });
             });
