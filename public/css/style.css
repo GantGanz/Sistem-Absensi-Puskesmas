@@ -1,0 +1,100 @@
+/* .navbar-brand {
+    margin-left: 10%;
+} */
+
+.card {
+    width: 18rem;
+}
+
+.card-img-top {
+    width: 15rem;
+}
+
+body {
+    background: #aaaaaa;
+    background-image: url(../img/grey_wall.png);
+}
+
+hr {
+    border: 1px solid;
+}
+
+.rounded-corner {
+    border-radius: 62px;
+}
+
+/* loading animation */
+#loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+#bg-loader {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#alert-presensi {
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+#alert-signup {
+    display: none;
+    position: fixed;
+    width: 100%;
+}
+
+/* .presensi_loader {
+    display: none;
+}
+
+.presensi_loader.active {
+    display: none;
+}
+
+.all_presensi_loader {
+    display: none;
+}
+
+.all_presensi_loader.active {
+    display: none;
+} */
