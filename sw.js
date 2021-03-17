@@ -63,21 +63,23 @@ self.addEventListener('activate', evt => {
 
 // fetch event
 self.addEventListener('fetch', evt => {
-    console.log('fetch event', evt);
-    evt.respondWith(
-        caches.match(evt.request).then(cacheRes => {
-            console.log(cacheRes);
-            return cacheRes || fetch(evt.request).then(fetchRes => {
-                return caches.open(dynamicCacheName).then(cache => {
-                    cache.put(evt.request.url, fetchRes.clone());
-                    limitCacheSize(dynamicCacheName, 30);
-                    return fetchRes;
+    if (evt.request.url.indexOf('firestore.googleapis.com') === -1) {
+        console.log('fetch event', evt);
+        evt.respondWith(
+            caches.match(evt.request).then(cacheRes => {
+                console.log(cacheRes);
+                return cacheRes || fetch(evt.request).then(fetchRes => {
+                    return caches.open(dynamicCacheName).then(cache => {
+                        cache.put(evt.request.url, fetchRes.clone());
+                        limitCacheSize(dynamicCacheName, 30);
+                        return fetchRes;
+                    });
                 });
-            });
-        }).catch(() => {
-            if (evt.request.url.indexOf('.html') > -1) {
-                return caches.match('fallback.html');
-            }
-        })
-    );
+            }).catch(() => {
+                if (evt.request.url.indexOf('.html') > -1) {
+                    return caches.match('fallback.html');
+                }
+            })
+        );
+    }
 });

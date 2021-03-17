@@ -16,6 +16,17 @@ firebase.initializeApp(firebaseConfig);
 // make auth and firestore references
 const db = firebase.firestore();
 
+db.enablePersistence()
+    .catch(err => {
+        if (err.code == 'failed-precondition') {
+            // probably multiple tabs open at once
+            console.log('persistence failed');
+        } else if (err.code == 'unimplemented') {
+            // lack of browser support
+            console.log('persistence isnt available');
+        }
+    });
+
 // update firestore settings
 // db.settings({
 //     timestampsInSnapshots: true
