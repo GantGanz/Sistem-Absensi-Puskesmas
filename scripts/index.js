@@ -375,7 +375,6 @@ const getNextPresensi = () => {
             // unattach event listener if no more docs
             if (data.empty) {
                 window.removeEventListener('scroll', handleScroll);
-                // loadMore.removeEventListener('click', handleClick);
             }
         }, error => {
             console.log(error)
@@ -397,12 +396,3 @@ const handleScroll = () => {
     }
 }
 window.addEventListener('scroll', handleScroll);
-
-// // load more docs (button)
-// const loadMore = document.querySelector('.load-more button');
-// const handleClick = () => {
-//     getNextPresensi();
-// }
-// if (loadMore) {
-//     loadMore.addEventListener('click', handleClick);
-// }
