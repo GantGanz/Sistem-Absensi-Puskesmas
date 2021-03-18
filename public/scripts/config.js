@@ -13,8 +13,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 
-// make auth and firestore references
+// make storage and firestore references
 const db = firebase.firestore();
+const storage = firebase.storage();
 
 db.enablePersistence()
     .catch(err => {

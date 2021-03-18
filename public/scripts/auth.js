@@ -7,12 +7,20 @@ let capture = document.querySelector('#capture');
 let submitCapture = document.querySelector('#submit-capture');
 let fotoCaptured = document.querySelector('#foto-captured');
 let fotoPresensi = null;
+var file = null;
+var storageRef = null;
 
 //  create new presensi
 if (fotoCaptured) {
-    capture.addEventListener('change', (ev) => {
+    capture.addEventListener('change', (e) => {
         fotoPresensi = window.URL.createObjectURL(capture.files[0]);
         fotoCaptured.src = fotoPresensi;
+        // get file
+        file = e.target.files[0];
+        // create a storage reference
+        storageRef = storage.ref('foto_presensi/' + file.name);
+        // upload file
+        // await storageRef.put(file);
         submitCapture.disabled = false;
     })
     captureForm.addEventListener('submit', (e) => {
@@ -27,11 +35,12 @@ if (fotoCaptured) {
             let yyyy = date.getFullYear();
             awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
             akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
-            db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(data => {
+            db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(async data => {
                 data.forEach(presensi => {
                     if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
                         if (ada == 1) {
                             document.getElementById("alert-presensi").style.display = "block";
+                            submitCapture.disabled = true;
                             setTimeout(() => {
                                 document.getElementById("alert-presensi").style.display = "none";
                             }, 3000);
@@ -40,9 +49,12 @@ if (fotoCaptured) {
                     }
                 });
                 if (ada == 1) {
+                    await storageRef.put(file);
+                    var file_url = await storageRef.getDownloadURL();
+                    console.log(file_url);
                     db.collection('presensi').add({
                         username: localStorage.getItem("Username"),
-                        foto: 'foto user',
+                        foto: file_url,
                         // level: 'level user',
                         nama: localStorage.getItem("Nama"),
                         nip: localStorage.getItem("NIP"),
