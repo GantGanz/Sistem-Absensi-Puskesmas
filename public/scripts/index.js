@@ -361,7 +361,10 @@ const getNextPresensi = () => {
                 <tr>
                     <td>${date}</td>
                     <td>${hour}</td>
-                    <td>${presensi.foto}</td>
+                    <td><a href="${presensi.foto}"
+                    target="_blank"><img id="foto-captured"
+                        src="${presensi.foto}"
+                        alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
                 </tr>`;
                 // row++;
             });
