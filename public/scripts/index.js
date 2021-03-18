@@ -77,7 +77,8 @@ const getNextAllPresensi = () => {
                         <td>${presensiData.nama}</td>
                         <td>${presensiData.nip}</td>
                         <td>${hour}</td>
-                        <td>${presensiData.foto}</td>
+                        <td><a href="${presensiData.foto}" target="_blank"><img id="foto-captured" src="${presensiData.foto}"
+                        alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
                     </tr>
                     `;
                 row++;
@@ -193,7 +194,8 @@ if (localStorage.getItem("Level") == "Admin") {
                             <td>${presensiData.nama}</td>
                             <td>${presensiData.nip}</td>
                             <td>${hour}</td>
-                            <td>${presensiData.foto}</td>
+                            <td><a href="${presensiData.foto}" target="_blank"><img id="foto-captured" src="${presensiData.foto}"
+                            alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
                         </tr>
                         `;
                     html += tr;
@@ -361,9 +363,7 @@ const getNextPresensi = () => {
                 <tr>
                     <td>${date}</td>
                     <td>${hour}</td>
-                    <td><a href="${presensi.foto}"
-                    target="_blank"><img id="foto-captured"
-                        src="${presensi.foto}"
+                    <td><a href="${presensi.foto}" target="_blank"><img id="foto-captured" src="${presensi.foto}"
                         alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
                 </tr>`;
                 // row++;
