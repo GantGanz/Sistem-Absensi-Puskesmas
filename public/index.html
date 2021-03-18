@@ -70,12 +70,22 @@
     </div>
     <div id="loader" style="display:none;"></div>
     <div class="container-fluid mt-3">
-        <div class="card mx-auto text-white border-success" id="add-Presensi">
-            <img class="card-img-top mx-auto" src="img/selfie-384.png" alt="Card image cap" loading="lazy">
-            <div class="card-body bg-success">
+        <div class="card mx-auto text-white border-secondary" id="add-Presensi">
+            <img id="foto-captured" class="card-img-top mx-auto" src="img/selfie-384.png" alt="Card image cap"
+                loading="lazy" width="300" height="240">
+            <div class="card-body bg-secondary">
                 <p class="card-text text-justify">
-                    Klik disini untuk melakukan absen. Foto selfie di lokasi dinas anda.
+                    Klik tombol dibawah untuk melakukan presensi, dengan foto selfie di lokasi dinas anda.
                 </p>
+                <form action="#" id="capture-form" enctype="multipart/form-data">
+                    <input class="btn btn-primary" type="file" id="capture" accept="image/*" capture
+                        style="width : 100%; box-sizing: border-box;">
+                    <hr>
+                    <div class="text-center">
+                        <button id="submit-capture" type="submit" class="btn btn-success mx-auto"
+                            disabled>Kirim</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="container-fluid bg-white mt-3 mb-3 pt-1 pb-1 rounded-corner">

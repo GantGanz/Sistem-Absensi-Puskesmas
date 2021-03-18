@@ -1,45 +1,58 @@
-const addPresensi = document.querySelector('#add-Presensi');
+// const addPresensi = document.querySelector('#add-Presensi');
 const signupForm = document.querySelector('#signup-form');
 const logout = document.querySelector('#logout');
 const loginForm = document.querySelector('#login-form');
+const captureForm = document.querySelector('#capture-form');
+let capture = document.querySelector('#capture');
+let submitCapture = document.querySelector('#submit-capture');
+let fotoCaptured = document.querySelector('#foto-captured');
+let fotoPresensi = null;
 
 //  create new presensi
-if (addPresensi) {
-    addPresensi.addEventListener('click', (e) => {
-        // e.preventDefault();
-        waktuSekarang = firebase.firestore.Timestamp.now();
-        let ada = 1;
-        let date = waktuSekarang.toDate();
-        let dd = date.getDate();
-        let mm = date.getMonth() + 1;
-        let yyyy = date.getFullYear();
-        awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
-        akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
-        db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(data => {
-            data.forEach(presensi => {
-                if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
-                    if (ada == 1) {
-                        document.getElementById("alert-presensi").style.display = "block";
-                        setTimeout(() => {
-                            document.getElementById("alert-presensi").style.display = "none";
-                        }, 3000);
-                        ada++;
-                    };
-                }
+if (fotoCaptured) {
+    capture.addEventListener('change', (ev) => {
+        fotoPresensi = window.URL.createObjectURL(capture.files[0]);
+        fotoCaptured.src = fotoPresensi;
+        submitCapture.disabled = false;
+    })
+    captureForm.addEventListener('submit', (e) => {
+        var con = confirm("File yang sudah dikirim tidak dapat dihapus. Lanjutkan?");
+        if (con == true) {
+            e.preventDefault();
+            waktuSekarang = firebase.firestore.Timestamp.now();
+            let ada = 1;
+            let date = waktuSekarang.toDate();
+            let dd = date.getDate();
+            let mm = date.getMonth() + 1;
+            let yyyy = date.getFullYear();
+            awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
+            akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+            db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(data => {
+                data.forEach(presensi => {
+                    if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
+                        if (ada == 1) {
+                            document.getElementById("alert-presensi").style.display = "block";
+                            setTimeout(() => {
+                                document.getElementById("alert-presensi").style.display = "none";
+                            }, 3000);
+                            ada++;
+                        };
+                    }
+                });
+                if (ada == 1) {
+                    db.collection('presensi').add({
+                        username: localStorage.getItem("Username"),
+                        foto: 'foto user',
+                        // level: 'level user',
+                        nama: localStorage.getItem("Nama"),
+                        nip: localStorage.getItem("NIP"),
+                        waktu: waktuSekarang
+                    }).then(() => location.reload());
+                };
+            }).catch((err) => {
+                console.log("Error checking document", err);
             });
-            if (ada == 1) {
-                db.collection('presensi').add({
-                    username: localStorage.getItem("Username"),
-                    foto: 'foto user',
-                    // level: 'level user',
-                    nama: localStorage.getItem("Nama"),
-                    nip: localStorage.getItem("NIP"),
-                    waktu: waktuSekarang
-                }).then(() => location.reload());
-            };
-        }).catch((err) => {
-            console.log("Error checking document", err);
-        });
+        }
     })
 }
 
