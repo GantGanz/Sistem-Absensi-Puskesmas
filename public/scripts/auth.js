@@ -25,6 +25,7 @@ if (fotoCaptured) {
         var con = confirm("File yang sudah dikirim tidak dapat dihapus. Lanjutkan?");
         if (con == true) {
             e.preventDefault();
+            document.getElementById("loader").style.display = "block";
             waktuSekarang = firebase.firestore.Timestamp.now();
             let ada = 1;
             let date = waktuSekarang.toDate();
@@ -43,6 +44,7 @@ if (fotoCaptured) {
                 data.forEach(presensi => {
                     if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
                         if (ada == 1) {
+                            document.getElementById("loader").style.display = "none";
                             document.getElementById("alert-presensi").style.display = "block";
                             submitCapture.disabled = true;
                             setTimeout(() => {
@@ -64,6 +66,7 @@ if (fotoCaptured) {
                             waktu: waktuSekarang
                         }).then(() => location.reload());
                     } else {
+                        document.getElementById("loader").style.display = "none";
                         document.querySelector('#alert-presensi-text').innerHTML = "Mohon gunakan foto hari ini";
                         document.getElementById("alert-presensi").style.display = "block";
                         setTimeout(() => {
