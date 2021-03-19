@@ -17,9 +17,6 @@ if (fotoCaptured) {
         fotoCaptured.src = fotoPresensi;
         // get file
         file = e.target.files[0];
-        // create a storage reference
-        console.log(file.name);
-        storageRef = storage.ref('foto_presensi/' + file.name);
         // upload file
         // await storageRef.put(file);
         submitCapture.disabled = false;
@@ -34,9 +31,14 @@ if (fotoCaptured) {
             let dd = date.getDate();
             let mm = date.getMonth() + 1;
             let yyyy = date.getFullYear();
-            awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
-            akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
-            let cekSekarang = yyyy + mm + dd;
+            let waktuSekarangString = yyyy + '/' + mm + '/' + dd;
+            let awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
+            let akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+            let waktuFoto = new Date(parseInt(file.name.slice(0, 13)));
+            let cekSekarang = waktuFoto.getFullYear() + "/" + (waktuFoto.getMonth() + 1) + "/" + waktuFoto.getDate();
+            let namaFile = localStorage.getItem("Username") + '-' + cekSekarang;
+            // create a storage reference
+            storageRef = storage.ref('foto_presensi/' + namaFile);
             db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(async data => {
                 data.forEach(presensi => {
                     if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
@@ -51,18 +53,22 @@ if (fotoCaptured) {
                     }
                 });
                 if (ada == 1) {
-                    if (file.name.includes(cekSekarang)) {
+                    if (waktuSekarangString == cekSekarang) {
                         await storageRef.put(file);
                         var file_url = await storageRef.getDownloadURL();
-                        console.log(file_url);
                         db.collection('presensi').add({
                             username: localStorage.getItem("Username"),
                             foto: file_url,
-                            // level: 'level user',
                             nama: localStorage.getItem("Nama"),
                             nip: localStorage.getItem("NIP"),
                             waktu: waktuSekarang
                         }).then(() => location.reload());
+                    } else {
+                        document.querySelector('#alert-presensi-text').innerHTML = "Mohon gunakan foto hari ini";
+                        document.getElementById("alert-presensi").style.display = "block";
+                        setTimeout(() => {
+                            document.getElementById("alert-presensi").style.display = "none";
+                        }, 3000);
                     }
                 };
             }).catch((err) => {
