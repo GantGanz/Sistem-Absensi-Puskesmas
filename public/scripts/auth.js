@@ -18,6 +18,7 @@ if (fotoCaptured) {
         // get file
         file = e.target.files[0];
         // create a storage reference
+        console.log(file.name);
         storageRef = storage.ref('foto_presensi/' + file.name);
         // upload file
         // await storageRef.put(file);
@@ -35,6 +36,7 @@ if (fotoCaptured) {
             let yyyy = date.getFullYear();
             awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
             akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+            let cekSekarang = yyyy + mm + dd;
             db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(async data => {
                 data.forEach(presensi => {
                     if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
@@ -49,17 +51,19 @@ if (fotoCaptured) {
                     }
                 });
                 if (ada == 1) {
-                    await storageRef.put(file);
-                    var file_url = await storageRef.getDownloadURL();
-                    console.log(file_url);
-                    db.collection('presensi').add({
-                        username: localStorage.getItem("Username"),
-                        foto: file_url,
-                        // level: 'level user',
-                        nama: localStorage.getItem("Nama"),
-                        nip: localStorage.getItem("NIP"),
-                        waktu: waktuSekarang
-                    }).then(() => location.reload());
+                    if (file.name.includes(cekSekarang)) {
+                        await storageRef.put(file);
+                        var file_url = await storageRef.getDownloadURL();
+                        console.log(file_url);
+                        db.collection('presensi').add({
+                            username: localStorage.getItem("Username"),
+                            foto: file_url,
+                            // level: 'level user',
+                            nama: localStorage.getItem("Nama"),
+                            nip: localStorage.getItem("NIP"),
+                            waktu: waktuSekarang
+                        }).then(() => location.reload());
+                    }
                 };
             }).catch((err) => {
                 console.log("Error checking document", err);
