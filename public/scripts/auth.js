@@ -37,7 +37,7 @@ if (fotoCaptured) {
             let akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
             let waktuFoto = new Date(parseInt(file.name.slice(0, 13)));
             let cekSekarang = waktuFoto.getFullYear() + "/" + (waktuFoto.getMonth() + 1) + "/" + waktuFoto.getDate();
-            let namaFile = localStorage.getItem("Username") + '-' + cekSekarang;
+            let namaFile = localStorage.getItem("Username") + '/' + cekSekarang;
             // create a storage reference
             storageRef = storage.ref('foto_presensi/' + namaFile);
             db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(async data => {
