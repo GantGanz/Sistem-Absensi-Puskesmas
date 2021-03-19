@@ -27,8 +27,3 @@ db.enablePersistence()
             console.log('persistence isnt available');
         }
     });
-
-// update firestore settings
-// db.settings({
-//     timestampsInSnapshots: true
-// });
