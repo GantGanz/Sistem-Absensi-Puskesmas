@@ -1,1 +1,190 @@
-const _0x3d6f=['signup-nama','where','#signup-form','change','presensi','block','index.html','level','90847aRiGBO','put','Akun\x20berhasil\x20didaftarkan','docs','message','Maaf,\x20Username\x20sudah\x20terdaftar','alert-login','getItem','53RwTLSX','foto_presensi/','URL','signup-level','#foto-captured','#submit-capture','NIP','click','getFullYear','#capture-form','alert\x20alert-danger\x20mx-auto','1631ZTkMwY','users','getElementById','alert-presensi','innerHTML','src','#logout','removeItem','536498pbWkYB','collection','#pesan-signup','Maaf,\x20koneksi\x20anda\x20bermasalah\x20atau\x20server\x20down','submit','toDate','preventDefault','159RRhMMM','username','setItem','ref','257KyKSDi','Username','className','Timestamp','loader','login-password','getMonth','signup-password','get','#pesan-login','signup-nip','querySelector','login.html','style','1CCcdFV','Admin','456371CTgMVH','reload','reset','files','643EyojNn','target','Nama','none','href','valueOf','Error\x20getting\x20document:','disabled','/\x2023:59:59','Error\x20checking\x20document','nip','log','2fbbsOl','signup-username','location','4ZkWMmo','add','name','size','then','nama','#alert-presensi-text','waktu','getDate','addEventListener','data','8711rEJhLP','bg-loader','display','357971abaYMD','Level','forEach','catch','value','getDownloadURL','password','alert-signup'];const _0x522f=function(_0x23964f,_0x31a3b7){_0x23964f=_0x23964f-0x168;let _0x3d6ff0=_0x3d6f[_0x23964f];return _0x3d6ff0;};const _0x54e2de=_0x522f;(function(_0x86a763,_0x328ca9){const _0x25d9be=_0x522f;while(!![]){try{const _0x15877a=parseInt(_0x25d9be(0x1a9))*-parseInt(_0x25d9be(0x1cc))+parseInt(_0x25d9be(0x175))*parseInt(_0x25d9be(0x1be))+-parseInt(_0x25d9be(0x190))+parseInt(_0x25d9be(0x19b))*-parseInt(_0x25d9be(0x188))+-parseInt(_0x25d9be(0x17d))*-parseInt(_0x25d9be(0x1c9))+-parseInt(_0x25d9be(0x1af))*parseInt(_0x25d9be(0x197))+parseInt(_0x25d9be(0x1bb))*parseInt(_0x25d9be(0x1ab));if(_0x15877a===_0x328ca9)break;else _0x86a763['push'](_0x86a763['shift']());}catch(_0x245bb9){_0x86a763['push'](_0x86a763['shift']());}}}(_0x3d6f,0x4e994));const signupForm=document[_0x54e2de(0x1a6)](_0x54e2de(0x16f)),logout=document[_0x54e2de(0x1a6)](_0x54e2de(0x18e)),loginForm=document[_0x54e2de(0x1a6)]('#login-form'),captureForm=document['querySelector'](_0x54e2de(0x186));let capture=document[_0x54e2de(0x1a6)]('#capture'),submitCapture=document[_0x54e2de(0x1a6)](_0x54e2de(0x182)),fotoCaptured=document['querySelector'](_0x54e2de(0x181)),fotoPresensi=null;var file=null,storageRef=null;fotoCaptured&&(capture[_0x54e2de(0x1c7)](_0x54e2de(0x170),_0x3681e9=>{const _0x3dc070=_0x54e2de;fotoPresensi=window[_0x3dc070(0x17f)]['createObjectURL'](capture[_0x3dc070(0x1ae)][0x0]),fotoCaptured[_0x3dc070(0x18d)]=fotoPresensi,file=_0x3681e9[_0x3dc070(0x1b0)][_0x3dc070(0x1ae)][0x0],submitCapture[_0x3dc070(0x1b6)]=![];}),captureForm['addEventListener'](_0x54e2de(0x194),_0x34eb9e=>{const _0x2c8914=_0x54e2de;var _0x522b6e=confirm('File\x20yang\x20sudah\x20dikirim\x20tidak\x20dapat\x20dihapus.\x20Lanjutkan?');if(_0x522b6e==!![]){_0x34eb9e['preventDefault'](),document['getElementById'](_0x2c8914(0x19f))[_0x2c8914(0x1a8)]['display']=_0x2c8914(0x172),waktuSekarang=firebase['firestore'][_0x2c8914(0x19e)]['now']();let _0x56581d=0x1,_0x387de8=waktuSekarang[_0x2c8914(0x195)](),_0xf84eee=_0x387de8['getDate'](),_0x238d82=_0x387de8[_0x2c8914(0x1a1)]()+0x1,_0x5ef164=_0x387de8[_0x2c8914(0x185)](),_0x37ea4f=_0x5ef164+'/'+_0x238d82+'/'+_0xf84eee,_0x161bba=new Date(_0x5ef164+'/'+_0x238d82+'/'+_0xf84eee+'/\x2000:00:00'),_0x13a418=new Date(_0x5ef164+'/'+_0x238d82+'/'+_0xf84eee+_0x2c8914(0x1b7)),_0x57986a=new Date(parseInt(file[_0x2c8914(0x1c0)]['slice'](0x0,0xd))),_0xdc5f95=_0x57986a[_0x2c8914(0x185)]()+'/'+(_0x57986a[_0x2c8914(0x1a1)]()+0x1)+'/'+_0x57986a[_0x2c8914(0x1c6)](),_0x6a29bb=localStorage[_0x2c8914(0x17c)](_0x2c8914(0x19c))+'/'+_0xdc5f95;storageRef=storage[_0x2c8914(0x19a)](_0x2c8914(0x17e)+_0x6a29bb),db[_0x2c8914(0x191)](_0x2c8914(0x171))[_0x2c8914(0x16e)]('username','==',localStorage[_0x2c8914(0x17c)]('Username'))[_0x2c8914(0x1a3)]()[_0x2c8914(0x1c2)](async _0x2140a7=>{const _0x59ef15=_0x2c8914;_0x2140a7[_0x59ef15(0x1ce)](_0x4f0c58=>{const _0x6361ba=_0x59ef15;if(_0x4f0c58[_0x6361ba(0x1c8)]()[_0x6361ba(0x1c5)][_0x6361ba(0x195)]()[_0x6361ba(0x1b4)]()>=_0x161bba[_0x6361ba(0x1b4)]()&&_0x4f0c58[_0x6361ba(0x1c8)]()[_0x6361ba(0x1c5)][_0x6361ba(0x195)]()['valueOf']()<=_0x13a418['valueOf']()){_0x56581d==0x1&&(document[_0x6361ba(0x18a)](_0x6361ba(0x19f))[_0x6361ba(0x1a8)][_0x6361ba(0x1cb)]=_0x6361ba(0x1b2),document[_0x6361ba(0x18a)](_0x6361ba(0x18b))['style'][_0x6361ba(0x1cb)]=_0x6361ba(0x172),submitCapture[_0x6361ba(0x1b6)]=!![],setTimeout(()=>{const _0x26baf4=_0x6361ba;document[_0x26baf4(0x18a)]('alert-presensi')['style'][_0x26baf4(0x1cb)]=_0x26baf4(0x1b2);},0xbb8),_0x56581d++);;}});if(_0x56581d==0x1){if(_0x37ea4f==_0xdc5f95){await storageRef[_0x59ef15(0x176)](file);var _0x585a72=await storageRef[_0x59ef15(0x16a)]();db['collection'](_0x59ef15(0x171))[_0x59ef15(0x1bf)]({'username':localStorage[_0x59ef15(0x17c)]('Username'),'foto':_0x585a72,'nama':localStorage['getItem'](_0x59ef15(0x1b1)),'nip':localStorage[_0x59ef15(0x17c)](_0x59ef15(0x183)),'waktu':waktuSekarang})[_0x59ef15(0x1c2)](()=>location[_0x59ef15(0x1ac)]());}else document[_0x59ef15(0x18a)](_0x59ef15(0x19f))['style'][_0x59ef15(0x1cb)]=_0x59ef15(0x1b2),document['querySelector'](_0x59ef15(0x1c4))[_0x59ef15(0x18c)]='Mohon\x20masukkan\x20foto\x20hari\x20ini\x20dengan\x20menggunakan\x20smartphone',document[_0x59ef15(0x18a)](_0x59ef15(0x18b))[_0x59ef15(0x1a8)][_0x59ef15(0x1cb)]=_0x59ef15(0x172),setTimeout(()=>{const _0x12973b=_0x59ef15;document['getElementById'](_0x12973b(0x18b))[_0x12973b(0x1a8)]['display']=_0x12973b(0x1b2);},0xbb8);};})['catch'](_0x4337de=>{const _0x525de3=_0x2c8914;console[_0x525de3(0x1ba)](_0x525de3(0x1b8),_0x4337de);});}}));localStorage[_0x54e2de(0x17c)](_0x54e2de(0x1cd))==_0x54e2de(0x1aa)&&(signupForm&&signupForm[_0x54e2de(0x1c7)](_0x54e2de(0x194),_0x2fc1fe=>{const _0x5cd2fa=_0x54e2de;_0x2fc1fe[_0x5cd2fa(0x196)](),document['getElementById']('alert-signup')[_0x5cd2fa(0x1a8)][_0x5cd2fa(0x1cb)]=_0x5cd2fa(0x1b2);const _0x5b059c=signupForm[_0x5cd2fa(0x16d)][_0x5cd2fa(0x169)],_0x1a0bdd=signupForm[_0x5cd2fa(0x1a5)][_0x5cd2fa(0x169)],_0x3321c2=signupForm[_0x5cd2fa(0x1bc)][_0x5cd2fa(0x169)],_0xa3cd7f=signupForm[_0x5cd2fa(0x1a2)][_0x5cd2fa(0x169)],_0x1de9f7=signupForm[_0x5cd2fa(0x180)][_0x5cd2fa(0x169)];db['collection'](_0x5cd2fa(0x189))[_0x5cd2fa(0x16e)]('username','==',_0x3321c2)[_0x5cd2fa(0x1a3)]()['then'](_0x2cb088=>{const _0x410a2e=_0x5cd2fa;_0x2cb088[_0x410a2e(0x1c1)]>0x0?(document[_0x410a2e(0x18a)](_0x410a2e(0x16c))['style']['display']='block',document[_0x410a2e(0x1a6)](_0x410a2e(0x192))['innerHTML']=_0x410a2e(0x17a),document['getElementById'](_0x410a2e(0x16c))[_0x410a2e(0x19d)]=_0x410a2e(0x187),setTimeout(()=>{const _0x1b62ca=_0x410a2e;document[_0x1b62ca(0x18a)]('alert-signup')['style']['display']='none';},0xbb8)):(document['getElementById'](_0x410a2e(0x16c))[_0x410a2e(0x1a8)]['display']=_0x410a2e(0x1b2),db['collection'](_0x410a2e(0x189))[_0x410a2e(0x1bf)]({'username':_0x3321c2,'nama':_0x5b059c,'nip':_0x1a0bdd,'password':_0xa3cd7f,'level':_0x1de9f7})[_0x410a2e(0x1c2)](()=>{const _0x513dbd=_0x410a2e;document[_0x513dbd(0x1a6)](_0x513dbd(0x192))[_0x513dbd(0x18c)]=_0x513dbd(0x177),document[_0x513dbd(0x18a)](_0x513dbd(0x16c))['className']='alert\x20alert-success\x20mx-auto',document['getElementById'](_0x513dbd(0x16c))[_0x513dbd(0x1a8)]['display']='block',setTimeout(()=>{const _0xc72e52=_0x513dbd;document[_0xc72e52(0x18a)](_0xc72e52(0x16c))[_0xc72e52(0x1a8)][_0xc72e52(0x1cb)]=_0xc72e52(0x1b2);},0xbb8),signupForm[_0x513dbd(0x1ad)]();})[_0x410a2e(0x168)](_0x3bf161=>console[_0x410a2e(0x1ba)](_0x3bf161[_0x410a2e(0x179)])));})[_0x5cd2fa(0x168)](_0x142813=>{const _0x34a064=_0x5cd2fa;console[_0x34a064(0x1ba)](_0x34a064(0x1b8),_0x142813),document['querySelector'](_0x34a064(0x192))['innerHTML']=_0x34a064(0x193);});}));logout&&logout[_0x54e2de(0x1c7)](_0x54e2de(0x184),_0x5ed0db=>{const _0x4cd542=_0x54e2de;localStorage[_0x4cd542(0x18f)](_0x4cd542(0x19c)),localStorage[_0x4cd542(0x18f)]('Nama'),localStorage[_0x4cd542(0x18f)](_0x4cd542(0x183)),localStorage[_0x4cd542(0x18f)]('Password'),localStorage['removeItem'](_0x4cd542(0x1cd)),window['location'][_0x4cd542(0x1b3)]=_0x4cd542(0x1a7);});loginForm?loginForm[_0x54e2de(0x1c7)](_0x54e2de(0x194),_0x242119=>{const _0x47e6e2=_0x54e2de;document[_0x47e6e2(0x18a)](_0x47e6e2(0x19f))['style']['display']=_0x47e6e2(0x172),document[_0x47e6e2(0x18a)](_0x47e6e2(0x1ca))['style'][_0x47e6e2(0x1cb)]=_0x47e6e2(0x172),_0x242119[_0x47e6e2(0x196)]();const _0x190f7c=loginForm['login-username'][_0x47e6e2(0x169)],_0x151ef9=loginForm[_0x47e6e2(0x1a0)][_0x47e6e2(0x169)];db[_0x47e6e2(0x191)](_0x47e6e2(0x189))[_0x47e6e2(0x16e)]('username','==',_0x190f7c)['where'](_0x47e6e2(0x16b),'==',_0x151ef9)[_0x47e6e2(0x1a3)]()[_0x47e6e2(0x1c2)](_0x293cdc=>{const _0x13bde8=_0x47e6e2;_0x293cdc[_0x13bde8(0x1c1)]>0x0?(localStorage[_0x13bde8(0x199)](_0x13bde8(0x19c),_0x293cdc[_0x13bde8(0x178)][0x0][_0x13bde8(0x1c8)]()[_0x13bde8(0x198)]),localStorage[_0x13bde8(0x199)](_0x13bde8(0x1b1),_0x293cdc[_0x13bde8(0x178)][0x0][_0x13bde8(0x1c8)]()[_0x13bde8(0x1c3)]),localStorage[_0x13bde8(0x199)](_0x13bde8(0x183),_0x293cdc[_0x13bde8(0x178)][0x0][_0x13bde8(0x1c8)]()[_0x13bde8(0x1b9)]),localStorage[_0x13bde8(0x199)]('Password',_0x293cdc[_0x13bde8(0x178)][0x0][_0x13bde8(0x1c8)]()[_0x13bde8(0x16b)]),localStorage['setItem'](_0x13bde8(0x1cd),_0x293cdc['docs'][0x0][_0x13bde8(0x1c8)]()[_0x13bde8(0x174)]),window[_0x13bde8(0x1bd)][_0x13bde8(0x1b3)]=_0x13bde8(0x173)):(document[_0x13bde8(0x18a)](_0x13bde8(0x19f))['style'][_0x13bde8(0x1cb)]=_0x13bde8(0x1b2),document['getElementById'](_0x13bde8(0x1ca))[_0x13bde8(0x1a8)][_0x13bde8(0x1cb)]='none',document[_0x13bde8(0x18a)](_0x13bde8(0x17b))[_0x13bde8(0x1a8)][_0x13bde8(0x1cb)]='block');})[_0x47e6e2(0x168)](function(_0x5a04e4){const _0x18cddb=_0x47e6e2;console['log'](_0x18cddb(0x1b5),_0x5a04e4),document[_0x18cddb(0x1a6)](_0x18cddb(0x1a4))[_0x18cddb(0x18c)]=_0x18cddb(0x193),document['getElementById'](_0x18cddb(0x19f))['style'][_0x18cddb(0x1cb)]=_0x18cddb(0x1b2),document[_0x18cddb(0x18a)](_0x18cddb(0x1ca))['style'][_0x18cddb(0x1cb)]='none',document[_0x18cddb(0x18a)](_0x18cddb(0x17b))['style'][_0x18cddb(0x1cb)]=_0x18cddb(0x172);});}):!localStorage[_0x54e2de(0x17c)]('Username')&&(window[_0x54e2de(0x1bd)][_0x54e2de(0x1b3)]=_0x54e2de(0x1a7));
+// const addPresensi = document.querySelector('#add-Presensi');
+const signupForm = document.querySelector('#signup-form');
+const logout = document.querySelector('#logout');
+const loginForm = document.querySelector('#login-form');
+const captureForm = document.querySelector('#capture-form');
+let capture = document.querySelector('#capture');
+let submitCapture = document.querySelector('#submit-capture');
+let fotoCaptured = document.querySelector('#foto-captured');
+let fotoPresensi = null;
+var file = null;
+var storageRef = null;
+
+//  create new presensi
+if (fotoCaptured) {
+    capture.addEventListener('change', (e) => {
+        fotoPresensi = window.URL.createObjectURL(capture.files[0]);
+        fotoCaptured.src = fotoPresensi;
+        // get file
+        file = e.target.files[0];
+        // upload file
+        // await storageRef.put(file);
+        submitCapture.disabled = false;
+    })
+    captureForm.addEventListener('submit', (e) => {
+        var con = confirm("File yang sudah dikirim tidak dapat dihapus. Lanjutkan?");
+        if (con == true) {
+            e.preventDefault();
+            document.getElementById("loader").style.display = "block";
+            waktuSekarang = firebase.firestore.Timestamp.now();
+            let ada = 1;
+            let date = waktuSekarang.toDate();
+            let dd = date.getDate();
+            let mm = date.getMonth() + 1;
+            let yyyy = date.getFullYear();
+            let waktuSekarangString = yyyy + '/' + mm + '/' + dd;
+            let awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
+            let akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+            let waktuFoto = new Date(parseInt(file.name.slice(0, 13)));
+            let cekSekarang = waktuFoto.getFullYear() + "/" + (waktuFoto.getMonth() + 1) + "/" + waktuFoto.getDate();
+            let namaFile = localStorage.getItem("Username") + '/' + cekSekarang;
+            // create a storage reference
+            storageRef = storage.ref('foto_presensi/' + namaFile);
+            db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(async data => {
+                data.forEach(presensi => {
+                    if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
+                        if (ada == 1) {
+                            document.getElementById("loader").style.display = "none";
+                            document.getElementById("alert-presensi").style.display = "block";
+                            submitCapture.disabled = true;
+                            setTimeout(() => {
+                                document.getElementById("alert-presensi").style.display = "none";
+                            }, 3000);
+                            ada++;
+                        };
+                    }
+                });
+                if (ada == 1) {
+                    if (waktuSekarangString == cekSekarang) {
+                        await storageRef.put(file);
+                        var file_url = await storageRef.getDownloadURL();
+                        db.collection('presensi').add({
+                            username: localStorage.getItem("Username"),
+                            foto: file_url,
+                            nama: localStorage.getItem("Nama"),
+                            nip: localStorage.getItem("NIP"),
+                            waktu: waktuSekarang
+                        }).then(() => location.reload());
+                    } else {
+                        document.getElementById("loader").style.display = "none";
+                        document.querySelector('#alert-presensi-text').innerHTML = "Mohon masukkan foto hari ini dengan menggunakan smartphone";
+                        document.getElementById("alert-presensi").style.display = "block";
+                        setTimeout(() => {
+                            document.getElementById("alert-presensi").style.display = "none";
+                        }, 3000);
+                    }
+                };
+            }).catch((err) => {
+                console.log("Error checking document", err);
+            });
+        }
+    })
+}
+
+// fitur Khusus Admin
+if (localStorage.getItem("Level") == "Admin") {
+    // sign up
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById("alert-signup").style.display = "none";
+            // document.getElementById("loader").style.display = "block";
+            // document.getElementById("bg-loader").style.display = "block";
+
+            // get account info
+            const nama = signupForm['signup-nama'].value;
+            const nip = signupForm['signup-nip'].value;
+            const username = signupForm['signup-username'].value;
+            const password = signupForm['signup-password'].value;
+            const level = signupForm['signup-level'].value;
+
+            db.collection("users").where("username", "==", username).get().then(doc => {
+                if (doc.size > 0) {
+                    // document.getElementById("loader").style.display = "none";
+                    // document.getElementById("bg-loader").style.display = "none";
+                    document.getElementById("alert-signup").style.display = "block";
+                    document.querySelector('#pesan-signup').innerHTML = "Maaf, Username sudah terdaftar";
+                    document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
+                    setTimeout(() => {
+                        document.getElementById("alert-signup").style.display = "none";
+                    }, 3000);
+                    // return console.log("Username sudah ada");
+                } else {
+                    document.getElementById("alert-signup").style.display = "none";
+                    db.collection('users').add({
+                        username: username,
+                        nama: nama,
+                        nip: nip,
+                        password: password,
+                        level: level
+                    }).then(() => {
+                        // document.getElementById("loader").style.display = "none";
+                        // document.getElementById("bg-loader").style.display = "none";
+                        document.querySelector('#pesan-signup').innerHTML = "Akun berhasil didaftarkan";
+                        document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+                        document.getElementById("alert-signup").style.display = "block";
+                        setTimeout(() => {
+                            document.getElementById("alert-signup").style.display = "none";
+                        }, 3000);
+                        signupForm.reset();
+                    }).catch(err => console.log(err.message));
+                }
+            }).catch((err) => {
+                console.log("Error checking document", err);
+                document.querySelector('#pesan-signup').innerHTML = "Maaf, koneksi anda bermasalah atau server down";
+                // document.getElementById("loader").style.display = "none";
+                // document.getElementById("bg-loader").style.display = "none";
+            });
+        });
+    }
+}
+
+// logout
+if (logout) {
+    logout.addEventListener('click', (e) => {
+        // e.preventDefault();
+        localStorage.removeItem("Username");
+        localStorage.removeItem("Nama");
+        localStorage.removeItem("NIP");
+        localStorage.removeItem("Password");
+        localStorage.removeItem("Level");
+        window.location.href = "login.html";
+    })
+}
+
+// login
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        document.getElementById("loader").style.display = "block";
+        document.getElementById("bg-loader").style.display = "block";
+        e.preventDefault();
+        const username = loginForm['login-username'].value;
+        const password = loginForm['login-password'].value;
+
+        db.collection("users").where("username", "==", username).where("password", "==", password).get().then(doc => {
+            if (doc.size > 0) {
+                localStorage.setItem("Username", doc.docs[0].data().username);
+                localStorage.setItem("Nama", doc.docs[0].data().nama);
+                localStorage.setItem("NIP", doc.docs[0].data().nip);
+                localStorage.setItem("Password", doc.docs[0].data().password);
+                localStorage.setItem("Level", doc.docs[0].data().level);
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("bg-loader").style.display = "none";
+                document.getElementById("alert-login").style.display = "block";
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+            document.querySelector('#pesan-login').innerHTML = "Maaf, koneksi anda bermasalah atau server down";
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("bg-loader").style.display = "none";
+            document.getElementById("alert-login").style.display = "block";
+        });
+    })
+} else {
+    // cek autentikasi
+    if (!localStorage.getItem("Username")) {
+        window.location.href = "login.html";
+    }
+}
