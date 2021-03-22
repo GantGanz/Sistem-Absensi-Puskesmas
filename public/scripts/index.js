@@ -77,7 +77,7 @@ const getNextAllPresensi = () => {
                         <td>${presensiData.nama}</td>
                         <td>${presensiData.nip}</td>
                         <td>${hour}</td>
-                        <td><a href="${presensiData.foto}" target="_blank"><img src="${presensiData.foto}"
+                        <td><a class="foto-foto-presensi" href="${presensiData.foto}" target="_blank"><img src="${presensiData.foto}"
                         alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
                     </tr>
                     `;
@@ -194,7 +194,7 @@ if (localStorage.getItem("Level") == "Admin") {
                             <td>${presensiData.nama}</td>
                             <td>${presensiData.nip}</td>
                             <td>${hour}</td>
-                            <td><a href="${presensiData.foto}" target="_blank"><img src="${presensiData.foto}"
+                            <td><a class="foto-foto-presensi" href="${presensiData.foto}" target="_blank"><img src="${presensiData.foto}"
                             alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
                         </tr>
                         `;
@@ -363,7 +363,7 @@ const getNextPresensi = () => {
                 <tr>
                     <td>${date}</td>
                     <td>${hour}</td>
-                    <td><img src="${presensi.foto}"
+                    <td><img src="${presensi.foto}" class="foto-foto-presensi"
                         alt="foto presensi" loading="lazy" width="50" height="50"
                         data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this)"></td>
                 </tr>`;

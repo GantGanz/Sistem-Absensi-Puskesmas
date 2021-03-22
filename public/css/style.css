@@ -1,6 +1,9 @@
 /* .navbar-brand {
     margin-left: 10%;
 } */
+.foto-foto-presensi {
+    cursor: pointer;
+}
 
 .card {
     width: 18rem;
