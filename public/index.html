@@ -48,21 +48,8 @@
                     <button class="btn btn-danger nav-link text-white pl-2 pr-2" type="button" id="logout"
                         href="login.html">
                         Logout </button>
-                    <!-- <a class="nav-link" id="logout" href="login.html"><button class="btn btn-danger">Logout</button></a> -->
                 </li>
             </ul>
-            <!-- <li class="nav-item logged-in">
-                    <a class="nav-link modal-trigger" data-target="modal-riwayat" href="riwayat.html">Riwayat</a>
-                </li> -->
-            <!-- <li class="nav-item logged-in">
-                    <a href="#" class="nav-link modal-trigger" data-target="modal-create">Presensi</a>
-                </li> -->
-            <!-- <li class="nav-item logged-out">
-                    <a class="nav-link modal-trigger" data-target="modal-login" href="riwayat.html">Login</a>
-                </li>
-                <li class="nav-item logged-out">
-                    <a class="nav-link modal-trigger" data-target="modal-signup" href="daftar.html">Daftar</a>
-                </li> -->
         </div>
         <!-- <button type="button" class="btn btn-danger ml-auto mr-1">Keluar</button> -->
     </nav>
@@ -71,6 +58,21 @@
         <div class="text-center font-weight-bold" id="alert-presensi-text">Anda sudah melakukan presensi hari ini</div>
     </div>
     <div id="loader" style="display:none;"></div>
+    <div class="modal fade" id="modal-presensi" tabindex="-1" role="dialog" aria-labelledby="modal-presensi"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" alt="foto-presensi" loading="lazy" id="modal-foto-presensi">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid mt-3">
         <div class="card mx-auto text-white border-secondary" id="add-Presensi">
             <img id="foto-captured" class="card-img-top mx-auto" src="img/selfie-384.png" alt="Card image cap"
