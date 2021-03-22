@@ -17,8 +17,6 @@ if (fotoCaptured) {
         fotoCaptured.src = fotoPresensi;
         // get file
         file = e.target.files[0];
-        // upload file
-        // await storageRef.put(file);
         submitCapture.disabled = false;
     })
     captureForm.addEventListener('submit', (e) => {
@@ -39,7 +37,7 @@ if (fotoCaptured) {
             let cekSekarang = waktuFoto.getFullYear() + "/" + (waktuFoto.getMonth() + 1) + "/" + waktuFoto.getDate();
             let namaFile = localStorage.getItem("Username") + '/' + cekSekarang;
             // create a storage reference
-            storageRef = storage.ref('foto_presensi/' + namaFile);
+            storageRef = storage.ref('foto_presensi/' + namaFile + ".jpeg");
             db.collection("presensi").where("username", "==", localStorage.getItem("Username")).get().then(async data => {
                 data.forEach(presensi => {
                     if ((presensi.data().waktu.toDate().valueOf() >= awal.valueOf()) && (presensi.data().waktu.toDate().valueOf() <= akhir.valueOf())) {
@@ -56,15 +54,45 @@ if (fotoCaptured) {
                 });
                 if (ada == 1) {
                     if (waktuSekarangString == cekSekarang) {
-                        await storageRef.put(file);
-                        var file_url = await storageRef.getDownloadURL();
-                        db.collection('presensi').add({
-                            username: localStorage.getItem("Username"),
-                            foto: file_url,
-                            nama: localStorage.getItem("Nama"),
-                            nip: localStorage.getItem("NIP"),
-                            waktu: waktuSekarang
-                        }).then(() => location.reload());
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = async function (event) {
+                            const imgElement = document.createElement("img");
+                            imgElement.src = event.target.result;
+                            imgElement.onload = async function (e) {
+                                const canvas = document.createElement("canvas");
+                                const MAX_WIDTH = 400;
+                                const scaleSize = MAX_WIDTH / e.target.width;
+                                canvas.width = MAX_WIDTH;
+                                canvas.height = e.target.height * scaleSize;
+                                const ctx = canvas.getContext("2d")
+                                ctx.drawImage(e.target, 0, 0, canvas.width, canvas.height);
+                                const srcEncoded = ctx.canvas.toDataURL();
+                                var byteString = atob(srcEncoded.split(',')[1]);
+                                var ab = new ArrayBuffer(byteString.length);
+                                var ia = new Uint8Array(ab);
+                                for (var i = 0; i < byteString.length; i++) {
+                                    ia[i] = byteString.charCodeAt(i);
+                                }
+                                var blob = new Blob([ia], {
+                                    type: 'image/jpeg'
+                                });
+                                var fileResized = new File([blob], file.name);
+                                // you can send srcEncoded to the server
+                                var metadata = {
+                                    cotentType: 'image/jpeg'
+                                };
+                                await storageRef.put(fileResized, metadata);
+                                var file_url = await storageRef.getDownloadURL();
+                                db.collection('presensi').add({
+                                    username: localStorage.getItem("Username"),
+                                    foto: file_url,
+                                    nama: localStorage.getItem("Nama"),
+                                    nip: localStorage.getItem("NIP"),
+                                    waktu: waktuSekarang
+                                }).then(() => location.reload());
+                            };
+                        };
                     } else {
                         document.getElementById("loader").style.display = "none";
                         document.querySelector('#alert-presensi-text').innerHTML = "Mohon masukkan foto hari ini dengan menggunakan smartphone";
