@@ -77,8 +77,9 @@ const getNextAllPresensi = () => {
                         <td>${presensiData.nama}</td>
                         <td>${presensiData.nip}</td>
                         <td>${hour}</td>
-                        <td><a class="foto-foto-presensi" href="${presensiData.foto}" target="_blank"><img src="${presensiData.foto}"
-                        alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
+                        <td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
                     </tr>
                     `;
                 row++;
@@ -194,8 +195,9 @@ if (localStorage.getItem("Level") == "Admin") {
                             <td>${presensiData.nama}</td>
                             <td>${presensiData.nip}</td>
                             <td>${hour}</td>
-                            <td><a class="foto-foto-presensi" href="${presensiData.foto}" target="_blank"><img src="${presensiData.foto}"
-                            alt="foto presensi" loading="lazy" width="50" height="50"></a></td>
+                            <td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                            data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
+                            loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
                         </tr>
                         `;
                     html += tr;
@@ -365,7 +367,7 @@ const getNextPresensi = () => {
                     <td>${hour}</td>
                     <td><img src="${presensi.foto}" class="foto-foto-presensi"
                         alt="foto presensi" loading="lazy" width="50" height="50"
-                        data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this)"></td>
+                        data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>
                 </tr>`;
                 // row++;
             });
@@ -386,9 +388,12 @@ const getNextPresensi = () => {
     }
 }
 
-function fotoPresensiClick(e) {
-    document.getElementById("modal-foto-presensi").src = e.src;
+function fotoPresensiClick(src) {
+    document.getElementById("modal-foto-presensi").src = src;
+}
 
+function allFotoPresensiClick(src) {
+    document.getElementById("modal-all-foto-presensi").src = src;
 }
 
 // wait DOM content to load
