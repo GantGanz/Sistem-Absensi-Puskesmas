@@ -1,6 +1,10 @@
 /* .navbar-brand {
     margin-left: 10%;
 } */
+img {
+    image-orientation: from-image;
+}
+
 .foto-foto-presensi {
     cursor: pointer;
 }
