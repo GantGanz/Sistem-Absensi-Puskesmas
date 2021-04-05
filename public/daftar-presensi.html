@@ -64,7 +64,8 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="" alt="foto-presensi" loading="lazy" id="modal-all-foto-presensi" style="max-width: 100%;">
+                    <img src="" alt="foto-presensi" loading="lazy" id="modal-all-foto-presensi"
+                        style="max-width: 100%;">
                 </div>
             </div>
         </div>
@@ -77,7 +78,7 @@
                         <button class="btn btn-link btn-block text-white bg-success" type="button"
                             data-toggle="collapse" data-target="#collapseTambah" aria-expanded="true"
                             aria-controls="collapseTambah">
-                            <strong class="h5">Filter tanggal</strong>
+                            <strong class="h5">Filter tanggal dan nama</strong>
                         </button>
                         <div class="container-fluid">
                             <div id="collapseTambah" class="collapse pt-3 pb-3">
@@ -86,6 +87,10 @@
                                     <input id="filter-awal" class="form-control" type="date" required>
                                     <label for="filter-akhir" class="mt-2">Tanggal Akhir : </label>
                                     <input id="filter-akhir" class="form-control" type="date" required>
+                                    <label for="filter-nama" class="mt-2">Nama : </label>
+                                    <select id="filter-nama" name="filter-nama" class="form-control">
+                                        <option value="">(Semua)</option>
+                                    </select>
                                     <div class="text-right">
                                         <button class="btn btn-primary mt-3">Pilih</button>
                                     </div>
