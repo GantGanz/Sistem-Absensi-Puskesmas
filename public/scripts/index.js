@@ -458,4 +458,4 @@ const handleScroll = () => {
         getNextAllPresensi();
     }
 }
-window.addEventListener('scrollstop', handleScroll);
+document.addEventListener('scrollstop', handleScroll);
