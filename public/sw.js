@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v17';
-const dynamicCacheName = 'site-dynamic-v17';
+const staticCacheName = 'site-static-v18';
+const dynamicCacheName = 'site-dynamic-v18';
 const assets = [
     '/',
     'css/bootstrap.min.css',
