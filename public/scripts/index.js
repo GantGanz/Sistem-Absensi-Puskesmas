@@ -458,4 +458,5 @@ const handleScroll = () => {
         getNextAllPresensi();
     }
 }
-document.addEventListener('scrollstop', handleScroll);
+// document.addEventListener('scrollstop', handleScroll);
+document.addEventListener('touchmove', handleScroll);
