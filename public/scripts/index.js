@@ -1,1 +1,470 @@
-const _0x1a40=['waktu','258224rYyiMw','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','update-nama','modal-all-foto-presensi','removeEventListener','portrait','<p\x20class=\x22text-center\x22>Untuk\x20mengedit\x20data-data,\x20masuk\x20ke\x20halaman\x20\x27Daftar\x20Akun\x27\x20dan\x20tekan\x20edit</p>','199986GkCJdY','\x27)\x22>Delete</button>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','nip','getSeconds','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>','desc','1259nMYkyF','value','onSnapshot','td,\x20th','letter','Username','430upMvzj','79khmHHb','/\x2023:59:59','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><img\x20src=\x22','getHours','location','update-username','innerHeight','getMonth','#pesan-signup','</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22text-center\x22>Password:\x20','delete','level','innerHTML','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Error\x20getting\x20document:','scrollHeight','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22','getItem','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22text-center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-info\x22\x20data-toggle=\x22modal\x22\x20data-target=\x22#updateModal\x22\x20onclick=\x22updateAccount(\x27','index.html','password','empty','preventDefault','table\x20tr','push','.account-details','update','getDate','Nama','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>','error','users','presensi','orderBy','</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','username','createObjectURL','getFullYear','text/csv','data','</p>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22text-center\x20pb-3\x22\x20id=\x22foto-user\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20class=\x22img-thumbnail\x20rounded-circle\x22\x20src=\x22img/selfie-384.png\x22\x20alt=\x22Foto\x20User\x22\x20loading=\x22lazy\x22\x20width=\x22250\x22\x20height=\x22250\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20class=\x22text-center\x22>','</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22text-center\x22>Level:\x20','filter-akhir','addEventListener','documentElement','Anggota','Selamat\x20Datang,\x20<span\x20class=\x22text-success\x22>','</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><img\x20src=\x22','now','<p\x20class=\x22text-center\x22>Hubungi\x20admin\x20jika\x20ada\x20kesalahan\x20data</p>','alert-signup','scrollY','createElement','collection','forEach','URL','startAfter','firestore','\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>','alert\x20alert-danger\x20mx-auto','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Error\x20removing\x20document:\x20','Apakah\x20anda\x20yakin\x20akan\x20menghapus\x20user?','Admin','style','foto','ceil','where','getElementById','.account-isAdmin','nama','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h4\x20class=\x22text-center\x22>NIP:\x20','Level','none','innerText','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','update-level','#filter-nama','.all-presensi','getMinutes','.all-accounts','querySelectorAll','Error\x20editing\x20document:\x20','</span>','87IUGznr','then','\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20alt=\x22foto\x20presensi\x22\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-presensi\x22\x20onclick=\x22fotoPresensiClick(this.src)\x22></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>','get','284jvJSkK','querySelector','download','join','Timestamp','4507IvFcuj','set','display','81504THNYvz','NIP','click','className','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','from','scroll','filter-nama','update-form','tabel_presensi','\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','DOMContentLoaded','print_pdf','doc','update_button','.admin-menu','Akun\x20berhasil\x20dihapus','toDate','1230536kIITrn','modal','#updateModal','length','limit','log','alert\x20alert-success\x20mx-auto','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','update-password','docs','catch','block','</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','src','</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','loader','submit','update-nip','\x27)\x22>Edit</button>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22text-center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22delete_button\x22\x20class=\x22btn\x20btn-danger\x22\x20onclick=\x22deleteAccount(\x27','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','.presensiList'];const _0x12b7=function(_0x20bd00,_0x1f9147){_0x20bd00=_0x20bd00-0x183;let _0x1a40a0=_0x1a40[_0x20bd00];return _0x1a40a0;};const _0x483ae2=_0x12b7;(function(_0x36a246,_0x7e426e){const _0x24f5ee=_0x12b7;while(!![]){try{const _0xd535db=-parseInt(_0x24f5ee(0x1cb))+parseInt(_0x24f5ee(0x1c4))+parseInt(_0x24f5ee(0x19c))+-parseInt(_0x24f5ee(0x1d8))*-parseInt(_0x24f5ee(0x194))+parseInt(_0x24f5ee(0x190))*-parseInt(_0x24f5ee(0x199))+-parseInt(_0x24f5ee(0x1d7))*parseInt(_0x24f5ee(0x1d1))+parseInt(_0x24f5ee(0x1ae));if(_0xd535db===_0x7e426e)break;else _0x36a246['push'](_0x36a246['shift']());}catch(_0x4c6fd6){_0x36a246['push'](_0x36a246['shift']());}}}(_0x1a40,0x701e3));const presensiList=document['querySelector'](_0x483ae2(0x1c2)),accountDetails=document[_0x483ae2(0x195)](_0x483ae2(0x1f1)),allAccounts=document[_0x483ae2(0x195)](_0x483ae2(0x18c)),nameNavbar=document['querySelector']('.name-navbar'),accountIsAdmin=document[_0x483ae2(0x195)](_0x483ae2(0x220)),adminMenu=document['querySelector'](_0x483ae2(0x1ab)),allPresensi=document['querySelector'](_0x483ae2(0x18a)),filterForm=document[_0x483ae2(0x195)]('#filter-form'),filterNama=document[_0x483ae2(0x195)](_0x483ae2(0x189)),print_pdf=document[_0x483ae2(0x21f)](_0x483ae2(0x1a8)),delete_button=document[_0x483ae2(0x21f)]('delete_button'),updateForm=document[_0x483ae2(0x21f)](_0x483ae2(0x1a4)),update_button=document[_0x483ae2(0x21f)](_0x483ae2(0x1aa));let id_update=null,username_update=null;if(localStorage[_0x483ae2(0x1e9)](_0x483ae2(0x1d6))){nameNavbar&&(nameNavbar['innerHTML']=_0x483ae2(0x207)+localStorage[_0x483ae2(0x1e9)](_0x483ae2(0x1d6))+_0x483ae2(0x18f));;if(accountDetails){accountDetails[_0x483ae2(0x1e4)]=_0x483ae2(0x201)+localStorage[_0x483ae2(0x1e9)](_0x483ae2(0x1f4))+_0x483ae2(0x183)+localStorage[_0x483ae2(0x1e9)](_0x483ae2(0x19d))+'</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22text-center\x22>Username:\x20'+localStorage['getItem'](_0x483ae2(0x1d6))+_0x483ae2(0x1e1)+localStorage[_0x483ae2(0x1e9)]('Password')+_0x483ae2(0x202)+localStorage['getItem'](_0x483ae2(0x184))+_0x483ae2(0x200);if(localStorage['getItem']('Level')==_0x483ae2(0x21a))accountIsAdmin['innerHTML']=_0x483ae2(0x1ca);else localStorage['getItem'](_0x483ae2(0x184))==_0x483ae2(0x206)&&(accountIsAdmin[_0x483ae2(0x1e4)]=_0x483ae2(0x20b));};}localStorage['getItem'](_0x483ae2(0x184))==_0x483ae2(0x206)&&allAccounts&&(window[_0x483ae2(0x1dc)]['href']=_0x483ae2(0x1eb));let latestDocAll=firebase[_0x483ae2(0x213)][_0x483ae2(0x198)][_0x483ae2(0x20a)](),row=null;const getNextAllPresensi=()=>{const _0x4f8e5c=_0x483ae2;if(allPresensi&&localStorage[_0x4f8e5c(0x1e9)](_0x4f8e5c(0x184))==_0x4f8e5c(0x21a)){document[_0x4f8e5c(0x21f)](_0x4f8e5c(0x1bd))[_0x4f8e5c(0x21b)][_0x4f8e5c(0x19b)]=_0x4f8e5c(0x1b9);const _0x4003f9=db[_0x4f8e5c(0x20f)](_0x4f8e5c(0x1f8))[_0x4f8e5c(0x1f9)](_0x4f8e5c(0x1c3),_0x4f8e5c(0x1d0))[_0x4f8e5c(0x212)](latestDocAll)[_0x4f8e5c(0x1b2)](0x14);_0x4003f9[_0x4f8e5c(0x1d3)](_0x1ca57d=>{const _0x3b8951=_0x4f8e5c;let _0x103d59='';row===null&&(row=0x1),_0x1ca57d[_0x3b8951(0x210)](_0x44d1ee=>{const _0x23d691=_0x3b8951,_0x555e74=_0x44d1ee[_0x23d691(0x1ff)]();let _0x5d0b9b=_0x555e74['waktu'][_0x23d691(0x1ad)](),_0xd2ea0b=_0x5d0b9b[_0x23d691(0x1f3)](),_0x251d27=_0x5d0b9b[_0x23d691(0x1df)]()+0x1,_0x2b6e2a=_0x5d0b9b['getFullYear'](),_0x6426bd=_0x5d0b9b['getHours'](),_0x90523c=_0x5d0b9b[_0x23d691(0x18b)](),_0x25870d=_0x5d0b9b[_0x23d691(0x1ce)]();_0x5d0b9b=_0xd2ea0b+'/'+_0x251d27+'/'+_0x2b6e2a,hour=_0x6426bd+':'+_0x90523c+':'+_0x25870d,_0x103d59+=_0x23d691(0x1f5)+row+_0x23d691(0x1ba)+_0x5d0b9b+_0x23d691(0x1c1)+_0x555e74[_0x23d691(0x1fb)]+_0x23d691(0x1c1)+_0x555e74[_0x23d691(0x221)]+_0x23d691(0x1c1)+_0x555e74[_0x23d691(0x1cd)]+_0x23d691(0x1c1)+hour+_0x23d691(0x1da)+_0x555e74['foto']+_0x23d691(0x214),row++;}),allPresensi['innerHTML']+=_0x103d59,document['getElementById'](_0x3b8951(0x1bd))[_0x3b8951(0x21b)][_0x3b8951(0x19b)]='none',latestDocAll=_0x1ca57d['docs'][_0x1ca57d[_0x3b8951(0x1b7)][_0x3b8951(0x1b1)]-0x1],_0x1ca57d['empty']&&window[_0x3b8951(0x1c8)](_0x3b8951(0x1a2),handleScroll);},_0x5d33f3=>{const _0x5bffbf=_0x4f8e5c;console[_0x5bffbf(0x1b3)](_0x5d33f3);});}};if(localStorage[_0x483ae2(0x1e9)](_0x483ae2(0x184))==_0x483ae2(0x21a)){if(adminMenu){if(allAccounts)adminMenu[_0x483ae2(0x1e4)]+=_0x483ae2(0x187);else allPresensi?adminMenu[_0x483ae2(0x1e4)]+=_0x483ae2(0x1b5):adminMenu[_0x483ae2(0x1e4)]+=_0x483ae2(0x1a0);}allAccounts&&db['collection']('users')[_0x483ae2(0x1f9)](_0x483ae2(0x1fb))[_0x483ae2(0x1d3)](_0x3a5c3a=>{const _0x5d9cfb=_0x483ae2;let _0x4a3681='',_0x4504bd=0x1;_0x3a5c3a[_0x5d9cfb(0x210)](_0x8461d1=>{const _0x2d26b0=_0x5d9cfb,_0x52ec2a=_0x8461d1[_0x2d26b0(0x1ff)](),_0x15bbf6=_0x2d26b0(0x215)+_0x4504bd+_0x2d26b0(0x1fa)+_0x52ec2a[_0x2d26b0(0x1fb)]+_0x2d26b0(0x1c5)+_0x52ec2a['nama']+_0x2d26b0(0x1c5)+_0x52ec2a[_0x2d26b0(0x1cd)]+_0x2d26b0(0x1c5)+_0x52ec2a[_0x2d26b0(0x1ec)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x52ec2a[_0x2d26b0(0x1e3)]+_0x2d26b0(0x1ea)+_0x8461d1['id']+_0x2d26b0(0x1c0)+_0x8461d1['id']+_0x2d26b0(0x1cc);_0x4a3681+=_0x15bbf6,_0x4504bd++;}),allAccounts[_0x5d9cfb(0x1e4)]=_0x4a3681;},_0xeee73=>{console['log'](_0xeee73);}),allPresensi&&(db[_0x483ae2(0x20f)](_0x483ae2(0x1f7))[_0x483ae2(0x1f9)](_0x483ae2(0x221))[_0x483ae2(0x1d3)](_0x53bbd5=>{const _0x11fda9=_0x483ae2;_0x53bbd5[_0x11fda9(0x210)](_0x20eae6=>{const _0x1e9600=_0x11fda9,_0x58e1cd=_0x20eae6[_0x1e9600(0x1ff)](),_0x3893c4=_0x1e9600(0x1e8)+_0x58e1cd['nama']+'\x22>'+_0x58e1cd['nama']+_0x1e9600(0x1bc);filterNama[_0x1e9600(0x1e4)]+=_0x3893c4;});},_0x2aa566=>{const _0x411186=_0x483ae2;console[_0x411186(0x1b3)](_0x2aa566);}),filterForm[_0x483ae2(0x204)](_0x483ae2(0x1be),_0x4f8617=>{const _0x4c80e6=_0x483ae2;_0x4f8617[_0x4c80e6(0x1ee)](),window[_0x4c80e6(0x1c8)]('scroll',handleScroll);const _0x4215c0=new Date(filterForm['filter-awal'][_0x4c80e6(0x1d2)]+'/\x2000:00:00'),_0x315bbf=new Date(filterForm[_0x4c80e6(0x203)][_0x4c80e6(0x1d2)]+_0x4c80e6(0x1d9)),_0x49044f=filterForm[_0x4c80e6(0x1a3)][_0x4c80e6(0x1d2)];_0x49044f?db[_0x4c80e6(0x20f)](_0x4c80e6(0x1f8))[_0x4c80e6(0x21e)]('waktu','>=',_0x4215c0)['where'](_0x4c80e6(0x1c3),'<=',_0x315bbf)[_0x4c80e6(0x21e)]('nama','==',_0x49044f)[_0x4c80e6(0x1f9)](_0x4c80e6(0x1c3),'desc')['onSnapshot'](_0x20a1c5=>{const _0x465b51=_0x4c80e6;let _0x2468ba='',_0x34f595=0x1;_0x20a1c5[_0x465b51(0x210)](_0x4ce116=>{const _0xe09293=_0x465b51,_0x5b589e=_0x4ce116[_0xe09293(0x1ff)]();let _0x22ba03=_0x5b589e[_0xe09293(0x1c3)]['toDate'](),_0x18a402=_0x22ba03['getDate'](),_0x2d216d=_0x22ba03[_0xe09293(0x1df)]()+0x1,_0xc69a20=_0x22ba03['getFullYear'](),_0x231701=_0x22ba03[_0xe09293(0x1db)](),_0xfeb981=_0x22ba03['getMinutes'](),_0x15e517=_0x22ba03[_0xe09293(0x1ce)]();_0x22ba03=_0x18a402+'/'+_0x2d216d+'/'+_0xc69a20,hour=_0x231701+':'+_0xfeb981+':'+_0x15e517;const _0xa620f2=_0xe09293(0x1cf)+_0x34f595+_0xe09293(0x208)+_0x22ba03+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x5b589e['username']+_0xe09293(0x1e5)+_0x5b589e[_0xe09293(0x221)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x5b589e['nip']+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+hour+_0xe09293(0x209)+_0x5b589e[_0xe09293(0x21c)]+'\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';_0x2468ba+=_0xa620f2,_0x34f595++;}),allPresensi[_0x465b51(0x1e4)]=_0x2468ba;},_0x1d1456=>{const _0x5bfde2=_0x4c80e6;console[_0x5bfde2(0x1b3)](_0x1d1456);}):db[_0x4c80e6(0x20f)](_0x4c80e6(0x1f8))[_0x4c80e6(0x21e)](_0x4c80e6(0x1c3),'>=',_0x4215c0)['where'](_0x4c80e6(0x1c3),'<=',_0x315bbf)[_0x4c80e6(0x1f9)](_0x4c80e6(0x1c3),'desc')['onSnapshot'](_0x52c217=>{const _0x11a9f2=_0x4c80e6;let _0x26d9cd='',_0x5b664e=0x1;_0x52c217[_0x11a9f2(0x210)](_0x2f2119=>{const _0x4b7d50=_0x11a9f2,_0x4ca23d=_0x2f2119['data']();let _0x3bc252=_0x4ca23d[_0x4b7d50(0x1c3)][_0x4b7d50(0x1ad)](),_0x23ebff=_0x3bc252[_0x4b7d50(0x1f3)](),_0x3d4bef=_0x3bc252['getMonth']()+0x1,_0xfccf26=_0x3bc252[_0x4b7d50(0x1fd)](),_0x1f5c1b=_0x3bc252[_0x4b7d50(0x1db)](),_0x203efa=_0x3bc252['getMinutes'](),_0x2133e8=_0x3bc252[_0x4b7d50(0x1ce)]();_0x3bc252=_0x23ebff+'/'+_0x3d4bef+'/'+_0xfccf26,hour=_0x1f5c1b+':'+_0x203efa+':'+_0x2133e8;const _0x3b350d=_0x4b7d50(0x1cf)+_0x5b664e+_0x4b7d50(0x208)+_0x3bc252+_0x4b7d50(0x1e5)+_0x4ca23d[_0x4b7d50(0x1fb)]+_0x4b7d50(0x1e5)+_0x4ca23d['nama']+_0x4b7d50(0x1e5)+_0x4ca23d[_0x4b7d50(0x1cd)]+_0x4b7d50(0x1e5)+hour+_0x4b7d50(0x209)+_0x4ca23d[_0x4b7d50(0x21c)]+_0x4b7d50(0x1a6);_0x26d9cd+=_0x3b350d,_0x5b664e++;}),allPresensi[_0x11a9f2(0x1e4)]=_0x26d9cd;},_0x14d495=>{const _0x5f5966=_0x4c80e6;console[_0x5f5966(0x1b3)](_0x14d495);});}));};function deleteAccount(_0x30958e){const _0x4c0cc3=_0x483ae2;var _0x14005e=confirm(_0x4c0cc3(0x219));_0x14005e==!![]&&db[_0x4c0cc3(0x20f)](_0x4c0cc3(0x1f7))[_0x4c0cc3(0x1a9)](_0x30958e)[_0x4c0cc3(0x1e2)]()[_0x4c0cc3(0x191)](()=>{const _0x278066=_0x4c0cc3;document[_0x278066(0x195)](_0x278066(0x1e0))[_0x278066(0x1e4)]=_0x278066(0x1ac),document[_0x278066(0x21f)](_0x278066(0x20c))['className']=_0x278066(0x1b4),document[_0x278066(0x21f)]('alert-signup')[_0x278066(0x21b)][_0x278066(0x19b)]=_0x278066(0x1b9),setTimeout(()=>{const _0x42fc2f=_0x278066;document[_0x42fc2f(0x21f)](_0x42fc2f(0x20c))['style']['display']='none';},0xbb8);})[_0x4c0cc3(0x1b8)](_0xabab7e=>{const _0x3ceed8=_0x4c0cc3;console[_0x3ceed8(0x1f6)](_0x3ceed8(0x218),_0xabab7e);});};function updateAccount(_0x2cf5e7){const _0x1e51f8=_0x483ae2;db['collection']('users')[_0x1e51f8(0x1a9)](_0x2cf5e7)[_0x1e51f8(0x193)]()['then'](_0xe938bf=>{const _0x3d274c=_0x1e51f8;username_update=_0xe938bf[_0x3d274c(0x1ff)]()[_0x3d274c(0x1fb)],id_update=_0xe938bf['id'],document[_0x3d274c(0x21f)](_0x3d274c(0x1dd))['value']=_0xe938bf[_0x3d274c(0x1ff)]()[_0x3d274c(0x1fb)],document['getElementById'](_0x3d274c(0x1c6))[_0x3d274c(0x1d2)]=_0xe938bf[_0x3d274c(0x1ff)]()[_0x3d274c(0x221)],document[_0x3d274c(0x21f)](_0x3d274c(0x1bf))[_0x3d274c(0x1d2)]=_0xe938bf[_0x3d274c(0x1ff)]()[_0x3d274c(0x1cd)],document[_0x3d274c(0x21f)](_0x3d274c(0x1b6))[_0x3d274c(0x1d2)]=_0xe938bf['data']()[_0x3d274c(0x1ec)],document[_0x3d274c(0x21f)](_0x3d274c(0x188))[_0x3d274c(0x1d2)]=_0xe938bf[_0x3d274c(0x1ff)]()[_0x3d274c(0x1e3)];})['catch'](function(_0xc444ad){const _0x33669d=_0x1e51f8;console[_0x33669d(0x1b3)](_0x33669d(0x1e6),_0xc444ad);});};update_button&&update_button[_0x483ae2(0x204)](_0x483ae2(0x19e),_0x4394b6=>{const _0x403b76=_0x483ae2;_0x4394b6[_0x403b76(0x1ee)](),db['collection'](_0x403b76(0x1f7))[_0x403b76(0x21e)]('username','==',updateForm[_0x403b76(0x1dd)][_0x403b76(0x1d2)])['get']()[_0x403b76(0x191)](_0x3b89e7=>{const _0x3d79ba=_0x403b76;_0x3b89e7['size']>0x0&&username_update!=updateForm[_0x3d79ba(0x1dd)][_0x3d79ba(0x1d2)]?($(_0x3d79ba(0x1b0))[_0x3d79ba(0x1af)]('hide'),document[_0x3d79ba(0x195)]('#pesan-signup')[_0x3d79ba(0x1e4)]='Maaf\x20Username\x20sudah\x20digunakan',document['getElementById'](_0x3d79ba(0x20c))[_0x3d79ba(0x19f)]=_0x3d79ba(0x216),document[_0x3d79ba(0x21f)](_0x3d79ba(0x20c))[_0x3d79ba(0x21b)][_0x3d79ba(0x19b)]=_0x3d79ba(0x1b9),setTimeout(()=>{const _0x13d835=_0x3d79ba;document[_0x13d835(0x21f)](_0x13d835(0x20c))['style'][_0x13d835(0x19b)]=_0x13d835(0x185);},0xbb8)):db[_0x3d79ba(0x20f)](_0x3d79ba(0x1f7))[_0x3d79ba(0x1a9)](id_update)[_0x3d79ba(0x1f2)]({'username':updateForm[_0x3d79ba(0x1dd)]['value'],'nama':updateForm['update-nama']['value'],'nip':updateForm[_0x3d79ba(0x1bf)]['value'],'password':updateForm[_0x3d79ba(0x1b6)][_0x3d79ba(0x1d2)],'level':updateForm[_0x3d79ba(0x188)][_0x3d79ba(0x1d2)]})[_0x3d79ba(0x191)](()=>{const _0x1c897c=_0x3d79ba;$(_0x1c897c(0x1b0))['modal']('hide'),document[_0x1c897c(0x195)](_0x1c897c(0x1e0))[_0x1c897c(0x1e4)]='Data\x20akun\x20berhasil\x20diperbarui',document[_0x1c897c(0x21f)]('alert-signup')['className']='alert\x20alert-success\x20mx-auto',document[_0x1c897c(0x21f)](_0x1c897c(0x20c))[_0x1c897c(0x21b)][_0x1c897c(0x19b)]=_0x1c897c(0x1b9),setTimeout(()=>{const _0x2ce511=_0x1c897c;document[_0x2ce511(0x21f)](_0x2ce511(0x20c))[_0x2ce511(0x21b)][_0x2ce511(0x19b)]='none';},0xbb8);})[_0x3d79ba(0x1b8)](_0x2f9831=>{const _0x203317=_0x3d79ba;console[_0x203317(0x1f6)](_0x203317(0x18e),_0x2f9831);});});});function downloadCSV(_0x12a26f,_0x3b426b){const _0x500bc9=_0x483ae2;var _0x4dc4bb,_0x5c30bb;_0x4dc4bb=new Blob([_0x12a26f],{'type':_0x500bc9(0x1fe)}),_0x5c30bb=document[_0x500bc9(0x20e)]('a'),_0x5c30bb[_0x500bc9(0x196)]=_0x3b426b,_0x5c30bb['href']=window[_0x500bc9(0x211)][_0x500bc9(0x1fc)](_0x4dc4bb),_0x5c30bb[_0x500bc9(0x21b)][_0x500bc9(0x19b)]=_0x500bc9(0x185),document['body']['appendChild'](_0x5c30bb),_0x5c30bb[_0x500bc9(0x19e)]();}function exportTableToCSV(_0x14b4e2){const _0x8144d2=_0x483ae2;var _0xf8b764=[],_0x275fa2=document[_0x8144d2(0x18d)](_0x8144d2(0x1ef));for(var _0x8ab462=0x0;_0x8ab462<_0x275fa2[_0x8144d2(0x1b1)];_0x8ab462++){var _0x448dda=[],_0xb46569=_0x275fa2[_0x8ab462]['querySelectorAll'](_0x8144d2(0x1d4));for(var _0x4a11cf=0x0;_0x4a11cf<_0xb46569['length'];_0x4a11cf++)_0x448dda[_0x8144d2(0x1f0)](_0xb46569[_0x4a11cf][_0x8144d2(0x186)]);_0xf8b764[_0x8144d2(0x1f0)](_0x448dda[_0x8144d2(0x197)](','));}downloadCSV(_0xf8b764['join']('\x0a'),_0x14b4e2);}print_pdf&&print_pdf['addEventListener'](_0x483ae2(0x19e),()=>{const _0x348614=_0x483ae2,_0x3b2893=this['document'][_0x348614(0x21f)](_0x348614(0x1a5));var _0x41dab0={'margin':0.3,'filename':'daftar-presensi.pdf','jsPDF':{'unit':'in','format':_0x348614(0x1d5),'orientation':_0x348614(0x1c9)}};html2pdf()[_0x348614(0x19a)](_0x41dab0)[_0x348614(0x1a1)](_0x3b2893)['save']();});let latestDoc=firebase[_0x483ae2(0x213)][_0x483ae2(0x198)]['now']();const getNextPresensi=()=>{const _0x50665c=_0x483ae2;if(presensiList){document['getElementById']('loader')[_0x50665c(0x21b)][_0x50665c(0x19b)]='block';const _0x525b28=db['collection']('presensi')['where']('username','==',localStorage[_0x50665c(0x1e9)](_0x50665c(0x1d6)))[_0x50665c(0x1f9)](_0x50665c(0x1c3),'desc')[_0x50665c(0x212)](latestDoc)[_0x50665c(0x1b2)](0x14);_0x525b28[_0x50665c(0x1d3)](_0x476279=>{const _0xbdad79=_0x50665c;let _0x59d6d5='';_0x476279['forEach'](_0x1663b9=>{const _0x2a92b3=_0x12b7,_0x5d1a84=_0x1663b9[_0x2a92b3(0x1ff)]();let _0x3f802e=_0x5d1a84['waktu']['toDate'](),_0x534dce=_0x3f802e[_0x2a92b3(0x1f3)](),_0x2515c0=_0x3f802e[_0x2a92b3(0x1df)]()+0x1,_0x45bb1b=_0x3f802e[_0x2a92b3(0x1fd)](),_0xaecc56=_0x3f802e['getHours'](),_0x23595d=_0x3f802e['getMinutes'](),_0x554b6f=_0x3f802e[_0x2a92b3(0x1ce)]();_0x3f802e=_0x534dce+'/'+_0x2515c0+'/'+_0x45bb1b,hour=_0xaecc56+':'+_0x23595d+':'+_0x554b6f,_0x59d6d5+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x3f802e+_0x2a92b3(0x217)+hour+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td><img\x20src=\x22'+_0x5d1a84['foto']+_0x2a92b3(0x192);}),presensiList['innerHTML']+=_0x59d6d5,document[_0xbdad79(0x21f)](_0xbdad79(0x1bd))[_0xbdad79(0x21b)][_0xbdad79(0x19b)]=_0xbdad79(0x185),latestDoc=_0x476279[_0xbdad79(0x1b7)][_0x476279[_0xbdad79(0x1b7)][_0xbdad79(0x1b1)]-0x1],_0x476279[_0xbdad79(0x1ed)]&&window[_0xbdad79(0x1c8)](_0xbdad79(0x1a2),handleScroll);},_0xe3e616=>{const _0x3df2e7=_0x50665c;console[_0x3df2e7(0x1b3)](_0xe3e616);});}};function fotoPresensiClick(_0xa3f76){const _0x58cba3=_0x483ae2;document[_0x58cba3(0x21f)]('modal-foto-presensi')[_0x58cba3(0x1bb)]=_0xa3f76;}function allFotoPresensiClick(_0x37fa1f){const _0x1f09aa=_0x483ae2;document[_0x1f09aa(0x21f)](_0x1f09aa(0x1c7))[_0x1f09aa(0x1bb)]=_0x37fa1f;}window[_0x483ae2(0x204)](_0x483ae2(0x1a7),()=>getNextPresensi()),window[_0x483ae2(0x204)](_0x483ae2(0x1a7),()=>getNextAllPresensi());const handleScroll=()=>{const _0x5f272b=_0x483ae2,_0x10a037=document[_0x5f272b(0x205)][_0x5f272b(0x1e7)]-window[_0x5f272b(0x1de)],_0x3a0e29=window[_0x5f272b(0x20d)];Math[_0x5f272b(0x21d)](_0x3a0e29)==_0x10a037&&(getNextPresensi(),getNextAllPresensi());};window[_0x483ae2(0x204)](_0x483ae2(0x1a2),handleScroll);
+const presensiList = document.querySelector('.presensiList');
+const accountDetails = document.querySelector('.account-details');
+const allAccounts = document.querySelector('.all-accounts');
+const nameNavbar = document.querySelector('.name-navbar');
+const accountIsAdmin = document.querySelector('.account-isAdmin');
+const adminMenu = document.querySelector('.admin-menu');
+const allPresensi = document.querySelector('.all-presensi');
+const filterForm = document.querySelector('#filter-form');
+const filterNama = document.querySelector('#filter-nama');
+// const presensi_loader = document.querySelector('.presensi_loader');
+// const all_presensi_loader = document.querySelector('.all_presensi_loader');
+const print_pdf = document.getElementById("print_pdf");
+const delete_button = document.getElementById("delete_button");
+const updateForm = document.getElementById('update-form');
+const update_button = document.getElementById("update_button");
+let id_update = null;
+let username_update = null;
+
+// menampilkan nama dan detail akun
+if (localStorage.getItem("Username")) {
+    if (nameNavbar) {
+        nameNavbar.innerHTML = `Selamat Datang, <span class="text-success">${localStorage.getItem("Username")}</span>`;
+    };
+    if (accountDetails) {
+        accountDetails.innerHTML = `
+            <div class="text-center pb-3" id="foto-user">
+                <img class="img-thumbnail rounded-circle" src="img/selfie-384.png" alt="Foto User" loading="lazy" width="250" height="250">
+            </div>
+            <h3 class="text-center">${localStorage.getItem("Nama")}</h3>
+            <h4 class="text-center">NIP: ${localStorage.getItem("NIP")}</h4>
+            <h5 class="text-center">Username: ${localStorage.getItem("Username")}</h5>
+            <h5 class="text-center" id="censored">Password: <button onclick="censor()">tampilkan</button></h5>
+            <p class="text-center">Level: ${localStorage.getItem("Level")}</p>`;
+        if (localStorage.getItem("Level") == "Admin") {
+            accountIsAdmin.innerHTML = `<p class="text-center">Untuk mengedit data-data, masuk ke halaman 'Daftar Akun' dan tekan edit</p>`;
+        } else if (localStorage.getItem("Level") == "Anggota") {
+            accountIsAdmin.innerHTML = `<p class="text-center">Hubungi admin jika ada kesalahan data</p>`;
+        }
+    };
+
+    function censor() {
+        var censoredText = document.getElementById("censored");
+        if (censoredText.innerHTML == `Password: <button onclick="censor()">tampilkan</button>`) {
+            censoredText.innerHTML = `Password: ${localStorage.getItem("Password")} <button onclick="censor()">tutup</button>`;
+        } else {
+            censoredText.innerHTML = `Password: <button onclick="censor()">tampilkan</button>`;
+        }
+    }
+}
+
+// Mencegah anggota masuk ke fitur admin
+if (localStorage.getItem("Level") == "Anggota" && allAccounts) {
+    window.location.href = "index.html";
+}
+
+// Fitur Khusus Admin
+// store last document of allpresensi
+let latestDocAll = firebase.firestore.Timestamp.now();
+let row = null;
+// show all presensi
+const getNextAllPresensi = () => {
+    if (allPresensi && (localStorage.getItem("Level") == "Admin")) {
+        document.getElementById("loader").style.display = "block";
+        // all_presensi_loader.classList.add('active');
+        const query = db.collection('presensi').orderBy("waktu", "desc").startAfter(latestDocAll).limit(20);
+        query.onSnapshot(data => {
+            let html = '';
+            if (row === null) {
+                row = 1;
+            }
+            data.forEach(presensi => {
+                const presensiData = presensi.data();
+                let date = presensiData.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth() + 1;
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
+                html += `
+                    <tr>
+                        <th scope="row">${row}</th>
+                        <td>${date}</td>
+                        <td>${presensiData.username}</td>
+                        <td>${presensiData.nama}</td>
+                        <td>${presensiData.nip}</td>
+                        <td>${hour}</td>
+                        <td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                    </tr>
+                    `;
+                row++;
+            });
+            allPresensi.innerHTML += html;
+            document.getElementById("loader").style.display = "none";
+            // all_presensi_loader.classList.remove('active');
+
+            // update latest doc
+            latestDocAll = data.docs[data.docs.length - 1];
+
+            // unattach event listener if no more docs
+            if (data.empty) {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }, error => {
+            console.log(error)
+        });
+    }
+}
+if (localStorage.getItem("Level") == "Admin") {
+    if (adminMenu) {
+        if (allAccounts) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+            `;
+        } else if (allPresensi) {
+            adminMenu.innerHTML += `
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="daftar-presensi.html">Daftar Presensi</a>
+            </li>
+        `;
+        } else {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+            `;
+        }
+    }
+    // show all account
+    if (allAccounts) {
+        db.collection('users').orderBy("username").onSnapshot(docs => {
+            let html = '';
+            let row = 1;
+            docs.forEach(account => {
+                const userData = account.data();
+                const tr = `
+                        <tr>
+                            <th scope="row">${row}</th>
+                            <td>${userData.username}</td>
+                            <td>${userData.nama}</td>
+                            <td>${userData.nip}</td>
+                            <td>${userData.password}</td>
+                            <td>${userData.level}</td>
+                            <td class="text-center">
+                                <button class="btn btn-info" data-toggle="modal" data-target="#updateModal" onclick="updateAccount('${account.id}')">Edit</button> 
+                            </td>
+                            <td class="text-center">
+                                <button id="delete_button" class="btn btn-danger" onclick="deleteAccount('${account.id}')">Delete</button> 
+                            </td>
+                        </tr>
+                        `;
+                html += tr;
+                row++;
+            });
+            allAccounts.innerHTML = html;
+        }, error => {
+            console.log(error)
+        });
+    }
+
+    if (allPresensi) {
+        // Drop down select
+        db.collection('users').orderBy("nama").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                const option = `
+                        <option value="${userData.nama}">${userData.nama}</option>
+                        `;
+                filterNama.innerHTML += option;
+            });
+        }, error => {
+            console.log(error)
+        });
+        // filter presensi
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+
+            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
+            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
+            const nama = filterForm['filter-nama'].value;
+            if (nama) {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let html = '';
+                    let row = 1;
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        let date = presensiData.waktu.toDate();
+                        let dd = date.getDate();
+                        let mm = date.getMonth() + 1;
+                        let yyyy = date.getFullYear();
+                        let hh = date.getHours();
+                        let mi = date.getMinutes();
+                        let se = date.getSeconds();
+                        date = dd + '/' + mm + '/' + yyyy;
+                        hour = hh + ':' + mi + ':' + se;
+                        const tr = `
+                            <tr>
+                                <th scope="row">${row}</th>
+                                <td>${date}</td>
+                                <td>${presensiData.username}</td>
+                                <td>${presensiData.nama}</td>
+                                <td>${presensiData.nip}</td>
+                                <td>${hour}</td>
+                                <td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                            </tr>
+                            `;
+                        html += tr;
+                        row++;
+                    });
+                    allPresensi.innerHTML = html;
+                }, error => {
+                    console.log(error)
+                });
+            } else {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let html = '';
+                    let row = 1;
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        let date = presensiData.waktu.toDate();
+                        let dd = date.getDate();
+                        let mm = date.getMonth() + 1;
+                        let yyyy = date.getFullYear();
+                        let hh = date.getHours();
+                        let mi = date.getMinutes();
+                        let se = date.getSeconds();
+                        date = dd + '/' + mm + '/' + yyyy;
+                        hour = hh + ':' + mi + ':' + se;
+                        const tr = `
+                            <tr>
+                                <th scope="row">${row}</th>
+                                <td>${date}</td>
+                                <td>${presensiData.username}</td>
+                                <td>${presensiData.nama}</td>
+                                <td>${presensiData.nip}</td>
+                                <td>${hour}</td>
+                                <td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                            </tr>
+                            `;
+                        html += tr;
+                        row++;
+                    });
+                    allPresensi.innerHTML = html;
+                }, error => {
+                    console.log(error)
+                });
+            }
+        });
+    }
+};
+
+function deleteAccount(id) {
+    var con = confirm("Apakah anda yakin akan menghapus user?");
+    if (con == true) {
+        db.collection("users").doc(id).delete().then(() => {
+            document.querySelector('#pesan-signup').innerHTML = "Akun berhasil dihapus";
+            document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+            document.getElementById("alert-signup").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("alert-signup").style.display = "none";
+            }, 3000);
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
+};
+
+function updateAccount(id) {
+    db.collection("users").doc(id).get().then(doc => {
+        username_update = doc.data().username;
+        id_update = doc.id;
+        document.getElementById("update-username").value = doc.data().username;
+        document.getElementById("update-nama").value = doc.data().nama;
+        document.getElementById("update-nip").value = doc.data().nip;
+        document.getElementById("update-password").value = doc.data().password;
+        document.getElementById("update-level").value = doc.data().level;
+    }).catch(function (error) {
+        console.log("Error getting document:", error);
+    });
+};
+if (update_button) {
+    update_button.addEventListener("click", (e) => {
+        e.preventDefault();
+        db.collection("users").where("username", "==", updateForm['update-username'].value).get().then(doc => {
+            if ((doc.size > 0) && (username_update != updateForm['update-username'].value)) {
+                $('#updateModal').modal('hide');
+                document.querySelector('#pesan-signup').innerHTML = "Maaf Username sudah digunakan";
+                document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
+                document.getElementById("alert-signup").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("alert-signup").style.display = "none";
+                }, 3000);
+            } else {
+                db.collection("users").doc(id_update).update({
+                    username: updateForm['update-username'].value,
+                    nama: updateForm['update-nama'].value,
+                    nip: updateForm['update-nip'].value,
+                    password: updateForm['update-password'].value,
+                    level: updateForm['update-level'].value
+                }).then(() => {
+                    $('#updateModal').modal('hide');
+                    document.querySelector('#pesan-signup').innerHTML = "Data akun berhasil diperbarui";
+                    document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+                    document.getElementById("alert-signup").style.display = "block";
+                    setTimeout(() => {
+                        document.getElementById("alert-signup").style.display = "none";
+                    }, 3000);
+                }).catch((error) => {
+                    console.error("Error editing document: ", error);
+                });
+            }
+        })
+    })
+}
+
+// Export to CSV
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+    // CSV file
+    csvFile = new Blob([csv], {
+        type: "text/csv"
+    });
+    // Download link
+    downloadLink = document.createElement("a");
+    // File name
+    downloadLink.download = filename;
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    // Hide download link
+    downloadLink.style.display = "none";
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+    // Click download link
+    downloadLink.click();
+}
+
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    for (var i = 0; i < rows.length; i++) {
+        var row = [],
+            cols = rows[i].querySelectorAll("td, th");
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+        csv.push(row.join(","));
+    }
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+
+// export to pdf
+if (print_pdf) {
+    print_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("tabel_presensi");
+        var opt = {
+            margin: 0.3,
+            filename: 'daftar-presensi.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
+}
+
+// store last document
+let latestDoc = firebase.firestore.Timestamp.now();
+// Infinite scroll pagination
+const getNextPresensi = () => {
+    // get data presensi
+    if (presensiList) {
+        // presensi_loader.classList.add('active');
+        document.getElementById("loader").style.display = "block";
+
+        const query = db.collection('presensi')
+            .where("username", "==", localStorage.getItem("Username"))
+            .orderBy("waktu", "desc")
+            .startAfter(latestDoc)
+            .limit(20);
+
+        // output docs
+        query.onSnapshot(data => {
+            let html = '';
+            // let row = 1;
+            data.forEach(doc => {
+                const presensi = doc.data();
+
+                let date = presensi.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth() + 1;
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
+                // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
+
+                html += `
+                <tr>
+                    <td>${date}</td>
+                    <td>${hour}</td>
+                    <td><img src="${presensi.foto}" class="foto-foto-presensi"
+                        alt="foto presensi" loading="lazy" width="50" height="50"
+                        data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>
+                </tr>`;
+                // row++;
+            });
+            presensiList.innerHTML += html;
+            // presensi_loader.classList.remove('active');
+            document.getElementById("loader").style.display = "none";
+
+            // update latest doc
+            latestDoc = data.docs[data.docs.length - 1];
+
+            // unattach event listener if no more docs
+            if (data.empty) {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }, error => {
+            console.log(error)
+        });
+    }
+}
+
+function fotoPresensiClick(src) {
+    document.getElementById("modal-foto-presensi").src = src;
+}
+
+function allFotoPresensiClick(src) {
+    document.getElementById("modal-all-foto-presensi").src = src;
+}
+
+// wait DOM content to load
+window.addEventListener('DOMContentLoaded', () => getNextPresensi());
+window.addEventListener('DOMContentLoaded', () => getNextAllPresensi());
+
+// load more docs (scroll)
+const handleScroll = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    if (Math.ceil(scrolled) == scrollable) {
+        getNextPresensi();
+        getNextAllPresensi();
+    }
+}
+window.addEventListener('scroll', handleScroll);
