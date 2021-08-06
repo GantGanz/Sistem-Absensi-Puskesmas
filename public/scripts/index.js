@@ -5,11 +5,13 @@ const nameNavbar = document.querySelector('.name-navbar');
 const accountIsAdmin = document.querySelector('.account-isAdmin');
 const adminMenu = document.querySelector('.admin-menu');
 const allPresensi = document.querySelector('.all-presensi');
+const hitungJaspel = document.querySelector('.hitung-jaspel');
 const filterForm = document.querySelector('#filter-form');
 const filterNama = document.querySelector('#filter-nama');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
+const print_hitung_pdf = document.getElementById("print_hitung_pdf");
 const delete_button = document.getElementById("delete_button");
 const updateForm = document.getElementById('update-form');
 const update_button = document.getElementById("update_button");
@@ -115,28 +117,37 @@ if (localStorage.getItem("Level") == "Admin") {
         if (allAccounts) {
             adminMenu.innerHTML += `
                 <li class="nav-item">
-                    <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
                 </li>
             `;
         } else if (allPresensi) {
             adminMenu.innerHTML += `
-            <li class="nav-item">
-                <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="daftar-presensi.html">Daftar Presensi</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
         `;
         } else {
             adminMenu.innerHTML += `
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
                 </li>
             `;
         }
@@ -170,6 +181,63 @@ if (localStorage.getItem("Level") == "Admin") {
             allAccounts.innerHTML = html;
         }, error => {
             console.log(error)
+        });
+    }
+
+    if (hitungJaspel) {
+        // Drop down select
+        db.collection('users').orderBy("nama").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                const option = `
+                <option value="${userData.nama}">${userData.nama}</option>
+                `;
+                filterNama.innerHTML += option;
+            });
+        }, error => {
+            console.log(error)
+        });
+        // filter presensi
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
+            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
+            const nama = filterForm['filter-nama'].value;
+            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).orderBy("waktu", "desc").onSnapshot(docs => {
+                let html = '';
+                let row = 1;
+                docs.forEach(presensi => {
+                    const presensiData = presensi.data();
+                    let date = presensiData.waktu.toDate();
+                    let dd = date.getDate();
+                    let mm = date.getMonth() + 1;
+                    let yyyy = date.getFullYear();
+                    let hh = date.getHours();
+                    let mi = date.getMinutes();
+                    let se = date.getSeconds();
+                    date = dd + '/' + mm + '/' + yyyy;
+                    hour = hh + ':' + mi + ':' + se;
+                    const tr = `
+                            <tr>
+                                <th scope="row">${row}</th>
+                                <td>${date}</td>
+                                <td>${presensiData.username}</td>
+                                <td>${presensiData.nama}</td>
+                                <td>${presensiData.nip}</td>
+                                <td>${hour}</td>
+                                <td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                            </tr>
+                            `;
+                    html += tr;
+                    row++;
+                });
+                allPresensi.innerHTML = html;
+            }, error => {
+                console.log(error)
+            });
         });
     }
 
@@ -376,6 +444,21 @@ if (print_pdf) {
         var opt = {
             margin: 0.3,
             filename: 'daftar-presensi.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
+}
+if (print_hitung_pdf) {
+    print_hitung_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("hasil_hitung_jaspel");
+        var opt = {
+            margin: 0.3,
+            filename: 'hasil_hitung_jaspel.pdf',
             jsPDF: {
                 unit: 'in',
                 format: 'letter',
