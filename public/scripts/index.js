@@ -239,7 +239,7 @@ if (localStorage.getItem("Level") == "Admin") {
             docs.forEach(account => {
                 const userData = account.data();
                 const option = `
-                        <option value="${userData.nama}">${userData.nama}</option>
+                            <option value="${userData.nama};${userData.nip}">${userData.nama}; ${userData.nip}</option>
                         `;
                 filterNama.innerHTML += option;
             });
@@ -253,9 +253,11 @@ if (localStorage.getItem("Level") == "Admin") {
 
             const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
             const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
-            const nama = filterForm['filter-nama'].value;
+            const nama = filterForm['filter-nama'].value.split(";")[0];
+            const nip = filterForm['filter-nama'].value.split(";")[1];
+            console.log(nama, nip);
             if (nama) {
-                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).orderBy("waktu", "desc").onSnapshot(docs => {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("nip", "==", nip).orderBy("waktu", "desc").onSnapshot(docs => {
                     let html = '';
                     let row = 1;
                     docs.forEach(presensi => {
