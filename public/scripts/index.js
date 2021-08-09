@@ -7,7 +7,9 @@ const adminMenu = document.querySelector('.admin-menu');
 const allPresensi = document.querySelector('.all-presensi');
 const hitungJaspel = document.querySelector('.hitung-jaspel');
 const filterForm = document.querySelector('#filter-form');
+const hitungForm = document.querySelector('#hitung-form');
 const filterNama = document.querySelector('#filter-nama');
+const hitungNama = document.querySelector('#hitung-nama');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
@@ -190,51 +192,41 @@ if (localStorage.getItem("Level") == "Admin") {
             docs.forEach(account => {
                 const userData = account.data();
                 const option = `
-                <option value="${userData.nama}">${userData.nama}</option>
+                <option value="${userData.nama};${userData.nip}">${userData.nama}; ${userData.nip}</option>
                 `;
-                filterNama.innerHTML += option;
+                hitungNama.innerHTML += option;
             });
         }, error => {
             console.log(error)
         });
-        // filter presensi
-        filterForm.addEventListener('submit', (e) => {
+        // hitung jaspel
+        hitungForm.addEventListener('submit', (e) => {
             e.preventDefault();
             window.removeEventListener('scroll', handleScroll);
-            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
-            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
-            const nama = filterForm['filter-nama'].value;
-            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).orderBy("waktu", "desc").onSnapshot(docs => {
-                let html = '';
-                let row = 1;
-                docs.forEach(presensi => {
-                    const presensiData = presensi.data();
-                    let date = presensiData.waktu.toDate();
-                    let dd = date.getDate();
-                    let mm = date.getMonth() + 1;
-                    let yyyy = date.getFullYear();
-                    let hh = date.getHours();
-                    let mi = date.getMinutes();
-                    let se = date.getSeconds();
-                    date = dd + '/' + mm + '/' + yyyy;
-                    hour = hh + ':' + mi + ':' + se;
-                    const tr = `
-                            <tr>
-                                <th scope="row">${row}</th>
-                                <td>${date}</td>
-                                <td>${presensiData.username}</td>
-                                <td>${presensiData.nama}</td>
-                                <td>${presensiData.nip}</td>
-                                <td>${hour}</td>
-                                <td><img src="${presensiData.foto}" class="foto-foto-presensi"
-                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
-                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
-                            </tr>
-                            `;
-                    html += tr;
-                    row++;
-                });
-                allPresensi.innerHTML = html;
+            const awal = new Date(hitungForm['hitung-awal'].value + '/ 00:00:00');
+            const akhir = new Date(hitungForm['hitung-akhir'].value + '/ 23:59:59');
+            const nama = hitungForm['hitung-nama'].value.split(";")[0];
+            const nip = hitungForm['hitung-nama'].value.split(";")[1];
+            const satuan = hitungForm['hitung-satuan'].value;
+            let jumlahHari = new Date(hitungForm['hitung-akhir'].value) - new Date(hitungForm['hitung-awal'].value);
+            jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
+            let jumlahHadir = 0;
+            // let nip = 0;
+            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("nip", "==", nip).orderBy("waktu", "desc").get().then(docs => {
+                console.log(docs.size);
+                jumlahHadir = docs.size;
+                // docs.forEach(data => {
+                //     nip = data.data().nip;
+                // });
+                let totalJaspel = numberWithCommas(jumlahHadir * satuan);
+                hitungJaspel.innerHTML = `<tr>
+                    <td>${hitungForm['hitung-awal'].value} ~ ${hitungForm['hitung-akhir'].value}</td>
+                    <td>${nama}</td>
+                    <td>${nip}</td>
+                    <td>${jumlahHadir} dari ${jumlahHari}</td>
+                    <td>${hitungForm['hitung-satuan'].value}</td>
+                    <td>Rp${totalJaspel},00</td>
+                </tr>`
             }, error => {
                 console.log(error)
             });
@@ -336,6 +328,12 @@ if (localStorage.getItem("Level") == "Admin") {
         });
     }
 };
+
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(",");
+}
 
 function deleteAccount(id) {
     var con = confirm("Apakah anda yakin akan menghapus user?");

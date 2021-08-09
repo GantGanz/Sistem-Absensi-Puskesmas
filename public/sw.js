@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v21';
-const dynamicCacheName = 'site-dynamic-v21';
+const staticCacheName = 'site-static-v22';
+const dynamicCacheName = 'site-dynamic-v22';
 const assets = [
     '/',
     'css/bootstrap.min.css',
@@ -19,8 +19,9 @@ const assets = [
     'manifest.json',
     'index.html',
     'akun.html',
-    'daftar-akun.html',
     'daftar-presensi.html',
+    'hitung-jaspel.html',
+    'daftar-akun.html',
     'login.html',
     'fallback.html'
 ];
