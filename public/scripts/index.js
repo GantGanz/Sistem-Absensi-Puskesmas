@@ -208,23 +208,23 @@ if (localStorage.getItem("Level") == "Admin") {
             const nama = hitungForm['hitung-nama'].value.split(";")[0];
             const nip = hitungForm['hitung-nama'].value.split(";")[1];
             const satuan = hitungForm['hitung-satuan'].value;
+            const denda = hitungForm['hitung-denda'].value;
             let jumlahHari = new Date(hitungForm['hitung-akhir'].value) - new Date(hitungForm['hitung-awal'].value);
             jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
             let jumlahHadir = 0;
-            // let nip = 0;
             db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("nip", "==", nip).orderBy("waktu", "desc").get().then(docs => {
                 console.log(docs.size);
                 jumlahHadir = docs.size;
-                // docs.forEach(data => {
-                //     nip = data.data().nip;
-                // });
-                let totalJaspel = numberWithCommas(jumlahHadir * satuan);
+                let jumlahJaspel = jumlahHadir * satuan;
+                let jumlahDenda = (jumlahHari - jumlahHadir) * denda;
+                let totalJaspel = numberWithCommas(jumlahJaspel - jumlahDenda);
                 hitungJaspel.innerHTML = `<tr>
                     <td>${hitungForm['hitung-awal'].value} ~ ${hitungForm['hitung-akhir'].value}</td>
                     <td>${nama}</td>
                     <td>${nip}</td>
-                    <td>${jumlahHadir} dari ${jumlahHari}</td>
-                    <td>${hitungForm['hitung-satuan'].value}</td>
+                    <td>${jumlahHadir} dari ${jumlahHari} hari</td>
+                    <td>${jumlahHadir} * ${satuan} = ${jumlahJaspel}</td>
+                    <td>${(jumlahHari - jumlahHadir)} * ${denda} = ${jumlahDenda}</td>
                     <td>Rp${totalJaspel},00</td>
                 </tr>`
             }, error => {
@@ -460,7 +460,7 @@ if (print_hitung_pdf) {
             jsPDF: {
                 unit: 'in',
                 format: 'letter',
-                orientation: 'portrait'
+                orientation: 'landscape'
             }
         };
         html2pdf().set(opt).from(invoice).save();
