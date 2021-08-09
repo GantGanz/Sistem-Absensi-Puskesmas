@@ -216,15 +216,15 @@ if (localStorage.getItem("Level") == "Admin") {
                 console.log(docs.size);
                 jumlahHadir = docs.size;
                 let jumlahJaspel = jumlahHadir * satuan;
-                let jumlahDenda = (jumlahHari - jumlahHadir) * denda;
+                let jumlahDenda = (jumlahHari - jumlahHadir - hitungForm['hitung-izin'].value) * denda;
                 let totalJaspel = numberWithCommas(jumlahJaspel - jumlahDenda);
                 hitungJaspel.innerHTML = `<tr>
                     <td>${hitungForm['hitung-awal'].value} ~ ${hitungForm['hitung-akhir'].value}</td>
                     <td>${nama}</td>
                     <td>${nip}</td>
-                    <td>${jumlahHadir} dari ${jumlahHari} hari</td>
+                    <td>${jumlahHadir} dari ${jumlahHari} hari, dengan ${hitungForm['hitung-izin'].value} izin</td>
                     <td>${jumlahHadir} * ${satuan} = ${jumlahJaspel}</td>
-                    <td>${(jumlahHari - jumlahHadir)} * ${denda} = ${jumlahDenda}</td>
+                    <td>${(jumlahHari - jumlahHadir)} - ${hitungForm['hitung-izin'].value} * ${denda} = ${jumlahDenda}</td>
                     <td>Rp${totalJaspel},00</td>
                 </tr>`
             }, error => {
