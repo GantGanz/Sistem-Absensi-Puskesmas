@@ -10,6 +10,8 @@ const filterForm = document.querySelector('#filter-form');
 const hitungForm = document.querySelector('#hitung-form');
 const filterNama = document.querySelector('#filter-nama');
 const hitungNama = document.querySelector('#hitung-nama');
+const laporanHarian = document.querySelector('#laporan_harian');
+const tabelBelumHadir = document.querySelector('.belumHadirList');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
@@ -119,6 +121,9 @@ if (localStorage.getItem("Level") == "Admin") {
         if (allAccounts) {
             adminMenu.innerHTML += `
                 <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
                 </li>
                 <li class="nav-item">
@@ -131,6 +136,9 @@ if (localStorage.getItem("Level") == "Admin") {
         } else if (allPresensi) {
             adminMenu.innerHTML += `
                 <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="daftar-presensi.html">Daftar Presensi</a>
                 </li>
                 <li class="nav-item">
@@ -139,9 +147,42 @@ if (localStorage.getItem("Level") == "Admin") {
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
                 </li>
-        `;
+            `;
+        } else if (laporanHarian) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link active" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+            `;
+        } else if (hitungJaspel) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+            `;
         } else {
             adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
                 </li>
@@ -327,6 +368,84 @@ if (localStorage.getItem("Level") == "Admin") {
                     console.log(error)
                 });
             }
+        });
+    }
+
+    if (laporanHarian) {
+        waktuSekarang = firebase.firestore.Timestamp.now();
+        let date = waktuSekarang.toDate();
+        let dd = date.getDate();
+        let mm = date.getMonth() + 1;
+        let yyyy = date.getFullYear();
+        let waktuSekarangString = yyyy + '/' + mm + '/' + dd;
+        let awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
+        let akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+        let daftarAkun = [];
+
+        db.collection('users').orderBy("username").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                daftarAkun.push(userData.username);
+            });
+        }, error => {
+            console.log(error)
+        });
+
+        let daftarAkunTidakHadir = daftarAkun;
+        db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).onSnapshot(docs => {
+            docs.forEach(presensi => {
+                const presensiData = presensi.data();
+                if (daftarAkun.includes(presensiData.username)) {
+                    daftarAkunTidakHadir = daftarAkunTidakHadir.filter(e => e !== presensiData.username);
+                }
+            });
+        }, error => {
+            console.log(error)
+        });
+
+        db.collection('users').orderBy("username").onSnapshot(docs => {
+            let html = '';
+            if (row === null) {
+                row = 1;
+            }
+            docs.forEach(account => {
+                let accountData = account.data();
+                if (daftarAkunTidakHadir.includes(accountData.username)) {
+                    html += `
+                    <tr>
+                        <th scope="row">${row}</th>
+                        <td>${accountData.nama}</td>
+                        <td>${accountData.username}</td>
+                        <td>${accountData.nip}</td>
+                        <td class="text-center">
+                            <button class="btn btn-info" onclick="izinkanHadir('${accountData.username}')">Izinkan</button> 
+                        </td>
+                    </tr>
+                    `;
+                    row++;
+                }
+            });
+            tabelBelumHadir.innerHTML += html;
+
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['Hadir', (daftarAkun.length - daftarAkunTidakHadir.length)],
+                    ['Belum Hadir', daftarAkunTidakHadir.length],
+                ]);
+                var options = {
+                    title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length
+                };
+                var chart = new google.visualization.PieChart(document.getElementById('chartLaporanHarian'));
+                chart.draw(data, options);
+            }
+        }, error => {
+            console.log(error)
         });
     }
 };

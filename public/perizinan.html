@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Presensi Puskesmas Kasiman | Hitung Jaspel</title>
+    <title>Presensi Puskesmas Kasiman | Laporan Harian</title>
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="img/selfie-96.png">
     <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
@@ -56,66 +56,25 @@
     <div id="loader" style="display:none;"></div>
 
     <div class="container-fluid mt-3">
-        <div class="container-md mb-3">
-            <div class="row">
-                <div class="col-8">
-                    <div class="bg-white rounded">
-                        <button class="btn btn-link btn-block text-white bg-success" type="button"
-                            data-toggle="collapse" data-target="#collapseHitung" aria-expanded="true"
-                            aria-controls="collapseHitung">
-                            <strong class="h5">Pilih tanggal dan nama</strong>
-                        </button>
-                        <div class="container-fluid">
-                            <div id="collapseHitung" class="collapse pt-3 pb-3">
-                                <form id="hitung-form">
-                                    <label for="hitung-awal">Tanggal Awal : </label>
-                                    <input id="hitung-awal" class="form-control" type="date" required>
-                                    <label for="hitung-akhir" class="mt-2">Tanggal Akhir : </label>
-                                    <input id="hitung-akhir" class="form-control" type="date" required>
-                                    <label for="hitung-nama" class="mt-2">Nama & NIP : </label>
-                                    <select id="hitung-nama" name="hitung-nama" class="form-control"></select>
-                                    <label for="hitung-satuan" class="mt-2">Besaran Jaspel per Hari : </label>
-                                    <input id="hitung-satuan" class="form-control" type="number" required
-                                        placeholder="contoh: 50000">
-                                    <label for="hitung-denda" class="mt-2">Besaran Denda per Hari : </label>
-                                    <input id="hitung-denda" class="form-control" type="number" required
-                                        placeholder="contoh: 50000">
-                                    <label for="hitung-izin" class="mt-2">Jumlah Izin (yang tidak tercatat) : </label>
-                                    <input id="hitung-izin" class="form-control" type="number" required
-                                        placeholder="contoh: 3" value="0">
-                                    <div class="text-right">
-                                        <button class="btn btn-primary mt-3">Pilih</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="text-center">
-                        <button class="btn btn-info mx-auto" id="print_hitung_pdf">Print (PDF)</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid bg-white mt-3 mb-3 pt-1 pb-1 rounded-corner" id="hasil_hitung_jaspel">
+        <div class="container-fluid bg-white mt-3 mb-3 pt-1 pb-1 rounded-corner" id="laporan_harian">
             <hr>
-            <h2 class="text-center">Hasil Hitung Jaspel</h2>
+            <h2 class="text-center">Perizinan</h2>
             <hr>
-            <table class="table table-responsive-lg table-bordered table-stirped">
+            <div id="chartLaporanHarian"></div>
+            <hr>
+            <h4 class="text-center">Pegawai yang Belum Hadir</h4>
+            <hr>
+            <table class="table table-bordered table-stirped">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Tanggal</th>
+                        <th scope="col">No.</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">NIP</th>
-                        <th scope="col">Jumlah Kehadiran</th>
-                        <th scope="col">Jumlah Jaspel</th>
-                        <th scope="col">Jumlah Denda</th>
-                        <th scope="col">Jaspel yang Didapat</th>
+                        <th scope="col">Nim</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
-                <tbody class="hitung-jaspel">
-
+                <tbody class="belumHadirList">
                 </tbody>
             </table>
             <hr>
@@ -131,6 +90,7 @@
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <!-- <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script> -->
 
+    <script type="text/javascript" src="scripts/loader.js"></script>
     <script src="scripts/config.js"></script>
     <script src="scripts/auth.js"></script>
     <script src="scripts/index.js"></script>

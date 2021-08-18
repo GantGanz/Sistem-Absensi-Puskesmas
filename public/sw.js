@@ -16,11 +16,13 @@ const assets = [
     'scripts/html2pdf.min.js',
     'scripts/index.js',
     'scripts/jquery.min.js',
+    'scripts/loader.js',
     'manifest.json',
     'index.html',
     'akun.html',
     'daftar-presensi.html',
     'hitung-jaspel.html',
+    'perizinan.html',
     'daftar-akun.html',
     'login.html',
     'fallback.html'
