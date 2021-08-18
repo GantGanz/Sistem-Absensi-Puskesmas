@@ -85,6 +85,16 @@ const getNextAllPresensi = () => {
                 let se = date.getSeconds();
                 date = dd + '/' + mm + '/' + yyyy;
                 hour = hh + ':' + mi + ':' + se;
+                let tdfoto = '';
+                if (presensiData.foto == 'i') {
+                    tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                } else {
+                    tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                };
                 html += `
                     <tr>
                         <th scope="row">${row}</th>
@@ -93,9 +103,7 @@ const getNextAllPresensi = () => {
                         <td>${presensiData.nama}</td>
                         <td>${presensiData.nip}</td>
                         <td>${hour}</td>
-                        <td><img src="${presensiData.foto}" class="foto-foto-presensi"
-                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
-                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                        ${tdfoto}
                     </tr>
                     `;
                 row++;
@@ -312,6 +320,15 @@ if (localStorage.getItem("Level") == "Admin") {
                         let se = date.getSeconds();
                         date = dd + '/' + mm + '/' + yyyy;
                         hour = hh + ':' + mi + ':' + se;
+                        if (presensiData.foto == 'i') {
+                            tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        } else {
+                            tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        };
                         const tr = `
                             <tr>
                                 <th scope="row">${row}</th>
@@ -320,9 +337,7 @@ if (localStorage.getItem("Level") == "Admin") {
                                 <td>${presensiData.nama}</td>
                                 <td>${presensiData.nip}</td>
                                 <td>${hour}</td>
-                                <td><img src="${presensiData.foto}" class="foto-foto-presensi"
-                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
-                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                                ${tdfoto}
                             </tr>
                             `;
                         html += tr;
@@ -449,6 +464,25 @@ if (localStorage.getItem("Level") == "Admin") {
         });
     }
 };
+
+function izinkanHadir(username) {
+    waktuSekarang = firebase.firestore.Timestamp.now();
+    db.collection('users').where("username", '==', username).onSnapshot(docs => {
+        docs.forEach(account => {
+            const userData = account.data();
+            db.collection('presensi').add({
+                username: userData.username,
+                foto: 'i',
+                nama: userData.nama,
+                nip: userData.nip,
+                waktu: waktuSekarang
+            }).then(() => location.reload());
+        });
+    }, error => {
+        console.log(error)
+    });
+}
+
 
 function numberWithCommas(x) {
     var parts = x.toString().split(".");
@@ -620,14 +654,20 @@ const getNextPresensi = () => {
                 date = dd + '/' + mm + '/' + yyyy;
                 hour = hh + ':' + mi + ':' + se;
                 // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
-
+                if (presensi.foto == 'i') {
+                    tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                    alt="foto presensi" loading="lazy" width="50" height="50"
+                    data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>`
+                } else {
+                    tdfoto = `<td><img src="${presensi.foto}" class="foto-foto-presensi"
+                    alt="foto presensi" loading="lazy" width="50" height="50"
+                    data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>`
+                };
                 html += `
                 <tr>
                     <td>${date}</td>
                     <td>${hour}</td>
-                    <td><img src="${presensi.foto}" class="foto-foto-presensi"
-                        alt="foto presensi" loading="lazy" width="50" height="50"
-                        data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>
+                    ${tdfoto}
                 </tr>`;
                 // row++;
             });

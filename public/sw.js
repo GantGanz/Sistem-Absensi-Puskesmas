@@ -9,6 +9,7 @@ const assets = [
     'img/logo-puskesmas.png',
     'img/selfie-384.png',
     'img/selfie-96.png',
+    'img/izin.png',
     'scripts/app.js',
     'scripts/auth.js',
     'scripts/bootstrap.min.js',
