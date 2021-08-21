@@ -241,7 +241,7 @@ if (localStorage.getItem("Level") == "Admin") {
             docs.forEach(account => {
                 const userData = account.data();
                 const option = `
-                <option value="${userData.nama};${userData.nip}">${userData.nama}; ${userData.nip}</option>
+                <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
                 `;
                 hitungNama.innerHTML += option;
             });
@@ -255,13 +255,13 @@ if (localStorage.getItem("Level") == "Admin") {
             const awal = new Date(hitungForm['hitung-awal'].value + '/ 00:00:00');
             const akhir = new Date(hitungForm['hitung-akhir'].value + '/ 23:59:59');
             const nama = hitungForm['hitung-nama'].value.split(";")[0];
-            const nip = hitungForm['hitung-nama'].value.split(";")[1];
+            const username = hitungForm['hitung-nama'].value.split(";")[1];
             const satuan = hitungForm['hitung-satuan'].value;
             const denda = hitungForm['hitung-denda'].value;
             let jumlahHari = new Date(hitungForm['hitung-akhir'].value) - new Date(hitungForm['hitung-awal'].value);
             jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
             let jumlahHadir = 0;
-            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("nip", "==", nip).orderBy("waktu", "desc").get().then(docs => {
+            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").get().then(docs => {
                 console.log(docs.size);
                 jumlahHadir = docs.size;
                 let jumlahJaspel = jumlahHadir * satuan;
@@ -270,7 +270,7 @@ if (localStorage.getItem("Level") == "Admin") {
                 hitungJaspel.innerHTML = `<tr>
                     <td>${hitungForm['hitung-awal'].value} ~ ${hitungForm['hitung-akhir'].value}</td>
                     <td>${nama}</td>
-                    <td>${nip}</td>
+                    <td>${username}</td>
                     <td>${jumlahHadir} dari ${jumlahHari} hari, dengan ${hitungForm['hitung-izin'].value} izin</td>
                     <td>${jumlahHadir} * ${satuan} = ${jumlahJaspel}</td>
                     <td>${(jumlahHari - jumlahHadir)} - ${hitungForm['hitung-izin'].value} * ${denda} = ${jumlahDenda}</td>
@@ -288,7 +288,7 @@ if (localStorage.getItem("Level") == "Admin") {
             docs.forEach(account => {
                 const userData = account.data();
                 const option = `
-                            <option value="${userData.nama};${userData.nip}">${userData.nama}; ${userData.nip}</option>
+                            <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
                         `;
                 filterNama.innerHTML += option;
             });
@@ -303,10 +303,9 @@ if (localStorage.getItem("Level") == "Admin") {
             const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
             const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
             const nama = filterForm['filter-nama'].value.split(";")[0];
-            const nip = filterForm['filter-nama'].value.split(";")[1];
-            console.log(nama, nip);
+            const username = filterForm['filter-nama'].value.split(";")[1];
             if (nama) {
-                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("nip", "==", nip).orderBy("waktu", "desc").onSnapshot(docs => {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").onSnapshot(docs => {
                     let html = '';
                     let row = 1;
                     docs.forEach(presensi => {
@@ -362,6 +361,15 @@ if (localStorage.getItem("Level") == "Admin") {
                         let se = date.getSeconds();
                         date = dd + '/' + mm + '/' + yyyy;
                         hour = hh + ':' + mi + ':' + se;
+                        if (presensiData.foto == 'i') {
+                            tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        } else {
+                            tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        };
                         const tr = `
                             <tr>
                                 <th scope="row">${row}</th>
@@ -370,9 +378,7 @@ if (localStorage.getItem("Level") == "Admin") {
                                 <td>${presensiData.nama}</td>
                                 <td>${presensiData.nip}</td>
                                 <td>${hour}</td>
-                                <td><img src="${presensiData.foto}" class="foto-foto-presensi"
-                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi" 
-                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>
+                                ${tdfoto}
                             </tr>
                             `;
                         html += tr;

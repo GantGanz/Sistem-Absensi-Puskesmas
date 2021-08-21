@@ -1,0 +1,90 @@
+<!-- tes -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Presensi Puskesmas Kasiman | Statistik</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/selfie-96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="#3CB043">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo-puskesmas.png" width="30" height="30" class="d-inline-block align-top" alt=""
+                loading="lazy">
+            Presensi Puskesmas
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav admin-menu">
+                <li class="nav-item active">
+                    <span class="text-white nav-link name-navbar">Selamat Datang, {Loading Username}</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akun.html">Detail Akun</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button class="btn btn-danger nav-link text-white pl-2 pr-2" type="button" id="logout">
+                        Logout </button>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <div id="loader" style="display:none;"></div>
+
+    <div class="container-fluid mt-3">
+        <div class="container-fluid bg-white mt-3 mb-3 pt-1 pb-1 rounded-corner" id="statistik">
+            <hr>
+            <h2 class="text-center">Statistik</h2>
+            <hr>
+
+            <div id="chartPresensiPerHari"></div>
+
+            <hr>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script> -->
+
+    <script type="text/javascript" src="scripts/loader.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/html2pdf.min.js"></script>
+</body>
+
+</html>
