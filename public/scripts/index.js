@@ -462,13 +462,14 @@ if (localStorage.getItem("Level") == "Admin") {
                     ['Belum Hadir', daftarAkunTidakHadir.length],
                 ]);
                 var options = {
-                    title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length,
-                    'width': 'auto',
-                    'height': 'auto'
+                    title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('chartLaporanHarian'));
                 chart.draw(data, options);
             }
+            $(window).resize(function () {
+                drawChart();
+            });
         }, error => {
             console.log(error)
         });
@@ -570,18 +571,11 @@ if (localStorage.getItem("Level") == "Admin") {
                         ]);
 
                         var options = {
-                            title: 'Jumlah Presensi per Hari',
-                            // width: 800,
-                            // height: 400
-                            'width': 'auto',
-                            'height': 'auto'
+                            title: 'Jumlah Presensi per Hari'
                         };
 
                         var chart = new google.visualization.ColumnChart(document.getElementById('chartPresensiPerHari'));
                         chart.draw(data, options);
-                        if (document.getElementById('chartPresensiPerHari').className != 'hasilChart') {
-                            document.getElementById('chartPresensiPerHari').className += 'hasilChart';
-                        }
                     }
 
                     function drawChart2() {
@@ -594,18 +588,11 @@ if (localStorage.getItem("Level") == "Admin") {
 
                         var options = {
                             title: 'Jumlah Kehadiran',
-                            colors: ['blue', 'silver', 'red'],
-                            // width: 800,
-                            // height: 400
-                            'width': 'auto',
-                            'height': 'auto'
+                            colors: ['blue', 'silver', 'red']
                         };
 
                         var chart = new google.visualization.PieChart(document.getElementById('chartJumlahKehadiran'));
                         chart.draw(data, options);
-                        if (document.getElementById('chartJumlahKehadiran').className != 'hasilChart') {
-                            document.getElementById('chartJumlahKehadiran').className += 'hasilChart';
-                        }
                     }
 
                     function drawChart3() {
@@ -635,17 +622,10 @@ if (localStorage.getItem("Level") == "Admin") {
                                 title: 'Jumlah'
                             },
                             legend: 'none',
-                            // width: 800,
-                            // height: 400
-                            'width': 'auto',
-                            'height': 'auto'
                         };
                         // Draw Chart
                         var chart = new google.visualization.LineChart(document.getElementById('chartWaktuKehadiran'));
                         chart.draw(data, options);
-                        if (document.getElementById('chartWaktuKehadiran').className != 'hasilChart') {
-                            document.getElementById('chartWaktuKehadiran').className += 'hasilChart';
-                        }
                     }
 
                     $(window).resize(function () {
