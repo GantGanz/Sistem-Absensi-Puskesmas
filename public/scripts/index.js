@@ -10,12 +10,14 @@ const filterForm = document.querySelector('#filter-form');
 const hitungForm = document.querySelector('#hitung-form');
 const filterNama = document.querySelector('#filter-nama');
 const hitungNama = document.querySelector('#hitung-nama');
+const statistik = document.querySelector('#statistik');
 const laporanHarian = document.querySelector('#laporan_harian');
 const tabelBelumHadir = document.querySelector('.belumHadirList');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
 const print_pdf = document.getElementById("print_pdf");
 const print_hitung_pdf = document.getElementById("print_hitung_pdf");
+const print_statistik_pdf = document.getElementById("print_statistik_pdf");
 const delete_button = document.getElementById("delete_button");
 const updateForm = document.getElementById('update-form');
 const update_button = document.getElementById("update_button");
@@ -460,13 +462,243 @@ if (localStorage.getItem("Level") == "Admin") {
                     ['Belum Hadir', daftarAkunTidakHadir.length],
                 ]);
                 var options = {
-                    title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length
+                    title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length,
+                    'width': 'auto',
+                    'height': 'auto'
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('chartLaporanHarian'));
                 chart.draw(data, options);
             }
         }, error => {
             console.log(error)
+        });
+    }
+
+    if (statistik) {
+        // Drop down select
+        db.collection('users').orderBy("nama").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                const option = `
+                            <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
+                        `;
+                filterNama.innerHTML += option;
+            });
+        }, error => {
+            console.log(error)
+        });
+        // filter statistik
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+
+            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
+            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
+            const nama = filterForm['filter-nama'].value.split(";")[0];
+            const username = filterForm['filter-nama'].value.split(";")[1];
+            if (nama) {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let minggu = 0;
+                    let senin = 0;
+                    let selasa = 0;
+                    let rabu = 0;
+                    let kamis = 0;
+                    let jumat = 0;
+                    let sabtu = 0;
+
+                    let jumlahHari = new Date(filterForm['filter-awal'].value) - new Date(filterForm['filter-akhir'].value);
+                    jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
+                    let hadir = 0;
+                    let izin = 0;
+                    let absen = 0;
+
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        switch (presensiData.waktu.toDate().getDay()) {
+                            case 0:
+                                minggu += 1;
+                                break;
+                            case 1:
+                                senin += 1;
+                                break;
+                            case 2:
+                                selasa += 1;
+                                break;
+                            case 3:
+                                rabu += 1;
+                                break;
+                            case 4:
+                                kamis += 1;
+                                break;
+                            case 5:
+                                jumat += 1;
+                                break;
+                            case 6:
+                                sabtu += 1;
+                        }
+                        if (presensiData.foto == 'i') {
+                            izin += 1;
+                        } else {
+                            hadir += 1;
+                        }
+                    });
+                    absen = 0 - (jumlahHari - hadir - izin);
+                    console.log(jumlahHari);
+                    console.log(hadir);
+                    console.log(izin);
+                    if (absen < 0) {
+                        absen = 1;
+                    }
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(drawChart);
+                    google.charts.setOnLoadCallback(drawChart2);
+                    google.charts.setOnLoadCallback(drawChart3);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Hari', 'Jumlah', {
+                                role: 'style'
+                            }],
+                            ['Senin', senin, 'red'],
+                            ['Selasa', selasa, 'orange'],
+                            ['rabu', rabu, 'yellow'],
+                            ['kamis', kamis, 'green'],
+                            ['jumat', jumat, 'blue'],
+                            ['sabtu', sabtu, 'indigo'],
+                            ['minggu', minggu, 'violet']
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Presensi per Hari',
+                            // width: 800,
+                            // height: 400
+                            'width': 'auto',
+                            'height': 'auto'
+                        };
+
+                        var chart = new google.visualization.ColumnChart(document.getElementById('chartPresensiPerHari'));
+                        chart.draw(data, options);
+                        if (document.getElementById('chartPresensiPerHari').className != 'hasilChart') {
+                            document.getElementById('chartPresensiPerHari').className += 'hasilChart';
+                        }
+                    }
+
+                    function drawChart2() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Keterangan', 'Jumlah'],
+                            ['Hadir', hadir],
+                            ['Izin', izin],
+                            ['Absen', absen]
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Kehadiran',
+                            colors: ['blue', 'silver', 'red'],
+                            // width: 800,
+                            // height: 400
+                            'width': 'auto',
+                            'height': 'auto'
+                        };
+
+                        var chart = new google.visualization.PieChart(document.getElementById('chartJumlahKehadiran'));
+                        chart.draw(data, options);
+                        if (document.getElementById('chartJumlahKehadiran').className != 'hasilChart') {
+                            document.getElementById('chartJumlahKehadiran').className += 'hasilChart';
+                        }
+                    }
+
+                    function drawChart3() {
+                        // Set Data
+                        var data = google.visualization.arrayToDataTable([
+                            ['Waktu', 'Jumlah'],
+                            ['00:00', 0],
+                            ['02:00', 0],
+                            ['04:00', 0],
+                            ['06:00', 2],
+                            ['08:00', 8],
+                            ['10:00', 10],
+                            ['12:00', 2],
+                            ['14:00', 7],
+                            ['16:00', 2],
+                            ['18:00', 0],
+                            ['20:00', 0],
+                            ['22:00', 0]
+                        ]);
+                        // Set Options
+                        var options = {
+                            title: 'Waktu Presensi',
+                            hAxis: {
+                                title: 'Waktu'
+                            },
+                            vAxis: {
+                                title: 'Jumlah'
+                            },
+                            legend: 'none',
+                            // width: 800,
+                            // height: 400
+                            'width': 'auto',
+                            'height': 'auto'
+                        };
+                        // Draw Chart
+                        var chart = new google.visualization.LineChart(document.getElementById('chartWaktuKehadiran'));
+                        chart.draw(data, options);
+                        if (document.getElementById('chartWaktuKehadiran').className != 'hasilChart') {
+                            document.getElementById('chartWaktuKehadiran').className += 'hasilChart';
+                        }
+                    }
+                }, error => {
+                    console.log(error)
+                });
+            } else {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let html = '';
+                    let row = 1;
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        let date = presensiData.waktu.toDate();
+                        let dd = date.getDate();
+                        let mm = date.getMonth() + 1;
+                        let yyyy = date.getFullYear();
+                        let hh = date.getHours();
+                        let mi = date.getMinutes();
+                        let se = date.getSeconds();
+                        date = dd + '/' + mm + '/' + yyyy;
+                        hour = hh + ':' + mi + ':' + se;
+                        if (presensiData.foto == 'i') {
+                            tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        } else {
+                            tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        };
+                        const tr = `
+                            <tr>
+                                <th scope="row">${row}</th>
+                                <td>${date}</td>
+                                <td>${presensiData.username}</td>
+                                <td>${presensiData.nama}</td>
+                                <td>${presensiData.nip}</td>
+                                <td>${hour}</td>
+                                ${tdfoto}
+                            </tr>
+                            `;
+                        html += tr;
+                        row++;
+                    });
+                    allPresensi.innerHTML = html;
+                }, error => {
+                    console.log(error)
+                });
+            }
+            // $(window).resize(function () {
+            //     drawChart();
+            //     drawChart2();
+            //     drawChart3();
+            // });
         });
     }
 };
@@ -618,6 +850,21 @@ if (print_hitung_pdf) {
         var opt = {
             margin: 0.3,
             filename: 'hasil_hitung_jaspel.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'landscape'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
+}
+if (print_statistik_pdf) {
+    print_statistik_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("statistik");
+        var opt = {
+            margin: 0.3,
+            filename: 'statistik_presensi.pdf',
             jsPDF: {
                 unit: 'in',
                 format: 'letter',

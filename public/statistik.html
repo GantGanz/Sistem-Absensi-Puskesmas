@@ -56,12 +56,50 @@
     <div id="loader" style="display:none;"></div>
 
     <div class="container-fluid mt-3">
+        <div class="container-md mb-3">
+            <div class="row">
+                <div class="col-8">
+                    <div class="bg-white rounded">
+                        <button class="btn btn-link btn-block text-white bg-success" type="button"
+                            data-toggle="collapse" data-target="#collapseTambah" aria-expanded="true"
+                            aria-controls="collapseTambah">
+                            <strong class="h5">Filter tanggal dan nama</strong>
+                        </button>
+                        <div class="container-fluid">
+                            <div id="collapseTambah" class="collapse pt-3 pb-3">
+                                <form id="filter-form">
+                                    <label for="filter-awal">Tanggal Awal : </label>
+                                    <input id="filter-awal" class="form-control" type="date" required>
+                                    <label for="filter-akhir" class="mt-2">Tanggal Akhir : </label>
+                                    <input id="filter-akhir" class="form-control" type="date" required>
+                                    <label for="filter-nama" class="mt-2">Nama & Username : </label>
+                                    <select id="filter-nama" name="filter-nama" class="form-control">
+                                        <option value="">(Semua)</option>
+                                    </select>
+                                    <div class="text-right">
+                                        <button class="btn btn-primary mt-3 btn-filter-sekali">Pilih</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="text-center">
+                        <button class="btn btn-info mx-auto" id="print_statistik_pdf">Print (PDF)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid bg-white mt-3 mb-3 pt-1 pb-1 rounded-corner" id="statistik">
             <hr>
             <h2 class="text-center">Statistik</h2>
             <hr>
 
             <div id="chartPresensiPerHari"></div>
+            <div id="chartJumlahKehadiran"></div>
+            <div id="chartWaktuKehadiran"></div>
 
             <hr>
         </div>
