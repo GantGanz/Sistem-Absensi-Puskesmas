@@ -297,7 +297,6 @@ if (localStorage.getItem("Level") == "Admin") {
             jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
             let jumlahHadir = 0;
             db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").get().then(docs => {
-                console.log(docs.size);
                 jumlahHadir = docs.size;
                 let jumlahJaspel = jumlahHadir * satuan;
                 let jumlahDenda = (jumlahHari - jumlahHadir - hitungForm['hitung-izin'].value) * denda;
@@ -509,6 +508,7 @@ if (localStorage.getItem("Level") == "Admin") {
     }
 
     if (statistik) {
+        let jumlahPegawai = 0;
         // Drop down select
         db.collection('users').orderBy("nama").onSnapshot(docs => {
             docs.forEach(account => {
@@ -517,6 +517,7 @@ if (localStorage.getItem("Level") == "Admin") {
                             <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
                         `;
                 filterNama.innerHTML += option;
+                jumlahPegawai += 1;
             });
         }, error => {
             console.log(error)
@@ -531,9 +532,9 @@ if (localStorage.getItem("Level") == "Admin") {
             const nama = filterForm['filter-nama'].value.split(";")[0];
             const username = filterForm['filter-nama'].value.split(";")[1];
             document.getElementById("tanggalStatistik").innerHTML = 'Tanggal : ' + awal.getDate() + '/' + awal.getMonth() + '/' + awal.getFullYear() + ' ~ ' + akhir.getDate() + '/' + akhir.getMonth() + '/' + akhir.getFullYear();
-            document.getElementById("namaStatistik").innerHTML = 'Nama (Username) : ' + nama + ' (' + username + ')';
 
             if (nama) {
+                document.getElementById("namaStatistik").innerHTML = 'Nama (Username) : ' + nama + ' (' + username + ')';
                 db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").onSnapshot(docs => {
                     let minggu = 0;
                     let senin = 0;
@@ -592,7 +593,6 @@ if (localStorage.getItem("Level") == "Admin") {
                         } else {
                             hadir += 1;
                         }
-                        console.log(jam12);
                         if ((presensiData.waktu.toDate().getHours() >= 0) && (presensiData.waktu.toDate().getHours() < 2)) {
                             jam0 += 1;
                         } else if ((presensiData.waktu.toDate().getHours() >= 2) && (presensiData.waktu.toDate().getHours() < 4)) {
@@ -711,43 +711,177 @@ if (localStorage.getItem("Level") == "Admin") {
                 });
             } else {
                 db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
-                    let html = '';
-                    let row = 1;
+                    document.getElementById("namaStatistik").innerHTML = 'Data seluruh pegawai';
+                    let minggu = 0;
+                    let senin = 0;
+                    let selasa = 0;
+                    let rabu = 0;
+                    let kamis = 0;
+                    let jumat = 0;
+                    let sabtu = 0;
+
+                    let jumlahHari = akhir - awal;
+                    jumlahHari = Math.round(jumlahHari / (1000 * 3600 * 24)) * jumlahPegawai;
+
+                    let hadir = 0;
+                    let izin = 0;
+                    let absen = 0;
+
+                    let jam0 = 0;
+                    let jam2 = 0;
+                    let jam4 = 0;
+                    let jam6 = 0;
+                    let jam8 = 0;
+                    let jam10 = 0;
+                    let jam12 = 0;
+                    let jam14 = 0;
+                    let jam16 = 0;
+                    let jam18 = 0;
+                    let jam20 = 0;
+                    let jam22 = 0;
+
                     docs.forEach(presensi => {
                         const presensiData = presensi.data();
-                        let date = presensiData.waktu.toDate();
-                        let dd = date.getDate();
-                        let mm = date.getMonth() + 1;
-                        let yyyy = date.getFullYear();
-                        let hh = date.getHours();
-                        let mi = date.getMinutes();
-                        let se = date.getSeconds();
-                        date = dd + '/' + mm + '/' + yyyy;
-                        hour = hh + ':' + mi + ':' + se;
-                        if (presensiData.foto == 'i') {
-                            tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
-                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
-                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        switch (presensiData.waktu.toDate().getDay()) {
+                            case 0:
+                                minggu += 1;
+                                break;
+                            case 1:
+                                senin += 1;
+                                break;
+                            case 2:
+                                selasa += 1;
+                                break;
+                            case 3:
+                                rabu += 1;
+                                break;
+                            case 4:
+                                kamis += 1;
+                                break;
+                            case 5:
+                                jumat += 1;
+                                break;
+                            case 6:
+                                sabtu += 1;
+                        }
+                        if (presensiData.foto === 'i') {
+                            izin += 1;
                         } else {
-                            tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
-                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
-                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
-                        };
-                        const tr = `
-                            <tr>
-                                <th scope="row">${row}</th>
-                                <td>${date}</td>
-                                <td>${presensiData.username}</td>
-                                <td>${presensiData.nama}</td>
-                                <td>${presensiData.nip}</td>
-                                <td>${hour}</td>
-                                ${tdfoto}
-                            </tr>
-                            `;
-                        html += tr;
-                        row++;
+                            hadir += 1;
+                        }
+                        if ((presensiData.waktu.toDate().getHours() >= 0) && (presensiData.waktu.toDate().getHours() < 2)) {
+                            jam0 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 2) && (presensiData.waktu.toDate().getHours() < 4)) {
+                            jam2 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 4) && (presensiData.waktu.toDate().getHours() < 6)) {
+                            jam4 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 6) && (presensiData.waktu.toDate().getHours() < 8)) {
+                            jam6 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 8) && (presensiData.waktu.toDate().getHours() < 10)) {
+                            jam8 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 10) && (presensiData.waktu.toDate().getHours() < 12)) {
+                            jam10 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 12) && (presensiData.waktu.toDate().getHours() < 14)) {
+                            jam12 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 14) && (presensiData.waktu.toDate().getHours() < 16)) {
+                            jam14 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 16) && (presensiData.waktu.toDate().getHours() < 18)) {
+                            jam16 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 18) && (presensiData.waktu.toDate().getHours() < 20)) {
+                            jam18 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 20) && (presensiData.waktu.toDate().getHours() < 22)) {
+                            jam20 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 22) && (presensiData.waktu.toDate().getHours() < 0)) {
+                            jam22 += 1;
+                        }
                     });
-                    allPresensi.innerHTML = html;
+                    absen = jumlahHari - hadir - izin;
+
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(drawChart);
+                    google.charts.setOnLoadCallback(drawChart2);
+                    google.charts.setOnLoadCallback(drawChart3);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Hari', 'Jumlah', {
+                                role: 'style'
+                            }],
+                            ['Senin', senin, 'red'],
+                            ['Selasa', selasa, 'orange'],
+                            ['rabu', rabu, 'yellow'],
+                            ['kamis', kamis, 'green'],
+                            ['jumat', jumat, 'blue'],
+                            ['sabtu', sabtu, 'indigo'],
+                            ['minggu', minggu, 'violet']
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Presensi per Hari'
+                        };
+
+                        var chart = new google.visualization.ColumnChart(document.getElementById('chartPresensiPerHari'));
+                        chart.draw(data, options);
+                    }
+
+                    function drawChart2() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Keterangan', 'Jumlah'],
+                            ['Hadir', hadir],
+                            ['Izin', izin],
+                            ['Absen', absen]
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Kehadiran',
+                            colors: ['blue', 'silver', 'red']
+                        };
+
+                        var chart = new google.visualization.PieChart(document.getElementById('chartJumlahKehadiran'));
+                        chart.draw(data, options);
+                    }
+
+                    function drawChart3() {
+                        // Set Data
+                        var data = google.visualization.arrayToDataTable([
+                            ['Waktu', 'Jumlah'],
+                            ['00:00', jam0],
+                            ['02:00', jam2],
+                            ['04:00', jam4],
+                            ['06:00', jam6],
+                            ['08:00', jam8],
+                            ['10:00', jam10],
+                            ['12:00', jam12],
+                            ['14:00', jam14],
+                            ['16:00', jam16],
+                            ['18:00', jam18],
+                            ['20:00', jam20],
+                            ['22:00', jam22]
+                        ]);
+                        // Set Options
+                        var options = {
+                            title: 'Waktu Presensi',
+                            hAxis: {
+                                title: 'Waktu'
+                            },
+                            vAxis: {
+                                title: 'Jumlah'
+                            },
+                            legend: 'none',
+                        };
+                        // Draw Chart
+                        var chart = new google.visualization.LineChart(document.getElementById('chartWaktuKehadiran'));
+                        chart.draw(data, options);
+                    }
+
+                    $(window).resize(function () {
+                        drawChart();
+                        drawChart2();
+                        drawChart3();
+                    });
+
                 }, error => {
                     console.log(error)
                 });
