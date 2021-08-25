@@ -142,6 +142,9 @@ if (localStorage.getItem("Level") == "Admin") {
                 <li class="nav-item">
                     <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
             `;
         } else if (allPresensi) {
             adminMenu.innerHTML += `
@@ -156,6 +159,9 @@ if (localStorage.getItem("Level") == "Admin") {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
                 </li>
             `;
         } else if (laporanHarian) {
@@ -172,6 +178,9 @@ if (localStorage.getItem("Level") == "Admin") {
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
             `;
         } else if (hitungJaspel) {
             adminMenu.innerHTML += `
@@ -187,6 +196,27 @@ if (localStorage.getItem("Level") == "Admin") {
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        } else if (statistik) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="statistik.html">Statistik</a>
+                </li>
             `;
         } else {
             adminMenu.innerHTML += `
@@ -201,6 +231,9 @@ if (localStorage.getItem("Level") == "Admin") {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
                 </li>
             `;
         }
