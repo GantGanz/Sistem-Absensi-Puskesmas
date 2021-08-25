@@ -506,8 +506,9 @@ if (localStorage.getItem("Level") == "Admin") {
                     let jumat = 0;
                     let sabtu = 0;
 
-                    let jumlahHari = new Date(filterForm['filter-awal'].value) - new Date(filterForm['filter-akhir'].value);
-                    jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
+                    let jumlahHari = akhir - awal;
+                    jumlahHari = Math.round(jumlahHari / (1000 * 3600 * 24));
+
                     let hadir = 0;
                     let izin = 0;
                     let absen = 0;
@@ -536,19 +537,17 @@ if (localStorage.getItem("Level") == "Admin") {
                             case 6:
                                 sabtu += 1;
                         }
-                        if (presensiData.foto == 'i') {
+                        if (presensiData.foto === 'i') {
                             izin += 1;
                         } else {
                             hadir += 1;
                         }
                     });
-                    absen = 0 - (jumlahHari - hadir - izin);
+                    absen = jumlahHari - hadir - izin;
                     console.log(jumlahHari);
                     console.log(hadir);
                     console.log(izin);
-                    if (absen < 0) {
-                        absen = 1;
-                    }
+
                     google.charts.load('current', {
                         'packages': ['corechart']
                     });
@@ -648,6 +647,13 @@ if (localStorage.getItem("Level") == "Admin") {
                             document.getElementById('chartWaktuKehadiran').className += 'hasilChart';
                         }
                     }
+
+                    $(window).resize(function () {
+                        drawChart();
+                        drawChart2();
+                        drawChart3();
+                    });
+
                 }, error => {
                     console.log(error)
                 });
@@ -694,11 +700,6 @@ if (localStorage.getItem("Level") == "Admin") {
                     console.log(error)
                 });
             }
-            // $(window).resize(function () {
-            //     drawChart();
-            //     drawChart2();
-            //     drawChart3();
-            // });
         });
     }
 };
