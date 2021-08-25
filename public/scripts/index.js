@@ -530,6 +530,9 @@ if (localStorage.getItem("Level") == "Admin") {
             const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
             const nama = filterForm['filter-nama'].value.split(";")[0];
             const username = filterForm['filter-nama'].value.split(";")[1];
+            document.getElementById("tanggalStatistik").innerHTML = 'Tanggal : ' + awal.getDate() + '/' + awal.getMonth() + '/' + awal.getFullYear() + ' ~ ' + akhir.getDate() + '/' + akhir.getMonth() + '/' + akhir.getFullYear();
+            document.getElementById("namaStatistik").innerHTML = 'Nama (Username) : ' + nama + ' (' + username + ')';
+
             if (nama) {
                 db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").onSnapshot(docs => {
                     let minggu = 0;
@@ -546,6 +549,19 @@ if (localStorage.getItem("Level") == "Admin") {
                     let hadir = 0;
                     let izin = 0;
                     let absen = 0;
+
+                    let jam0 = 0;
+                    let jam2 = 0;
+                    let jam4 = 0;
+                    let jam6 = 0;
+                    let jam8 = 0;
+                    let jam10 = 0;
+                    let jam12 = 0;
+                    let jam14 = 0;
+                    let jam16 = 0;
+                    let jam18 = 0;
+                    let jam20 = 0;
+                    let jam22 = 0;
 
                     docs.forEach(presensi => {
                         const presensiData = presensi.data();
@@ -576,11 +592,34 @@ if (localStorage.getItem("Level") == "Admin") {
                         } else {
                             hadir += 1;
                         }
+                        console.log(jam12);
+                        if ((presensiData.waktu.toDate().getHours() >= 0) && (presensiData.waktu.toDate().getHours() < 2)) {
+                            jam0 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 2) && (presensiData.waktu.toDate().getHours() < 4)) {
+                            jam2 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 4) && (presensiData.waktu.toDate().getHours() < 6)) {
+                            jam4 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 6) && (presensiData.waktu.toDate().getHours() < 8)) {
+                            jam6 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 8) && (presensiData.waktu.toDate().getHours() < 10)) {
+                            jam8 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 10) && (presensiData.waktu.toDate().getHours() < 12)) {
+                            jam10 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 12) && (presensiData.waktu.toDate().getHours() < 14)) {
+                            jam12 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 14) && (presensiData.waktu.toDate().getHours() < 16)) {
+                            jam14 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 16) && (presensiData.waktu.toDate().getHours() < 18)) {
+                            jam16 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 18) && (presensiData.waktu.toDate().getHours() < 20)) {
+                            jam18 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 20) && (presensiData.waktu.toDate().getHours() < 22)) {
+                            jam20 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 22) && (presensiData.waktu.toDate().getHours() < 0)) {
+                            jam22 += 1;
+                        }
                     });
                     absen = jumlahHari - hadir - izin;
-                    console.log(jumlahHari);
-                    console.log(hadir);
-                    console.log(izin);
 
                     google.charts.load('current', {
                         'packages': ['corechart']
@@ -632,18 +671,18 @@ if (localStorage.getItem("Level") == "Admin") {
                         // Set Data
                         var data = google.visualization.arrayToDataTable([
                             ['Waktu', 'Jumlah'],
-                            ['00:00', 0],
-                            ['02:00', 0],
-                            ['04:00', 0],
-                            ['06:00', 2],
-                            ['08:00', 8],
-                            ['10:00', 10],
-                            ['12:00', 2],
-                            ['14:00', 7],
-                            ['16:00', 2],
-                            ['18:00', 0],
-                            ['20:00', 0],
-                            ['22:00', 0]
+                            ['00:00', jam0],
+                            ['02:00', jam2],
+                            ['04:00', jam4],
+                            ['06:00', jam6],
+                            ['08:00', jam8],
+                            ['10:00', jam10],
+                            ['12:00', jam12],
+                            ['14:00', jam14],
+                            ['16:00', jam16],
+                            ['18:00', jam18],
+                            ['20:00', jam20],
+                            ['22:00', jam22]
                         ]);
                         // Set Options
                         var options = {
@@ -882,7 +921,7 @@ if (print_statistik_pdf) {
             jsPDF: {
                 unit: 'in',
                 format: 'letter',
-                orientation: 'landscape'
+                orientation: 'portrait'
             }
         };
         html2pdf().set(opt).from(invoice).save();
