@@ -711,7 +711,7 @@ if (localStorage.getItem("Level") == "Admin") {
                 });
             } else {
                 db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
-                    document.getElementById("namaStatistik").innerHTML = 'Data seluruh pegawai';
+                    document.getElementById("namaStatistik").innerHTML = 'Data seluruh pegawai (' + jumlahPegawai + ' orang )';
                     let minggu = 0;
                     let senin = 0;
                     let selasa = 0;
