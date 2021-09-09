@@ -11,7 +11,7 @@ const hitungForm = document.querySelector('#hitung-form');
 const filterNama = document.querySelector('#filter-nama');
 const hitungNama = document.querySelector('#hitung-nama');
 const statistik = document.querySelector('#statistik');
-const laporanHarian = document.querySelector('#laporan_harian');
+const perizinan = document.querySelector('#perizinan');
 const tabelBelumHadir = document.querySelector('.belumHadirList');
 // const presensi_loader = document.querySelector('.presensi_loader');
 // const all_presensi_loader = document.querySelector('.all_presensi_loader');
@@ -164,7 +164,7 @@ if (localStorage.getItem("Level") == "Admin") {
                     <a class="nav-link text-warning" href="statistik.html">Statistik</a>
                 </li>
             `;
-        } else if (laporanHarian) {
+        } else if (perizinan) {
             adminMenu.innerHTML += `
                 <li class="nav-item">
                     <a class="nav-link active" href="perizinan.html">Perizinan</a>
@@ -426,7 +426,7 @@ if (localStorage.getItem("Level") == "Admin") {
         });
     }
 
-    if (laporanHarian) {
+    if (perizinan) {
         waktuSekarang = firebase.firestore.Timestamp.now();
         let date = waktuSekarang.toDate();
         let dd = date.getDate();
@@ -496,7 +496,7 @@ if (localStorage.getItem("Level") == "Admin") {
                 var options = {
                     title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length
                 };
-                var chart = new google.visualization.PieChart(document.getElementById('chartLaporanHarian'));
+                var chart = new google.visualization.PieChart(document.getElementById('chartPerizinan'));
                 chart.draw(data, options);
             }
             $(window).resize(function () {
