@@ -490,7 +490,7 @@ if (localStorage.getItem("Level") == "Admin") {
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
                     ['Task', 'Hours per Day'],
-                    ['Hadir', (daftarAkun.length - daftarAkunTidakHadir.length)],
+                    ['Hadir / Izin', (daftarAkun.length - daftarAkunTidakHadir.length)],
                     ['Belum Hadir', daftarAkunTidakHadir.length],
                 ]);
                 var options = {
@@ -891,6 +891,8 @@ if (localStorage.getItem("Level") == "Admin") {
 };
 
 function izinkanHadir(username) {
+    document.getElementById("loader").style.display = "block";
+    document.getElementById("bg-loader").style.display = "block";
     waktuSekarang = firebase.firestore.Timestamp.now();
     db.collection('users').where("username", '==', username).onSnapshot(docs => {
         docs.forEach(account => {
