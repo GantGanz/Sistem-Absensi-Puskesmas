@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v28';
-const dynamicCacheName = 'site-dynamic-v28';
+const staticCacheName = 'site-static-v29';
+const dynamicCacheName = 'site-dynamic-v29';
 const assets = [
     '/',
     'css/bootstrap.min.css',
@@ -8,6 +8,7 @@ const assets = [
     'img/logo-puskesmas-ori.png',
     'img/logo-puskesmas.png',
     'img/selfie-384.png',
+    'img/selfie-144.png',
     'img/selfie-96.png',
     'img/izin.png',
     'scripts/app.js',
@@ -19,11 +20,13 @@ const assets = [
     'scripts/jquery.min.js',
     'scripts/loader.js',
     'manifest.json',
+    'favicon.ico',
     'index.html',
     'akun.html',
     'daftar-presensi.html',
     'hitung-jaspel.html',
     'perizinan.html',
+    'statistik.html',
     'daftar-akun.html',
     'login.html',
     'fallback.html'
