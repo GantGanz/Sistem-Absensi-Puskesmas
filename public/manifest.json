@@ -1,7 +1,7 @@
 {
     "name": "Presensi Puskesmas Kasiman",
     "short_name": "Presensi Puskesmas Kasiman",
-    "start_url": "index.html",
+    "start_url": "https://presensi-puskesmas-kasiman.web.app/",
     "display": "standalone",
     "background_color": "#AEF359",
     "theme_color": "#3CB043",
