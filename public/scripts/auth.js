@@ -176,7 +176,7 @@ if (logout) {
         localStorage.removeItem("NIP");
         localStorage.removeItem("Password");
         localStorage.removeItem("Level");
-        window.location.href = "login.html";
+        window.location.replace("login.html");
     })
 }
 
@@ -184,7 +184,7 @@ if (logout) {
 if (loginForm) {
     db.collection("users").where("username", "==", localStorage.getItem("Username")).where("password", "==", localStorage.getItem("Password")).onSnapshot((querySnapshot) => {
         if (querySnapshot.size > 0) {
-            window.location.href = "index.html";
+            window.location.replace("index.html");
         }
     })
     loginForm.addEventListener('submit', (e) => {
@@ -201,7 +201,7 @@ if (loginForm) {
                 localStorage.setItem("NIP", doc.docs[0].data().nip);
                 localStorage.setItem("Password", doc.docs[0].data().password);
                 localStorage.setItem("Level", doc.docs[0].data().level);
-                window.location.href = "index.html";
+                window.location.replace("index.html");
             } else {
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("bg-loader").style.display = "none";
@@ -223,7 +223,7 @@ if (loginForm) {
         localStorage.removeItem("NIP");
         localStorage.removeItem("Password");
         localStorage.removeItem("Level");
-        window.location.href = "login.html";
+        window.location.replace("login.html");
     } else {
         db.collection("users").where("username", "==", localStorage.getItem("Username")).where("password", "==", localStorage.getItem("Password")).onSnapshot((querySnapshot) => {
             if (querySnapshot.size < 1) {
@@ -232,7 +232,7 @@ if (loginForm) {
                 localStorage.removeItem("NIP");
                 localStorage.removeItem("Password");
                 localStorage.removeItem("Level");
-                window.location.href = "login.html";
+                window.location.replace("login.html");
             }
         })
     }

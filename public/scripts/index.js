@@ -58,7 +58,7 @@ if (localStorage.getItem("Username")) {
 
 // Mencegah anggota masuk ke fitur admin
 if (localStorage.getItem("Level") == "Anggota" && allAccounts) {
-    window.location.href = "index.html";
+    window.location.replace("index.html");
 }
 
 // Fitur Khusus Admin
