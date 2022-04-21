@@ -1,1 +1,1157 @@
-const _0x4557ed=_0x50ba;(function(_0x2ee7f8,_0x4ab6a2){const _0x5fcbe4=_0x50ba,_0x2e5830=_0x2ee7f8();while(!![]){try{const _0x1f3a22=-parseInt(_0x5fcbe4(0x1ce))/0x1+-parseInt(_0x5fcbe4(0x1fa))/0x2+parseInt(_0x5fcbe4(0x1e1))/0x3+parseInt(_0x5fcbe4(0x17d))/0x4*(parseInt(_0x5fcbe4(0x224))/0x5)+parseInt(_0x5fcbe4(0x20c))/0x6*(-parseInt(_0x5fcbe4(0x212))/0x7)+-parseInt(_0x5fcbe4(0x1b9))/0x8+parseInt(_0x5fcbe4(0x193))/0x9;if(_0x1f3a22===_0x4ab6a2)break;else _0x2e5830['push'](_0x2e5830['shift']());}catch(_0x23f7c1){_0x2e5830['push'](_0x2e5830['shift']());}}}(_0x9c18,0x3adb8));const presensiList=document['querySelector'](_0x4557ed(0x1ab)),accountDetails=document['querySelector']('.account-details'),allAccounts=document[_0x4557ed(0x21a)](_0x4557ed(0x1ca)),nameNavbar=document[_0x4557ed(0x21a)]('.name-navbar'),accountIsAdmin=document[_0x4557ed(0x21a)](_0x4557ed(0x1d5)),adminMenu=document[_0x4557ed(0x21a)](_0x4557ed(0x230)),allPresensi=document[_0x4557ed(0x21a)](_0x4557ed(0x216)),hitungJaspel=document['querySelector'](_0x4557ed(0x1be)),filterForm=document[_0x4557ed(0x21a)](_0x4557ed(0x18b)),hitungForm=document[_0x4557ed(0x21a)](_0x4557ed(0x252)),filterNama=document['querySelector'](_0x4557ed(0x1ed)),hitungNama=document[_0x4557ed(0x21a)]('#hitung-nama'),statistik=document['querySelector'](_0x4557ed(0x1d3)),perizinan=document[_0x4557ed(0x21a)](_0x4557ed(0x1b2)),tabelBelumHadir=document[_0x4557ed(0x21a)](_0x4557ed(0x1a1)),print_pdf=document['getElementById']('print_pdf'),print_hitung_pdf=document[_0x4557ed(0x1af)](_0x4557ed(0x243)),print_statistik_pdf=document['getElementById'](_0x4557ed(0x1ef)),delete_button=document[_0x4557ed(0x1af)](_0x4557ed(0x176)),updateForm=document[_0x4557ed(0x1af)](_0x4557ed(0x1ae)),update_button=document[_0x4557ed(0x1af)](_0x4557ed(0x24d));let id_update=null,username_update=null;if(localStorage[_0x4557ed(0x25c)](_0x4557ed(0x258))){nameNavbar&&(nameNavbar[_0x4557ed(0x1bb)]=_0x4557ed(0x19f)+localStorage[_0x4557ed(0x25c)](_0x4557ed(0x258))+'</span>');;if(accountDetails){accountDetails[_0x4557ed(0x1bb)]=_0x4557ed(0x20d)+localStorage[_0x4557ed(0x25c)]('Nama')+'</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h4\x20class=\x22text-center\x22>NIP:\x20'+localStorage[_0x4557ed(0x25c)]('NIP')+_0x4557ed(0x1f5)+localStorage['getItem'](_0x4557ed(0x258))+_0x4557ed(0x201)+localStorage[_0x4557ed(0x25c)](_0x4557ed(0x200))+'</p>';if(localStorage[_0x4557ed(0x25c)](_0x4557ed(0x200))==_0x4557ed(0x255))accountIsAdmin[_0x4557ed(0x1bb)]=_0x4557ed(0x248);else localStorage[_0x4557ed(0x25c)]('Level')==_0x4557ed(0x21f)&&(accountIsAdmin['innerHTML']=_0x4557ed(0x180));};function censor(){const _0x11583a=_0x4557ed;var _0x23cfa3=document[_0x11583a(0x1af)](_0x11583a(0x172));_0x23cfa3[_0x11583a(0x1bb)]==_0x11583a(0x1c2)?_0x23cfa3[_0x11583a(0x1bb)]=_0x11583a(0x1a5)+localStorage['getItem'](_0x11583a(0x226))+_0x11583a(0x23a):_0x23cfa3[_0x11583a(0x1bb)]=_0x11583a(0x1c2);}}localStorage['getItem'](_0x4557ed(0x200))==_0x4557ed(0x21f)&&allAccounts&&window[_0x4557ed(0x1a9)][_0x4557ed(0x1aa)]('index.html');function _0x50ba(_0x2452d7,_0x71e1d3){const _0x9c18ad=_0x9c18();return _0x50ba=function(_0x50ba2b,_0x2de822){_0x50ba2b=_0x50ba2b-0x15c;let _0x228515=_0x9c18ad[_0x50ba2b];return _0x228515;},_0x50ba(_0x2452d7,_0x71e1d3);}let latestDocAll=firebase[_0x4557ed(0x21c)][_0x4557ed(0x1e4)][_0x4557ed(0x244)](),row=null;function _0x9c18(){const _0x33038f=['removeEventListener','getDay','violet','resize','green','Hadir\x20/\x20Izin','\x27)\x22>Delete</button>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','filter-nama','#filter-nama','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','print_statistik_pdf','loader','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','display','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>','td,\x20th','</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22text-center\x22>Username:\x20','Error\x20getting\x20document:','setOnLoadCallback','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>','indigo','945786UhiGUu','hasil_hitung_jaspel','/\x2023:59:59','then','text/csv','length','Level','</h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h5\x20class=\x22text-center\x22\x20id=\x22censored\x22>Password:\x20<button\x20onclick=\x22censor()\x22>tampilkan</button></h5>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22text-center\x22>Level:\x20','error','Jumlah\x20Kehadiran','hitung-akhir','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22perizinan.html\x22>Perizinan</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22hitung-jaspel.html\x22>Hitung\x20Jaspel</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22statistik.html\x22>Statistik</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','submit','add','blue','12:00','charts','waktu','30wnFRhg','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22text-center\x20pb-3\x22\x20id=\x22foto-user\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20class=\x22img-thumbnail\x20rounded-circle\x22\x20src=\x22img/selfie-384.png\x22\x20alt=\x22Foto\x20User\x22\x20loading=\x22lazy\x22\x20width=\x22250\x22\x20height=\x22250\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20class=\x22text-center\x22>','nip','scrollHeight','bg-loader','DOMContentLoaded','282947fNgPrC','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22text-center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-info\x22\x20data-toggle=\x22modal\x22\x20data-target=\x22#updateModal\x22\x20onclick=\x22updateAccount(\x27','</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x20*\x20','.all-presensi','PieChart','04:00','data','querySelector','log','firestore','document','daftar-presensi.pdf','Anggota','Task','chartPerizinan','Waktu\x20Presensi','reload','5rnGvqv','filter-awal','Password','ColumnChart','appendChild','chartJumlahKehadiran','#updateModal','startAfter','from','doc','querySelectorAll','Hadir','.admin-menu','catch','06:00','presensi','landscape','load','Belum\x20Hadir','jumat','modal','orderBy','\x20<button\x20onclick=\x22censor()\x22>tutup</button>','16:00','modal-all-foto-presensi','hitung-nama','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22','getDate','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22perizinan.html\x22>Perizinan</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22hitung-jaspel.html\x22>Hitung\x20Jaspel</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22statistik.html\x22>Statistik</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','getHours','value','print_hitung_pdf','now','className','current','tanggalStatistik','<p\x20class=\x22text-center\x22>Untuk\x20mengedit\x20data-data,\x20masuk\x20ke\x20halaman\x20\x27Daftar\x20Akun\x27\x20dan\x20tekan\x20edit</p>','Izin','round','</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','set','update_button','Data\x20seluruh\x20pegawai\x20(','chartPresensiPerHari','<td><img\x20src=\x22img/izin.png\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>','Jumlah\x20Presensi\x20per\x20Hari','#hitung-form','where','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Rp','Admin','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22text-center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-info\x22\x20onclick=\x22izinkanHadir(\x27','hitung-denda','Username','visualization','update-password','draw','getItem','forEach','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22perizinan.html\x22>Perizinan</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22hitung-jaspel.html\x22>Hitung\x20Jaspel</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22statistik.html\x22>Statistik</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','letter','password','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22perizinan.html\x22>Perizinan</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22hitung-jaspel.html\x22>Hitung\x20Jaspel</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22statistik.html\x22>Statistik</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x20orang\x20)','join','Hari','hide','</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','14:00','table\x20tr','\x20~\x20','<td><img\x20src=\x22img/izin.png\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>','arrayToDataTable','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>','update-nip','filter-akhir','empty','save','\x20hari</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','click','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','docs','foto','includes','18:00','censored','desc','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22','hasil_hitung_jaspel.pdf','delete_button','LineChart','yellow','src','scrollY','Selasa','none','1758788eHYhre','nama','getMonth','<p\x20class=\x22text-center\x22>Hubungi\x20admin\x20jika\x20ada\x20kesalahan\x20data</p>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22perizinan.html\x22>Perizinan</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22hitung-jaspel.html\x22>Hitung\x20Jaspel</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22statistik.html\x22>Statistik</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','getFullYear','rabu','tabel_presensi','push','minggu','update-username','Error\x20editing\x20document:\x20','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','limit','#filter-form','username','split','02:00','Absen','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','collection','\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20alt=\x22foto\x20presensi\x22\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-presensi\x22\x20onclick=\x22fotoPresensiClick(this.src)\x22></td>','5253318lOGDaY','\x27)\x22>Edit</button>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20class=\x22text-center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22delete_button\x22\x20class=\x22btn\x20btn-danger\x22\x20onclick=\x22deleteAccount(\x27','/\x2000:00:00','</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','scroll','corechart','update','Nama\x20(Username)\x20:\x20','update-nama','addEventListener','documentElement','Hours\x20per\x20Day','Selamat\x20Datang,\x20<span\x20class=\x22text-success\x22>','users','.belumHadirList','alert\x20alert-success\x20mx-auto','style','preventDefault','Password:\x20','chartWaktuKehadiran','10:00','\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>','location','replace','.presensiList','hitung-awal','\x20=\x20','update-form','getElementById','innerText','</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','#perizinan','Tanggal\x20:\x20','hitung-satuan','08:00','Senin','size','getSeconds','1353704RqiaMI','URL','innerHTML','22:00','update-level','.hitung-jaspel','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','Apakah\x20anda\x20yakin\x20akan\x20menghapus\x20user?','<td><img\x20src=\x22','Password:\x20<button\x20onclick=\x22censor()\x22>tampilkan</button>','#pesan-signup','href','Waktu','onSnapshot','kamis','alert-signup','00:00','.all-accounts','orange','silver','red','47962WwOBFa','innerHeight','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22perizinan.html\x22>Perizinan</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22daftar-presensi.html\x22>Daftar\x20Presensi</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22hitung-jaspel.html\x22>Hitung\x20Jaspel</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20active\x22\x20href=\x22daftar-akun.html\x22>Daftar\x20Akun</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20class=\x22nav-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20class=\x22nav-link\x20text-warning\x22\x20href=\x22statistik.html\x22>Statistik</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','block','#statistik','get','.account-isAdmin','20:00','ceil','getMinutes','level','Keterangan','sabtu','\x20dari\x20','Jumlah','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','filter','namaStatistik','329562sFglag','toDate','download','Timestamp'];_0x9c18=function(){return _0x33038f;};return _0x9c18();}const getNextAllPresensi=()=>{const _0x1fc21f=_0x4557ed;if(allPresensi&&localStorage[_0x1fc21f(0x25c)](_0x1fc21f(0x200))==_0x1fc21f(0x255)){document['getElementById'](_0x1fc21f(0x1f0))[_0x1fc21f(0x1a3)]['display']=_0x1fc21f(0x1d2);const _0x5b5b72=db['collection'](_0x1fc21f(0x233))[_0x1fc21f(0x239)](_0x1fc21f(0x20b),_0x1fc21f(0x173))[_0x1fc21f(0x22b)](latestDocAll)['limit'](0x14);_0x5b5b72['onSnapshot'](_0x46f5ef=>{const _0x400cb6=_0x1fc21f;let _0x2dc9b4='';row===null&&(row=0x1),_0x46f5ef[_0x400cb6(0x25d)](_0x365bea=>{const _0x50bb8e=_0x400cb6,_0x17eb8e=_0x365bea[_0x50bb8e(0x219)]();let _0x132578=_0x17eb8e['waktu']['toDate'](),_0x35d4dd=_0x132578['getDate'](),_0x24897b=_0x132578['getMonth']()+0x1,_0x528b9e=_0x132578[_0x50bb8e(0x182)](),_0x175047=_0x132578['getHours'](),_0x5e1c55=_0x132578['getMinutes'](),_0x4c269f=_0x132578[_0x50bb8e(0x1b8)]();_0x132578=_0x35d4dd+'/'+_0x24897b+'/'+_0x528b9e,hour=_0x175047+':'+_0x5e1c55+':'+_0x4c269f;let _0x2c4563='';_0x17eb8e['foto']=='i'?_0x2c4563=_0x50bb8e(0x250):_0x2c4563='<td><img\x20src=\x22'+_0x17eb8e['foto']+'\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>';;_0x2dc9b4+=_0x50bb8e(0x1f8)+row+_0x50bb8e(0x160)+_0x132578+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x17eb8e[_0x50bb8e(0x18c)]+_0x50bb8e(0x190)+_0x17eb8e[_0x50bb8e(0x17e)]+_0x50bb8e(0x190)+_0x17eb8e[_0x50bb8e(0x20e)]+_0x50bb8e(0x190)+hour+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x2c4563+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',row++;}),allPresensi[_0x400cb6(0x1bb)]+=_0x2dc9b4,document['getElementById'](_0x400cb6(0x1f0))[_0x400cb6(0x1a3)]['display']=_0x400cb6(0x17c),latestDocAll=_0x46f5ef[_0x400cb6(0x16e)][_0x46f5ef[_0x400cb6(0x16e)]['length']-0x1],_0x46f5ef[_0x400cb6(0x169)]&&window[_0x400cb6(0x1e5)](_0x400cb6(0x197),handleScroll);},_0x47de13=>{const _0x2802b4=_0x1fc21f;console[_0x2802b4(0x21b)](_0x47de13);});}};if(localStorage[_0x4557ed(0x25c)](_0x4557ed(0x200))==_0x4557ed(0x255)){if(adminMenu){if(allAccounts)adminMenu[_0x4557ed(0x1bb)]+=_0x4557ed(0x1d1);else{if(allPresensi)adminMenu['innerHTML']+=_0x4557ed(0x262);else{if(perizinan)adminMenu[_0x4557ed(0x1bb)]+=_0x4557ed(0x240);else{if(hitungJaspel)adminMenu[_0x4557ed(0x1bb)]+=_0x4557ed(0x25e);else statistik?adminMenu[_0x4557ed(0x1bb)]+=_0x4557ed(0x181):adminMenu[_0x4557ed(0x1bb)]+=_0x4557ed(0x205);}}}}allAccounts&&db['collection'](_0x4557ed(0x1a0))[_0x4557ed(0x239)](_0x4557ed(0x18c))[_0x4557ed(0x1c6)](_0x32c437=>{const _0x2e63f1=_0x4557ed;let _0x47fb46='',_0x424cbf=0x1;_0x32c437['forEach'](_0x252773=>{const _0x83991=_0x50ba,_0x55d192=_0x252773[_0x83991(0x219)](),_0x5409ad=_0x83991(0x1f3)+_0x424cbf+_0x83991(0x1b1)+_0x55d192[_0x83991(0x18c)]+_0x83991(0x189)+_0x55d192[_0x83991(0x17e)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x55d192[_0x83991(0x20e)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x55d192['password']+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x55d192['level']+_0x83991(0x213)+_0x252773['id']+_0x83991(0x194)+_0x252773['id']+_0x83991(0x1eb);_0x47fb46+=_0x5409ad,_0x424cbf++;}),allAccounts[_0x2e63f1(0x1bb)]=_0x47fb46;},_0x23ad2b=>{const _0x424b1e=_0x4557ed;console[_0x424b1e(0x21b)](_0x23ad2b);});hitungJaspel&&(db[_0x4557ed(0x191)]('users')['orderBy'](_0x4557ed(0x17e))['onSnapshot'](_0x16390b=>{const _0x5d455a=_0x4557ed;_0x16390b[_0x5d455a(0x25d)](_0x311aea=>{const _0x368416=_0x5d455a,_0x218a3b=_0x311aea[_0x368416(0x219)](),_0x59cd3b=_0x368416(0x23e)+_0x218a3b[_0x368416(0x17e)]+';'+_0x218a3b[_0x368416(0x18c)]+'\x22>'+_0x218a3b[_0x368416(0x17e)]+';\x20'+_0x218a3b[_0x368416(0x18c)]+_0x368416(0x24b);hitungNama['innerHTML']+=_0x59cd3b;});},_0x2ac7a9=>{const _0x48c099=_0x4557ed;console[_0x48c099(0x21b)](_0x2ac7a9);}),hitungForm['addEventListener'](_0x4557ed(0x206),_0x34c8d1=>{const _0x24a504=_0x4557ed;_0x34c8d1[_0x24a504(0x1a4)](),window[_0x24a504(0x1e5)](_0x24a504(0x197),handleScroll);const _0x43ed71=new Date(hitungForm[_0x24a504(0x1ac)][_0x24a504(0x242)]+_0x24a504(0x195)),_0x42d9ad=new Date(hitungForm['hitung-akhir']['value']+_0x24a504(0x1fc)),_0x52c6c5=hitungForm[_0x24a504(0x23d)][_0x24a504(0x242)][_0x24a504(0x18d)](';')[0x0],_0x272796=hitungForm[_0x24a504(0x23d)][_0x24a504(0x242)][_0x24a504(0x18d)](';')[0x1],_0x16cdc5=hitungForm[_0x24a504(0x1b4)]['value'],_0x4f0310=hitungForm[_0x24a504(0x257)][_0x24a504(0x242)];let _0x3bbdee=new Date(hitungForm[_0x24a504(0x204)]['value'])-new Date(hitungForm[_0x24a504(0x1ac)][_0x24a504(0x242)]);_0x3bbdee=_0x3bbdee/(0x3e8*0xe10*0x18)+0x1;let _0x55ea6b=0x0;db[_0x24a504(0x191)](_0x24a504(0x233))[_0x24a504(0x253)](_0x24a504(0x20b),'>=',_0x43ed71)[_0x24a504(0x253)](_0x24a504(0x20b),'<=',_0x42d9ad)[_0x24a504(0x253)](_0x24a504(0x17e),'==',_0x52c6c5)[_0x24a504(0x253)](_0x24a504(0x18c),'==',_0x272796)[_0x24a504(0x239)](_0x24a504(0x20b),_0x24a504(0x173))['get']()[_0x24a504(0x1fd)](_0x120e62=>{const _0x2588cc=_0x24a504;_0x55ea6b=_0x120e62['size'];let _0x35bae1=_0x55ea6b*_0x16cdc5,_0x432381=(_0x3bbdee-_0x55ea6b)*_0x4f0310,_0x130304=numberWithCommas(_0x35bae1-_0x432381);hitungJaspel['innerHTML']='<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+hitungForm[_0x2588cc(0x1ac)][_0x2588cc(0x242)]+_0x2588cc(0x163)+hitungForm[_0x2588cc(0x204)]['value']+_0x2588cc(0x1d0)+_0x52c6c5+_0x2588cc(0x1d0)+_0x272796+_0x2588cc(0x1d0)+_0x55ea6b+_0x2588cc(0x1dc)+_0x3bbdee+_0x2588cc(0x16b)+_0x55ea6b+_0x2588cc(0x215)+_0x16cdc5+_0x2588cc(0x1ad)+_0x35bae1+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+(_0x3bbdee-_0x55ea6b)+_0x2588cc(0x215)+_0x4f0310+_0x2588cc(0x1ad)+_0x432381+_0x2588cc(0x254)+_0x130304+',00</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>';},_0x28ad6a=>{const _0xb96d6a=_0x24a504;console[_0xb96d6a(0x21b)](_0x28ad6a);});}));allPresensi&&(db['collection'](_0x4557ed(0x1a0))[_0x4557ed(0x239)](_0x4557ed(0x17e))[_0x4557ed(0x1c6)](_0x373f0d=>{const _0x313e3c=_0x4557ed;_0x373f0d[_0x313e3c(0x25d)](_0x174efa=>{const _0x203fa7=_0x313e3c,_0x54e434=_0x174efa[_0x203fa7(0x219)](),_0xac0639=_0x203fa7(0x174)+_0x54e434[_0x203fa7(0x17e)]+';'+_0x54e434[_0x203fa7(0x18c)]+'\x22>'+_0x54e434[_0x203fa7(0x17e)]+';\x20'+_0x54e434[_0x203fa7(0x18c)]+'</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';filterNama[_0x203fa7(0x1bb)]+=_0xac0639;});},_0x298a03=>{const _0x47ef1f=_0x4557ed;console[_0x47ef1f(0x21b)](_0x298a03);}),filterForm[_0x4557ed(0x19c)](_0x4557ed(0x206),_0x2ffa12=>{const _0x307941=_0x4557ed;_0x2ffa12['preventDefault'](),window[_0x307941(0x1e5)]('scroll',handleScroll);const _0x298d97=new Date(filterForm[_0x307941(0x225)]['value']+_0x307941(0x195)),_0xa0394b=new Date(filterForm[_0x307941(0x168)][_0x307941(0x242)]+_0x307941(0x1fc)),_0x3fbaa3=filterForm[_0x307941(0x1ec)]['value'][_0x307941(0x18d)](';')[0x0],_0xe03c58=filterForm[_0x307941(0x1ec)]['value'][_0x307941(0x18d)](';')[0x1];_0x3fbaa3?db[_0x307941(0x191)](_0x307941(0x233))['where'](_0x307941(0x20b),'>=',_0x298d97)[_0x307941(0x253)]('waktu','<=',_0xa0394b)[_0x307941(0x253)](_0x307941(0x18c),'==',_0xe03c58)[_0x307941(0x239)](_0x307941(0x20b),_0x307941(0x173))[_0x307941(0x1c6)](_0x29ae0a=>{const _0x241e4f=_0x307941;let _0x3e7b28='',_0x4adcbd=0x1;_0x29ae0a[_0x241e4f(0x25d)](_0x2f6c6c=>{const _0x29656a=_0x241e4f,_0x3a322c=_0x2f6c6c[_0x29656a(0x219)]();let _0x30140e=_0x3a322c[_0x29656a(0x20b)]['toDate'](),_0x2bdf3a=_0x30140e['getDate'](),_0x5bc723=_0x30140e[_0x29656a(0x17f)]()+0x1,_0x358c53=_0x30140e['getFullYear'](),_0x179631=_0x30140e[_0x29656a(0x241)](),_0x35f129=_0x30140e[_0x29656a(0x1d8)](),_0x21c742=_0x30140e[_0x29656a(0x1b8)]();_0x30140e=_0x2bdf3a+'/'+_0x5bc723+'/'+_0x358c53,hour=_0x179631+':'+_0x35f129+':'+_0x21c742;_0x3a322c[_0x29656a(0x16f)]=='i'?tdfoto=_0x29656a(0x164):tdfoto=_0x29656a(0x1c1)+_0x3a322c[_0x29656a(0x16f)]+_0x29656a(0x1a8);;const _0x25c565='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20scope=\x22row\x22>'+_0x4adcbd+'</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x30140e+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x3a322c[_0x29656a(0x18c)]+_0x29656a(0x1bf)+_0x3a322c['nama']+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x3a322c[_0x29656a(0x20e)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+hour+_0x29656a(0x1de)+tdfoto+_0x29656a(0x1ee);_0x3e7b28+=_0x25c565,_0x4adcbd++;}),allPresensi[_0x241e4f(0x1bb)]=_0x3e7b28;},_0x17cc30=>{console['log'](_0x17cc30);}):db[_0x307941(0x191)](_0x307941(0x233))[_0x307941(0x253)](_0x307941(0x20b),'>=',_0x298d97)[_0x307941(0x253)](_0x307941(0x20b),'<=',_0xa0394b)[_0x307941(0x239)](_0x307941(0x20b),_0x307941(0x173))[_0x307941(0x1c6)](_0x1a036c=>{const _0x3e4757=_0x307941;let _0x46a318='',_0x16d5c2=0x1;_0x1a036c[_0x3e4757(0x25d)](_0x48ee15=>{const _0x5c808d=_0x3e4757,_0x1aaebd=_0x48ee15['data']();let _0x1c33b6=_0x1aaebd[_0x5c808d(0x20b)][_0x5c808d(0x1e2)](),_0x4e1387=_0x1c33b6[_0x5c808d(0x23f)](),_0x55b6bb=_0x1c33b6[_0x5c808d(0x17f)]()+0x1,_0x3f1772=_0x1c33b6[_0x5c808d(0x182)](),_0x553b00=_0x1c33b6['getHours'](),_0x3b5cbd=_0x1c33b6[_0x5c808d(0x1d8)](),_0x5b9e2e=_0x1c33b6[_0x5c808d(0x1b8)]();_0x1c33b6=_0x4e1387+'/'+_0x55b6bb+'/'+_0x3f1772,hour=_0x553b00+':'+_0x3b5cbd+':'+_0x5b9e2e;_0x1aaebd[_0x5c808d(0x16f)]=='i'?tdfoto='<td><img\x20src=\x22img/izin.png\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-all-presensi\x22\x20alt=\x22foto\x20presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x20onclick=\x22allFotoPresensiClick(this.src)\x22></td>':tdfoto=_0x5c808d(0x1c1)+_0x1aaebd[_0x5c808d(0x16f)]+_0x5c808d(0x1a8);;const _0x4d4c94=_0x5c808d(0x166)+_0x16d5c2+_0x5c808d(0x196)+_0x1c33b6+_0x5c808d(0x1bf)+_0x1aaebd[_0x5c808d(0x18c)]+_0x5c808d(0x1bf)+_0x1aaebd['nama']+_0x5c808d(0x1bf)+_0x1aaebd[_0x5c808d(0x20e)]+_0x5c808d(0x1bf)+hour+_0x5c808d(0x1de)+tdfoto+_0x5c808d(0x1ee);_0x46a318+=_0x4d4c94,_0x16d5c2++;}),allPresensi['innerHTML']=_0x46a318;},_0x25692c=>{const _0x461c77=_0x307941;console[_0x461c77(0x21b)](_0x25692c);});}));if(perizinan){waktuSekarang=firebase[_0x4557ed(0x21c)][_0x4557ed(0x1e4)][_0x4557ed(0x244)]();let date=waktuSekarang[_0x4557ed(0x1e2)](),dd=date[_0x4557ed(0x23f)](),mm=date[_0x4557ed(0x17f)]()+0x1,yyyy=date[_0x4557ed(0x182)](),waktuSekarangString=yyyy+'/'+mm+'/'+dd,awal=new Date(yyyy+'/'+mm+'/'+dd+_0x4557ed(0x195)),akhir=new Date(yyyy+'/'+mm+'/'+dd+'/\x2023:59:59'),daftarAkun=[];db[_0x4557ed(0x191)](_0x4557ed(0x1a0))['orderBy'](_0x4557ed(0x18c))[_0x4557ed(0x1c6)](_0x584e1e=>{_0x584e1e['forEach'](_0x21f2b9=>{const _0x5a0acd=_0x50ba,_0x2c0ec1=_0x21f2b9[_0x5a0acd(0x219)]();daftarAkun[_0x5a0acd(0x185)](_0x2c0ec1[_0x5a0acd(0x18c)]);});},_0x34348e=>{const _0x10a51e=_0x4557ed;console[_0x10a51e(0x21b)](_0x34348e);});let daftarAkunTidakHadir=daftarAkun;db[_0x4557ed(0x191)](_0x4557ed(0x233))[_0x4557ed(0x253)](_0x4557ed(0x20b),'>=',awal)[_0x4557ed(0x253)]('waktu','<=',akhir)[_0x4557ed(0x1c6)](_0x5ac85a=>{const _0x1b5246=_0x4557ed;_0x5ac85a[_0x1b5246(0x25d)](_0x144af3=>{const _0x1ef8d9=_0x1b5246,_0x411879=_0x144af3[_0x1ef8d9(0x219)]();daftarAkun[_0x1ef8d9(0x170)](_0x411879['username'])&&(daftarAkunTidakHadir=daftarAkunTidakHadir[_0x1ef8d9(0x1df)](_0x43214a=>_0x43214a!==_0x411879[_0x1ef8d9(0x18c)]));});},_0x3fe229=>{const _0x2aeeee=_0x4557ed;console[_0x2aeeee(0x21b)](_0x3fe229);}),db[_0x4557ed(0x191)](_0x4557ed(0x1a0))[_0x4557ed(0x239)](_0x4557ed(0x18c))[_0x4557ed(0x1c6)](_0x41d762=>{const _0x1d7b52=_0x4557ed;let _0x3b5eda='';row===null&&(row=0x1);_0x41d762['forEach'](_0x1be07a=>{const _0x4fb399=_0x50ba;let _0x19e5b5=_0x1be07a['data']();daftarAkunTidakHadir[_0x4fb399(0x170)](_0x19e5b5[_0x4fb399(0x18c)])&&(_0x3b5eda+=_0x4fb399(0x1f8)+row+'</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x19e5b5['nama']+_0x4fb399(0x190)+_0x19e5b5[_0x4fb399(0x18c)]+_0x4fb399(0x190)+_0x19e5b5[_0x4fb399(0x20e)]+_0x4fb399(0x256)+_0x19e5b5[_0x4fb399(0x18c)]+'\x27)\x22>Izinkan</button>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',row++);}),tabelBelumHadir[_0x1d7b52(0x1bb)]+=_0x3b5eda,google[_0x1d7b52(0x20a)][_0x1d7b52(0x235)](_0x1d7b52(0x246),{'packages':[_0x1d7b52(0x198)]}),google[_0x1d7b52(0x20a)][_0x1d7b52(0x1f7)](_0x229832);function _0x229832(){const _0xb7e71f=_0x1d7b52;var _0x288a6e=google[_0xb7e71f(0x259)][_0xb7e71f(0x165)]([[_0xb7e71f(0x220),_0xb7e71f(0x19e)],[_0xb7e71f(0x1ea),daftarAkun[_0xb7e71f(0x1ff)]-daftarAkunTidakHadir[_0xb7e71f(0x1ff)]],[_0xb7e71f(0x236),daftarAkunTidakHadir[_0xb7e71f(0x1ff)]]]),_0x370acb={'title':'Tanggal\x20:\x20'+waktuSekarangString+';\x20Jumlah\x20Pegawai\x20:\x20'+daftarAkun['length']},_0x2fd86b=new google[(_0xb7e71f(0x259))][(_0xb7e71f(0x217))](document[_0xb7e71f(0x1af)](_0xb7e71f(0x221)));_0x2fd86b[_0xb7e71f(0x25b)](_0x288a6e,_0x370acb);}$(window)[_0x1d7b52(0x1e8)](function(){_0x229832();});},_0xe4479a=>{console['log'](_0xe4479a);});}if(statistik){let jumlahPegawai=0x0;db[_0x4557ed(0x191)]('users')[_0x4557ed(0x239)](_0x4557ed(0x17e))[_0x4557ed(0x1c6)](_0x4088e4=>{const _0x48aa1a=_0x4557ed;_0x4088e4[_0x48aa1a(0x25d)](_0x32fb5c=>{const _0x2dc7e3=_0x48aa1a,_0x1959d3=_0x32fb5c[_0x2dc7e3(0x219)](),_0x4e150d=_0x2dc7e3(0x174)+_0x1959d3[_0x2dc7e3(0x17e)]+';'+_0x1959d3['username']+'\x22>'+_0x1959d3[_0x2dc7e3(0x17e)]+';\x20'+_0x1959d3['username']+_0x2dc7e3(0x214);filterNama['innerHTML']+=_0x4e150d,jumlahPegawai+=0x1;});},_0x5e5379=>{const _0x2c81ab=_0x4557ed;console[_0x2c81ab(0x21b)](_0x5e5379);}),filterForm[_0x4557ed(0x19c)]('submit',_0x361c18=>{const _0x1eaa47=_0x4557ed;_0x361c18[_0x1eaa47(0x1a4)](),window[_0x1eaa47(0x1e5)](_0x1eaa47(0x197),handleScroll);const _0x5d646f=new Date(filterForm[_0x1eaa47(0x225)][_0x1eaa47(0x242)]+_0x1eaa47(0x195)),_0x561588=new Date(filterForm[_0x1eaa47(0x168)]['value']+_0x1eaa47(0x1fc)),_0x599d8a=filterForm[_0x1eaa47(0x1ec)]['value']['split'](';')[0x0],_0x5a7b49=filterForm[_0x1eaa47(0x1ec)][_0x1eaa47(0x242)][_0x1eaa47(0x18d)](';')[0x1];document['getElementById'](_0x1eaa47(0x247))[_0x1eaa47(0x1bb)]=_0x1eaa47(0x1b3)+_0x5d646f[_0x1eaa47(0x23f)]()+'/'+_0x5d646f[_0x1eaa47(0x17f)]()+'/'+_0x5d646f[_0x1eaa47(0x182)]()+_0x1eaa47(0x163)+_0x561588[_0x1eaa47(0x23f)]()+'/'+_0x561588['getMonth']()+'/'+_0x561588[_0x1eaa47(0x182)](),_0x599d8a?(document[_0x1eaa47(0x1af)](_0x1eaa47(0x1e0))['innerHTML']=_0x1eaa47(0x19a)+_0x599d8a+'\x20('+_0x5a7b49+')',db[_0x1eaa47(0x191)](_0x1eaa47(0x233))[_0x1eaa47(0x253)]('waktu','>=',_0x5d646f)[_0x1eaa47(0x253)](_0x1eaa47(0x20b),'<=',_0x561588)[_0x1eaa47(0x253)](_0x1eaa47(0x17e),'==',_0x599d8a)[_0x1eaa47(0x253)](_0x1eaa47(0x18c),'==',_0x5a7b49)[_0x1eaa47(0x239)](_0x1eaa47(0x20b),_0x1eaa47(0x173))[_0x1eaa47(0x1c6)](_0x1564da=>{const _0xc92e7f=_0x1eaa47;let _0x3a45d9=0x0,_0x583fa7=0x0,_0x100efc=0x0,_0x4c5ab6=0x0,_0x1805ec=0x0,_0x3e4966=0x0,_0x347bd2=0x0,_0x48edc9=_0x561588-_0x5d646f;_0x48edc9=Math[_0xc92e7f(0x24a)](_0x48edc9/(0x3e8*0xe10*0x18));let _0x176a7f=0x0,_0x3cf4c2=0x0,_0x53a9e2=0x0,_0x4982cf=0x0,_0x553092=0x0,_0x2489b4=0x0,_0x5632ef=0x0,_0x2bf758=0x0,_0xdfb89=0x0,_0x23ec39=0x0,_0xa887cd=0x0,_0x3d59c0=0x0,_0x44a0bf=0x0,_0x3850c2=0x0,_0x38fbe5=0x0;_0x1564da[_0xc92e7f(0x25d)](_0x3c9ac0=>{const _0x3aa794=_0xc92e7f,_0x5846af=_0x3c9ac0[_0x3aa794(0x219)]();switch(_0x5846af[_0x3aa794(0x20b)]['toDate']()[_0x3aa794(0x1e6)]()){case 0x0:_0x3a45d9+=0x1;break;case 0x1:_0x583fa7+=0x1;break;case 0x2:_0x100efc+=0x1;break;case 0x3:_0x4c5ab6+=0x1;break;case 0x4:_0x1805ec+=0x1;break;case 0x5:_0x3e4966+=0x1;break;case 0x6:_0x347bd2+=0x1;}_0x5846af[_0x3aa794(0x16f)]==='i'?_0x3cf4c2+=0x1:_0x176a7f+=0x1;if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()['getHours']()>=0x0&&_0x5846af['waktu'][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()<0x2)_0x4982cf+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0x2&&_0x5846af['waktu']['toDate']()[_0x3aa794(0x241)]()<0x4)_0x553092+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0x4&&_0x5846af['waktu'][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()<0x6)_0x2489b4+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)]['toDate']()['getHours']()>=0x6&&_0x5846af['waktu'][_0x3aa794(0x1e2)]()['getHours']()<0x8)_0x5632ef+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0x8&&_0x5846af['waktu'][_0x3aa794(0x1e2)]()['getHours']()<0xa)_0x2bf758+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0xa&&_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()['getHours']()<0xc)_0xdfb89+=0x1;else{if(_0x5846af['waktu'][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0xc&&_0x5846af[_0x3aa794(0x20b)]['toDate']()[_0x3aa794(0x241)]()<0xe)_0x23ec39+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0xe&&_0x5846af['waktu'][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()<0x10)_0xa887cd+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0x10&&_0x5846af['waktu'][_0x3aa794(0x1e2)]()['getHours']()<0x12)_0x3d59c0+=0x1;else{if(_0x5846af['waktu'][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0x12&&_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()<0x14)_0x44a0bf+=0x1;else{if(_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()['getHours']()>=0x14&&_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()['getHours']()<0x16)_0x3850c2+=0x1;else _0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()>=0x16&&_0x5846af[_0x3aa794(0x20b)][_0x3aa794(0x1e2)]()[_0x3aa794(0x241)]()<0x0&&(_0x38fbe5+=0x1);}}}}}}}}}}}),_0x53a9e2=_0x48edc9-_0x176a7f-_0x3cf4c2,google[_0xc92e7f(0x20a)][_0xc92e7f(0x235)](_0xc92e7f(0x246),{'packages':[_0xc92e7f(0x198)]}),google[_0xc92e7f(0x20a)][_0xc92e7f(0x1f7)](_0x1a6315),google[_0xc92e7f(0x20a)][_0xc92e7f(0x1f7)](_0x40096d),google['charts']['setOnLoadCallback'](_0x4fd788);function _0x1a6315(){const _0x2ec49a=_0xc92e7f;var _0x5c8ce2=google[_0x2ec49a(0x259)][_0x2ec49a(0x165)]([[_0x2ec49a(0x15e),_0x2ec49a(0x1dd),{'role':_0x2ec49a(0x1a3)}],[_0x2ec49a(0x1b6),_0x583fa7,_0x2ec49a(0x1cd)],[_0x2ec49a(0x17b),_0x100efc,_0x2ec49a(0x1cb)],[_0x2ec49a(0x183),_0x4c5ab6,'yellow'],[_0x2ec49a(0x1c7),_0x1805ec,_0x2ec49a(0x1e9)],[_0x2ec49a(0x237),_0x3e4966,'blue'],[_0x2ec49a(0x1db),_0x347bd2,'indigo'],[_0x2ec49a(0x186),_0x3a45d9,_0x2ec49a(0x1e7)]]),_0x4d7892={'title':'Jumlah\x20Presensi\x20per\x20Hari'},_0x2afe8f=new google[(_0x2ec49a(0x259))][(_0x2ec49a(0x227))](document[_0x2ec49a(0x1af)](_0x2ec49a(0x24f)));_0x2afe8f[_0x2ec49a(0x25b)](_0x5c8ce2,_0x4d7892);}function _0x40096d(){const _0x9839c1=_0xc92e7f;var _0x57b5f1=google[_0x9839c1(0x259)][_0x9839c1(0x165)]([['Keterangan',_0x9839c1(0x1dd)],[_0x9839c1(0x22f),_0x176a7f],[_0x9839c1(0x249),_0x3cf4c2],[_0x9839c1(0x18f),_0x53a9e2]]),_0x48a4a4={'title':_0x9839c1(0x203),'colors':[_0x9839c1(0x208),_0x9839c1(0x1cc),_0x9839c1(0x1cd)]},_0x5bf1d5=new google[(_0x9839c1(0x259))]['PieChart'](document['getElementById'](_0x9839c1(0x229)));_0x5bf1d5[_0x9839c1(0x25b)](_0x57b5f1,_0x48a4a4);}function _0x4fd788(){const _0x29cfc6=_0xc92e7f;var _0x39198b=google[_0x29cfc6(0x259)][_0x29cfc6(0x165)]([[_0x29cfc6(0x1c5),_0x29cfc6(0x1dd)],[_0x29cfc6(0x1c9),_0x4982cf],['02:00',_0x553092],[_0x29cfc6(0x218),_0x2489b4],[_0x29cfc6(0x232),_0x5632ef],[_0x29cfc6(0x1b5),_0x2bf758],[_0x29cfc6(0x1a7),_0xdfb89],[_0x29cfc6(0x209),_0x23ec39],[_0x29cfc6(0x161),_0xa887cd],['16:00',_0x3d59c0],[_0x29cfc6(0x171),_0x44a0bf],[_0x29cfc6(0x1d6),_0x3850c2],[_0x29cfc6(0x1bc),_0x38fbe5]]),_0x38066e={'title':_0x29cfc6(0x222),'hAxis':{'title':_0x29cfc6(0x1c5)},'vAxis':{'title':'Jumlah'},'legend':_0x29cfc6(0x17c)},_0x4ce2ba=new google[(_0x29cfc6(0x259))][(_0x29cfc6(0x177))](document['getElementById'](_0x29cfc6(0x1a6)));_0x4ce2ba[_0x29cfc6(0x25b)](_0x39198b,_0x38066e);}$(window)[_0xc92e7f(0x1e8)](function(){_0x1a6315(),_0x40096d(),_0x4fd788();});},_0xffc872=>{console['log'](_0xffc872);})):db[_0x1eaa47(0x191)](_0x1eaa47(0x233))[_0x1eaa47(0x253)](_0x1eaa47(0x20b),'>=',_0x5d646f)[_0x1eaa47(0x253)](_0x1eaa47(0x20b),'<=',_0x561588)[_0x1eaa47(0x239)](_0x1eaa47(0x20b),_0x1eaa47(0x173))[_0x1eaa47(0x1c6)](_0x24655f=>{const _0x119374=_0x1eaa47;document[_0x119374(0x1af)](_0x119374(0x1e0))['innerHTML']=_0x119374(0x24e)+jumlahPegawai+_0x119374(0x15c);let _0x11a7e0=0x0,_0x1122ac=0x0,_0x1b6323=0x0,_0x16b140=0x0,_0x452470=0x0,_0xbc40da=0x0,_0x4efcf0=0x0,_0x5e7fd1=_0x561588-_0x5d646f;_0x5e7fd1=Math[_0x119374(0x24a)](_0x5e7fd1/(0x3e8*0xe10*0x18))*jumlahPegawai;let _0x1a7657=0x0,_0x3545ed=0x0,_0x319fef=0x0,_0x3254a6=0x0,_0x11781b=0x0,_0x50bab4=0x0,_0x26911b=0x0,_0xf64e61=0x0,_0x32821a=0x0,_0x511b87=0x0,_0x1b98e6=0x0,_0x30da83=0x0,_0x1f93ef=0x0,_0x3cc742=0x0,_0x120478=0x0;_0x24655f[_0x119374(0x25d)](_0x3d0073=>{const _0x58f745=_0x119374,_0x2d46c2=_0x3d0073[_0x58f745(0x219)]();switch(_0x2d46c2[_0x58f745(0x20b)]['toDate']()[_0x58f745(0x1e6)]()){case 0x0:_0x11a7e0+=0x1;break;case 0x1:_0x1122ac+=0x1;break;case 0x2:_0x1b6323+=0x1;break;case 0x3:_0x16b140+=0x1;break;case 0x4:_0x452470+=0x1;break;case 0x5:_0xbc40da+=0x1;break;case 0x6:_0x4efcf0+=0x1;}_0x2d46c2[_0x58f745(0x16f)]==='i'?_0x3545ed+=0x1:_0x1a7657+=0x1;if(_0x2d46c2[_0x58f745(0x20b)][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()>=0x0&&_0x2d46c2[_0x58f745(0x20b)]['toDate']()[_0x58f745(0x241)]()<0x2)_0x3254a6+=0x1;else{if(_0x2d46c2[_0x58f745(0x20b)]['toDate']()[_0x58f745(0x241)]()>=0x2&&_0x2d46c2[_0x58f745(0x20b)][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()<0x4)_0x11781b+=0x1;else{if(_0x2d46c2['waktu'][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()>=0x4&&_0x2d46c2[_0x58f745(0x20b)]['toDate']()[_0x58f745(0x241)]()<0x6)_0x50bab4+=0x1;else{if(_0x2d46c2['waktu'][_0x58f745(0x1e2)]()['getHours']()>=0x6&&_0x2d46c2[_0x58f745(0x20b)]['toDate']()[_0x58f745(0x241)]()<0x8)_0x26911b+=0x1;else{if(_0x2d46c2[_0x58f745(0x20b)]['toDate']()['getHours']()>=0x8&&_0x2d46c2[_0x58f745(0x20b)][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()<0xa)_0xf64e61+=0x1;else{if(_0x2d46c2[_0x58f745(0x20b)][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()>=0xa&&_0x2d46c2[_0x58f745(0x20b)][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()<0xc)_0x32821a+=0x1;else{if(_0x2d46c2['waktu'][_0x58f745(0x1e2)]()['getHours']()>=0xc&&_0x2d46c2['waktu'][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()<0xe)_0x511b87+=0x1;else{if(_0x2d46c2['waktu'][_0x58f745(0x1e2)]()['getHours']()>=0xe&&_0x2d46c2['waktu']['toDate']()[_0x58f745(0x241)]()<0x10)_0x1b98e6+=0x1;else{if(_0x2d46c2['waktu'][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()>=0x10&&_0x2d46c2['waktu'][_0x58f745(0x1e2)]()['getHours']()<0x12)_0x30da83+=0x1;else{if(_0x2d46c2['waktu'][_0x58f745(0x1e2)]()[_0x58f745(0x241)]()>=0x12&&_0x2d46c2['waktu']['toDate']()[_0x58f745(0x241)]()<0x14)_0x1f93ef+=0x1;else{if(_0x2d46c2[_0x58f745(0x20b)][_0x58f745(0x1e2)]()['getHours']()>=0x14&&_0x2d46c2['waktu']['toDate']()['getHours']()<0x16)_0x3cc742+=0x1;else _0x2d46c2['waktu'][_0x58f745(0x1e2)]()['getHours']()>=0x16&&_0x2d46c2[_0x58f745(0x20b)]['toDate']()[_0x58f745(0x241)]()<0x0&&(_0x120478+=0x1);}}}}}}}}}}}),_0x319fef=_0x5e7fd1-_0x1a7657-_0x3545ed,google[_0x119374(0x20a)]['load'](_0x119374(0x246),{'packages':['corechart']}),google[_0x119374(0x20a)][_0x119374(0x1f7)](_0x10d25c),google['charts'][_0x119374(0x1f7)](_0x4a1682),google[_0x119374(0x20a)]['setOnLoadCallback'](_0x1814d7);function _0x10d25c(){const _0x1aa6ca=_0x119374;var _0x40d4da=google['visualization'][_0x1aa6ca(0x165)]([[_0x1aa6ca(0x15e),_0x1aa6ca(0x1dd),{'role':_0x1aa6ca(0x1a3)}],[_0x1aa6ca(0x1b6),_0x1122ac,'red'],['Selasa',_0x1b6323,_0x1aa6ca(0x1cb)],[_0x1aa6ca(0x183),_0x16b140,_0x1aa6ca(0x178)],[_0x1aa6ca(0x1c7),_0x452470,_0x1aa6ca(0x1e9)],[_0x1aa6ca(0x237),_0xbc40da,_0x1aa6ca(0x208)],[_0x1aa6ca(0x1db),_0x4efcf0,_0x1aa6ca(0x1f9)],[_0x1aa6ca(0x186),_0x11a7e0,_0x1aa6ca(0x1e7)]]),_0x11e8b6={'title':_0x1aa6ca(0x251)},_0x66ee80=new google[(_0x1aa6ca(0x259))][(_0x1aa6ca(0x227))](document[_0x1aa6ca(0x1af)](_0x1aa6ca(0x24f)));_0x66ee80[_0x1aa6ca(0x25b)](_0x40d4da,_0x11e8b6);}function _0x4a1682(){const _0x22e2bf=_0x119374;var _0x50919b=google['visualization'][_0x22e2bf(0x165)]([[_0x22e2bf(0x1da),_0x22e2bf(0x1dd)],[_0x22e2bf(0x22f),_0x1a7657],[_0x22e2bf(0x249),_0x3545ed],['Absen',_0x319fef]]),_0x3f3c95={'title':_0x22e2bf(0x203),'colors':[_0x22e2bf(0x208),_0x22e2bf(0x1cc),_0x22e2bf(0x1cd)]},_0x5c0bc9=new google[(_0x22e2bf(0x259))][(_0x22e2bf(0x217))](document[_0x22e2bf(0x1af)](_0x22e2bf(0x229)));_0x5c0bc9['draw'](_0x50919b,_0x3f3c95);}function _0x1814d7(){const _0x3bd6fa=_0x119374;var _0x54d3df=google[_0x3bd6fa(0x259)][_0x3bd6fa(0x165)]([['Waktu',_0x3bd6fa(0x1dd)],[_0x3bd6fa(0x1c9),_0x3254a6],[_0x3bd6fa(0x18e),_0x11781b],['04:00',_0x50bab4],[_0x3bd6fa(0x232),_0x26911b],[_0x3bd6fa(0x1b5),_0xf64e61],['10:00',_0x32821a],[_0x3bd6fa(0x209),_0x511b87],[_0x3bd6fa(0x161),_0x1b98e6],[_0x3bd6fa(0x23b),_0x30da83],[_0x3bd6fa(0x171),_0x1f93ef],[_0x3bd6fa(0x1d6),_0x3cc742],['22:00',_0x120478]]),_0x283bc4={'title':_0x3bd6fa(0x222),'hAxis':{'title':_0x3bd6fa(0x1c5)},'vAxis':{'title':'Jumlah'},'legend':_0x3bd6fa(0x17c)},_0x3cbee7=new google[(_0x3bd6fa(0x259))]['LineChart'](document[_0x3bd6fa(0x1af)](_0x3bd6fa(0x1a6)));_0x3cbee7[_0x3bd6fa(0x25b)](_0x54d3df,_0x283bc4);}$(window)[_0x119374(0x1e8)](function(){_0x10d25c(),_0x4a1682(),_0x1814d7();});},_0x10dd62=>{console['log'](_0x10dd62);});});}};function izinkanHadir(_0x34ed02){const _0x2eea27=_0x4557ed;document[_0x2eea27(0x1af)](_0x2eea27(0x1f0))['style'][_0x2eea27(0x1f2)]=_0x2eea27(0x1d2),document[_0x2eea27(0x1af)](_0x2eea27(0x210))[_0x2eea27(0x1a3)]['display']=_0x2eea27(0x1d2),waktuSekarang=firebase[_0x2eea27(0x21c)][_0x2eea27(0x1e4)]['now'](),db[_0x2eea27(0x191)]('users')[_0x2eea27(0x253)](_0x2eea27(0x18c),'==',_0x34ed02)[_0x2eea27(0x1c6)](_0x37cda3=>{const _0x511e7a=_0x2eea27;_0x37cda3[_0x511e7a(0x25d)](_0xa76aac=>{const _0x3e8460=_0x511e7a,_0x371212=_0xa76aac[_0x3e8460(0x219)]();db[_0x3e8460(0x191)](_0x3e8460(0x233))[_0x3e8460(0x207)]({'username':_0x371212[_0x3e8460(0x18c)],'foto':'i','nama':_0x371212[_0x3e8460(0x17e)],'nip':_0x371212[_0x3e8460(0x20e)],'waktu':waktuSekarang})[_0x3e8460(0x1fd)](()=>location[_0x3e8460(0x223)]());});},_0x4fc21c=>{const _0x35cbce=_0x2eea27;console[_0x35cbce(0x21b)](_0x4fc21c);});}function numberWithCommas(_0x29868e){const _0x2f2f11=_0x4557ed;var _0x2bc6c6=_0x29868e['toString']()['split']('.');return _0x2bc6c6[0x0]=_0x2bc6c6[0x0][_0x2f2f11(0x1aa)](/\B(?=(\d{3})+(?!\d))/g,'.'),_0x2bc6c6[_0x2f2f11(0x15d)](',');}function deleteAccount(_0x4af158){const _0xf9d0a1=_0x4557ed;var _0xee2187=confirm(_0xf9d0a1(0x1c0));_0xee2187==!![]&&db[_0xf9d0a1(0x191)](_0xf9d0a1(0x1a0))[_0xf9d0a1(0x22d)](_0x4af158)['delete']()[_0xf9d0a1(0x1fd)](()=>{const _0x4e9824=_0xf9d0a1;document[_0x4e9824(0x21a)](_0x4e9824(0x1c3))[_0x4e9824(0x1bb)]='Akun\x20berhasil\x20dihapus',document[_0x4e9824(0x1af)](_0x4e9824(0x1c8))[_0x4e9824(0x245)]='alert\x20alert-success\x20mx-auto',document['getElementById'](_0x4e9824(0x1c8))[_0x4e9824(0x1a3)][_0x4e9824(0x1f2)]=_0x4e9824(0x1d2),setTimeout(()=>{const _0x5e8630=_0x4e9824;document[_0x5e8630(0x1af)](_0x5e8630(0x1c8))['style'][_0x5e8630(0x1f2)]='none';},0xbb8);})[_0xf9d0a1(0x231)](_0x5e412e=>{const _0x40d685=_0xf9d0a1;console[_0x40d685(0x202)]('Error\x20removing\x20document:\x20',_0x5e412e);});};function updateAccount(_0x4d1e2f){const _0x3cb5a4=_0x4557ed;db[_0x3cb5a4(0x191)](_0x3cb5a4(0x1a0))['doc'](_0x4d1e2f)[_0x3cb5a4(0x1d4)]()[_0x3cb5a4(0x1fd)](_0x4d0bee=>{const _0x1d87d1=_0x3cb5a4;username_update=_0x4d0bee[_0x1d87d1(0x219)]()[_0x1d87d1(0x18c)],id_update=_0x4d0bee['id'],document[_0x1d87d1(0x1af)](_0x1d87d1(0x187))[_0x1d87d1(0x242)]=_0x4d0bee['data']()[_0x1d87d1(0x18c)],document[_0x1d87d1(0x1af)](_0x1d87d1(0x19b))[_0x1d87d1(0x242)]=_0x4d0bee[_0x1d87d1(0x219)]()[_0x1d87d1(0x17e)],document[_0x1d87d1(0x1af)](_0x1d87d1(0x167))[_0x1d87d1(0x242)]=_0x4d0bee['data']()['nip'],document[_0x1d87d1(0x1af)](_0x1d87d1(0x25a))['value']=_0x4d0bee[_0x1d87d1(0x219)]()[_0x1d87d1(0x260)],document[_0x1d87d1(0x1af)](_0x1d87d1(0x1bd))[_0x1d87d1(0x242)]=_0x4d0bee[_0x1d87d1(0x219)]()[_0x1d87d1(0x1d9)];})[_0x3cb5a4(0x231)](function(_0xd4f60e){const _0x257be4=_0x3cb5a4;console[_0x257be4(0x21b)](_0x257be4(0x1f6),_0xd4f60e);});};update_button&&update_button[_0x4557ed(0x19c)]('click',_0xc7750=>{const _0x3b70b7=_0x4557ed;_0xc7750['preventDefault'](),db[_0x3b70b7(0x191)]('users')[_0x3b70b7(0x253)](_0x3b70b7(0x18c),'==',updateForm[_0x3b70b7(0x187)]['value'])['get']()[_0x3b70b7(0x1fd)](_0x5a773e=>{const _0x3b3af2=_0x3b70b7;_0x5a773e[_0x3b3af2(0x1b7)]>0x0&&username_update!=updateForm[_0x3b3af2(0x187)][_0x3b3af2(0x242)]?($(_0x3b3af2(0x22a))[_0x3b3af2(0x238)](_0x3b3af2(0x15f)),document[_0x3b3af2(0x21a)](_0x3b3af2(0x1c3))[_0x3b3af2(0x1bb)]='Maaf\x20Username\x20sudah\x20digunakan',document[_0x3b3af2(0x1af)](_0x3b3af2(0x1c8))[_0x3b3af2(0x245)]='alert\x20alert-danger\x20mx-auto',document[_0x3b3af2(0x1af)]('alert-signup')[_0x3b3af2(0x1a3)][_0x3b3af2(0x1f2)]=_0x3b3af2(0x1d2),setTimeout(()=>{const _0x206830=_0x3b3af2;document[_0x206830(0x1af)](_0x206830(0x1c8))[_0x206830(0x1a3)][_0x206830(0x1f2)]=_0x206830(0x17c);},0xbb8)):db[_0x3b3af2(0x191)](_0x3b3af2(0x1a0))[_0x3b3af2(0x22d)](id_update)[_0x3b3af2(0x199)]({'username':updateForm[_0x3b3af2(0x187)][_0x3b3af2(0x242)],'nama':updateForm['update-nama']['value'],'nip':updateForm[_0x3b3af2(0x167)][_0x3b3af2(0x242)],'password':updateForm[_0x3b3af2(0x25a)][_0x3b3af2(0x242)],'level':updateForm[_0x3b3af2(0x1bd)][_0x3b3af2(0x242)]})[_0x3b3af2(0x1fd)](()=>{const _0x58774f=_0x3b3af2;$(_0x58774f(0x22a))['modal'](_0x58774f(0x15f)),document[_0x58774f(0x21a)](_0x58774f(0x1c3))[_0x58774f(0x1bb)]='Data\x20akun\x20berhasil\x20diperbarui',document[_0x58774f(0x1af)](_0x58774f(0x1c8))[_0x58774f(0x245)]=_0x58774f(0x1a2),document[_0x58774f(0x1af)](_0x58774f(0x1c8))['style'][_0x58774f(0x1f2)]='block',setTimeout(()=>{const _0x584648=_0x58774f;document['getElementById'](_0x584648(0x1c8))['style'][_0x584648(0x1f2)]=_0x584648(0x17c);},0xbb8);})[_0x3b3af2(0x231)](_0x1c8308=>{const _0x5ab488=_0x3b3af2;console[_0x5ab488(0x202)](_0x5ab488(0x188),_0x1c8308);});});});function downloadCSV(_0x21f5b6,_0x5270cb){const _0x1c5cb7=_0x4557ed;var _0x491184,_0x3788e3;_0x491184=new Blob([_0x21f5b6],{'type':_0x1c5cb7(0x1fe)}),_0x3788e3=document['createElement']('a'),_0x3788e3[_0x1c5cb7(0x1e3)]=_0x5270cb,_0x3788e3[_0x1c5cb7(0x1c4)]=window[_0x1c5cb7(0x1ba)]['createObjectURL'](_0x491184),_0x3788e3[_0x1c5cb7(0x1a3)][_0x1c5cb7(0x1f2)]=_0x1c5cb7(0x17c),document['body'][_0x1c5cb7(0x228)](_0x3788e3),_0x3788e3[_0x1c5cb7(0x16c)]();}function exportTableToCSV(_0x338393){const _0x3c8505=_0x4557ed;var _0x3ee1e0=[],_0x1f777e=document[_0x3c8505(0x22e)](_0x3c8505(0x162));for(var _0x35b964=0x0;_0x35b964<_0x1f777e['length'];_0x35b964++){var _0x2a1e7d=[],_0x420288=_0x1f777e[_0x35b964][_0x3c8505(0x22e)](_0x3c8505(0x1f4));for(var _0xa67781=0x0;_0xa67781<_0x420288[_0x3c8505(0x1ff)];_0xa67781++)_0x2a1e7d[_0x3c8505(0x185)](_0x420288[_0xa67781][_0x3c8505(0x1b0)]);_0x3ee1e0[_0x3c8505(0x185)](_0x2a1e7d[_0x3c8505(0x15d)](','));}downloadCSV(_0x3ee1e0[_0x3c8505(0x15d)]('\x0a'),_0x338393);}print_pdf&&print_pdf[_0x4557ed(0x19c)]('click',()=>{const _0x3a39b7=_0x4557ed,_0x105d9f=this[_0x3a39b7(0x21d)][_0x3a39b7(0x1af)](_0x3a39b7(0x184));var _0x4968ca={'margin':0.3,'filename':_0x3a39b7(0x21e),'jsPDF':{'unit':'in','format':'letter','orientation':'portrait'}};html2pdf()['set'](_0x4968ca)[_0x3a39b7(0x22c)](_0x105d9f)[_0x3a39b7(0x16a)]();});print_hitung_pdf&&print_hitung_pdf[_0x4557ed(0x19c)]('click',()=>{const _0x45c357=_0x4557ed,_0x70ecfc=this[_0x45c357(0x21d)][_0x45c357(0x1af)](_0x45c357(0x1fb));var _0x3482f3={'margin':0.3,'filename':_0x45c357(0x175),'jsPDF':{'unit':'in','format':'letter','orientation':_0x45c357(0x234)}};html2pdf()[_0x45c357(0x24c)](_0x3482f3)[_0x45c357(0x22c)](_0x70ecfc)[_0x45c357(0x16a)]();});print_statistik_pdf&&print_statistik_pdf[_0x4557ed(0x19c)]('click',()=>{const _0x14e38e=_0x4557ed,_0x4725c0=this[_0x14e38e(0x21d)][_0x14e38e(0x1af)]('statistik');var _0x583b9d={'margin':0.3,'filename':'statistik_presensi.pdf','jsPDF':{'unit':'in','format':_0x14e38e(0x25f),'orientation':'portrait'}};html2pdf()[_0x14e38e(0x24c)](_0x583b9d)[_0x14e38e(0x22c)](_0x4725c0)[_0x14e38e(0x16a)]();});let latestDoc=firebase[_0x4557ed(0x21c)][_0x4557ed(0x1e4)][_0x4557ed(0x244)]();const getNextPresensi=()=>{const _0x146f70=_0x4557ed;if(presensiList){document[_0x146f70(0x1af)](_0x146f70(0x1f0))[_0x146f70(0x1a3)][_0x146f70(0x1f2)]='block';const _0x54f9c6=db[_0x146f70(0x191)]('presensi')[_0x146f70(0x253)]('username','==',localStorage[_0x146f70(0x25c)](_0x146f70(0x258)))[_0x146f70(0x239)]('waktu','desc')[_0x146f70(0x22b)](latestDoc)[_0x146f70(0x18a)](0x14);_0x54f9c6['onSnapshot'](_0x391648=>{const _0x2cf80a=_0x146f70;let _0x18e6a6='';_0x391648[_0x2cf80a(0x25d)](_0x45b0f8=>{const _0x27d586=_0x2cf80a,_0xc57d00=_0x45b0f8[_0x27d586(0x219)]();let _0x431023=_0xc57d00[_0x27d586(0x20b)][_0x27d586(0x1e2)](),_0x4bd815=_0x431023[_0x27d586(0x23f)](),_0x3aae0d=_0x431023['getMonth']()+0x1,_0x276a8c=_0x431023[_0x27d586(0x182)](),_0x14fa08=_0x431023['getHours'](),_0x445bab=_0x431023['getMinutes'](),_0x16ffdb=_0x431023[_0x27d586(0x1b8)]();_0x431023=_0x4bd815+'/'+_0x3aae0d+'/'+_0x276a8c,hour=_0x14fa08+':'+_0x445bab+':'+_0x16ffdb;_0xc57d00['foto']=='i'?tdfoto='<td><img\x20src=\x22img/izin.png\x22\x20class=\x22foto-foto-presensi\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20alt=\x22foto\x20presensi\x22\x20loading=\x22lazy\x22\x20width=\x2250\x22\x20height=\x2250\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-toggle=\x22modal\x22\x20data-target=\x22#modal-presensi\x22\x20onclick=\x22fotoPresensiClick(this.src)\x22></td>':tdfoto=_0x27d586(0x1c1)+_0xc57d00[_0x27d586(0x16f)]+_0x27d586(0x192);;_0x18e6a6+=_0x27d586(0x16d)+_0x431023+_0x27d586(0x1d0)+hour+_0x27d586(0x1f1)+tdfoto+_0x27d586(0x261);}),presensiList[_0x2cf80a(0x1bb)]+=_0x18e6a6,document[_0x2cf80a(0x1af)](_0x2cf80a(0x1f0))[_0x2cf80a(0x1a3)]['display']='none',latestDoc=_0x391648['docs'][_0x391648['docs'][_0x2cf80a(0x1ff)]-0x1],_0x391648[_0x2cf80a(0x169)]&&window[_0x2cf80a(0x1e5)](_0x2cf80a(0x197),handleScroll);},_0x3ee773=>{console['log'](_0x3ee773);});}};function fotoPresensiClick(_0x37ab09){const _0x2ddb7e=_0x4557ed;document[_0x2ddb7e(0x1af)]('modal-foto-presensi')['src']=_0x37ab09;}function allFotoPresensiClick(_0x1b2c56){const _0x2e850d=_0x4557ed;document['getElementById'](_0x2e850d(0x23c))[_0x2e850d(0x179)]=_0x1b2c56;}window[_0x4557ed(0x19c)](_0x4557ed(0x211),()=>getNextPresensi()),window[_0x4557ed(0x19c)]('DOMContentLoaded',()=>getNextAllPresensi());const handleScroll=()=>{const _0x1813a8=_0x4557ed,_0x3ffa03=document[_0x1813a8(0x19d)][_0x1813a8(0x20f)]-window[_0x1813a8(0x1cf)],_0x2b78d9=window[_0x1813a8(0x17a)];Math[_0x1813a8(0x1d7)](_0x2b78d9)==_0x3ffa03&&(getNextPresensi(),getNextAllPresensi());};window[_0x4557ed(0x19c)](_0x4557ed(0x197),handleScroll);
+const presensiList = document.querySelector('.presensiList');
+const accountDetails = document.querySelector('.account-details');
+const allAccounts = document.querySelector('.all-accounts');
+const nameNavbar = document.querySelector('.name-navbar');
+const accountIsAdmin = document.querySelector('.account-isAdmin');
+const adminMenu = document.querySelector('.admin-menu');
+const allPresensi = document.querySelector('.all-presensi');
+const hitungJaspel = document.querySelector('.hitung-jaspel');
+const filterForm = document.querySelector('#filter-form');
+const hitungForm = document.querySelector('#hitung-form');
+const filterNama = document.querySelector('#filter-nama');
+const hitungNama = document.querySelector('#hitung-nama');
+const statistik = document.querySelector('#statistik');
+const perizinan = document.querySelector('#perizinan');
+const tabelBelumHadir = document.querySelector('.belumHadirList');
+// const presensi_loader = document.querySelector('.presensi_loader');
+// const all_presensi_loader = document.querySelector('.all_presensi_loader');
+const print_pdf = document.getElementById("print_pdf");
+const print_hitung_pdf = document.getElementById("print_hitung_pdf");
+const print_statistik_pdf = document.getElementById("print_statistik_pdf");
+const delete_button = document.getElementById("delete_button");
+const updateForm = document.getElementById('update-form');
+const update_button = document.getElementById("update_button");
+let id_update = null;
+let username_update = null;
+
+// menampilkan nama dan detail akun
+if (localStorage.getItem("Username")) {
+    // mem buka block tampilan index.html untuk pengguna yg sudah login
+    document.getElementById("blocked").style.display = "none";
+
+    if (nameNavbar) {
+        nameNavbar.innerHTML = `Selamat Datang, <span class="text-success">${localStorage.getItem("Username")}</span>`;
+    };
+    if (accountDetails) {
+        accountDetails.innerHTML = `
+            <div class="text-center pb-3" id="foto-user">
+                <img class="img-thumbnail rounded-circle" src="img/selfie-384.png" alt="Foto User" loading="lazy" width="250" height="250">
+            </div>
+            <h3 class="text-center">${localStorage.getItem("Nama")}</h3>
+            <h4 class="text-center">NIP: ${localStorage.getItem("NIP")}</h4>
+            <h5 class="text-center">Username: ${localStorage.getItem("Username")}</h5>
+            <h5 class="text-center" id="censored">Password: <button onclick="censor()">tampilkan</button></h5>
+            <p class="text-center">Level: ${localStorage.getItem("Level")}</p>`;
+        if (localStorage.getItem("Level") == "Admin") {
+            accountIsAdmin.innerHTML = `<p class="text-center">Untuk mengedit data-data, masuk ke halaman 'Daftar Akun' dan tekan edit</p>`;
+        } else if (localStorage.getItem("Level") == "Anggota") {
+            accountIsAdmin.innerHTML = `<p class="text-center">Hubungi admin jika ada kesalahan data</p>`;
+        }
+    };
+
+    function censor() {
+        var censoredText = document.getElementById("censored");
+        if (censoredText.innerHTML == `Password: <button onclick="censor()">tampilkan</button>`) {
+            censoredText.innerHTML = `Password: ${localStorage.getItem("Password")} <button onclick="censor()">tutup</button>`;
+        } else {
+            censoredText.innerHTML = `Password: <button onclick="censor()">tampilkan</button>`;
+        }
+    }
+}
+
+// Mencegah anggota masuk ke fitur admin
+if (localStorage.getItem("Level") == "Anggota" && allAccounts) {
+    window.location.replace("index.html");
+}
+
+// Fitur Khusus Admin
+// store last document of allpresensi
+let latestDocAll = firebase.firestore.Timestamp.now();
+let row = null;
+// show all presensi
+const getNextAllPresensi = () => {
+    if (allPresensi && (localStorage.getItem("Level") == "Admin")) {
+        document.getElementById("loader").style.display = "block";
+        // all_presensi_loader.classList.add('active');
+        const query = db.collection('presensi').orderBy("waktu", "desc").startAfter(latestDocAll).limit(20);
+        query.onSnapshot(data => {
+            let html = '';
+            if (row === null) {
+                row = 1;
+            }
+            data.forEach(presensi => {
+                const presensiData = presensi.data();
+                let date = presensiData.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth() + 1;
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
+                let tdfoto = '';
+                if (presensiData.foto == 'i') {
+                    tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                } else {
+                    tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                        data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                        loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                };
+                html += `
+                    <tr>
+                        <th scope="row">${row}</th>
+                        <td>${date}</td>
+                        <td>${presensiData.username}</td>
+                        <td>${presensiData.nama}</td>
+                        <td>${presensiData.nip}</td>
+                        <td>${hour}</td>
+                        ${tdfoto}
+                    </tr>
+                    `;
+                row++;
+            });
+            allPresensi.innerHTML += html;
+            document.getElementById("loader").style.display = "none";
+            // all_presensi_loader.classList.remove('active');
+
+            // update latest doc
+            latestDocAll = data.docs[data.docs.length - 1];
+
+            // unattach event listener if no more docs
+            if (data.empty) {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }, error => {
+            console.log(error)
+        });
+    }
+}
+if (localStorage.getItem("Level") == "Admin") {
+    if (adminMenu) {
+        if (allAccounts) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link active" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        } else if (allPresensi) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        } else if (perizinan) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link active" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        } else if (hitungJaspel) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        } else if (statistik) {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        } else {
+            adminMenu.innerHTML += `
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="perizinan.html">Perizinan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-presensi.html">Daftar Presensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="hitung-jaspel.html">Hitung Jaspel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="daftar-akun.html">Daftar Akun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="statistik.html">Statistik</a>
+                </li>
+            `;
+        }
+    }
+    // show all account
+    if (allAccounts) {
+        db.collection('users').orderBy("username").onSnapshot(docs => {
+            let html = '';
+            let row = 1;
+            docs.forEach(account => {
+                const userData = account.data();
+                const tr = `
+                        <tr>
+                            <th scope="row">${row}</th>
+                            <td>${userData.username}</td>
+                            <td>${userData.nama}</td>
+                            <td>${userData.nip}</td>
+                            <td>${userData.password}</td>
+                            <td>${userData.level}</td>
+                            <td class="text-center">
+                                <button class="btn btn-info" data-toggle="modal" data-target="#updateModal" onclick="updateAccount('${account.id}')">Edit</button> 
+                            </td>
+                            <td class="text-center">
+                                <button id="delete_button" class="btn btn-danger" onclick="deleteAccount('${account.id}')">Delete</button> 
+                            </td>
+                        </tr>
+                        `;
+                html += tr;
+                row++;
+            });
+            allAccounts.innerHTML = html;
+        }, error => {
+            console.log(error)
+        });
+    }
+
+    if (hitungJaspel) {
+        // Drop down select
+        db.collection('users').orderBy("nama").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                const option = `
+                <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
+                `;
+                hitungNama.innerHTML += option;
+            });
+        }, error => {
+            console.log(error)
+        });
+        // hitung jaspel
+        hitungForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+            const awal = new Date(hitungForm['hitung-awal'].value + '/ 00:00:00');
+            const akhir = new Date(hitungForm['hitung-akhir'].value + '/ 23:59:59');
+            const nama = hitungForm['hitung-nama'].value.split(";")[0];
+            const username = hitungForm['hitung-nama'].value.split(";")[1];
+            const satuan = hitungForm['hitung-satuan'].value;
+            const denda = hitungForm['hitung-denda'].value;
+            let jumlahHari = new Date(hitungForm['hitung-akhir'].value) - new Date(hitungForm['hitung-awal'].value);
+            jumlahHari = (jumlahHari / (1000 * 3600 * 24)) + 1;
+            let jumlahHadir = 0;
+            db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").get().then(docs => {
+                jumlahHadir = docs.size;
+                let jumlahJaspel = jumlahHadir * satuan;
+                let jumlahDenda = (jumlahHari - jumlahHadir) * denda;
+                let totalJaspel = numberWithCommas(jumlahJaspel - jumlahDenda);
+                hitungJaspel.innerHTML = `<tr>
+                    <td>${hitungForm['hitung-awal'].value} ~ ${hitungForm['hitung-akhir'].value}</td>
+                    <td>${nama}</td>
+                    <td>${username}</td>
+                    <td>${jumlahHadir} dari ${jumlahHari} hari</td>
+                    <td>${jumlahHadir} * ${satuan} = ${jumlahJaspel}</td>
+                    <td>${(jumlahHari - jumlahHadir)} * ${denda} = ${jumlahDenda}</td>
+                    <td>Rp${totalJaspel},00</td>
+                </tr>`
+            }, error => {
+                console.log(error)
+            });
+        });
+    }
+
+    if (allPresensi) {
+        // Drop down select
+        db.collection('users').orderBy("nama").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                const option = `
+                            <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
+                        `;
+                filterNama.innerHTML += option;
+            });
+        }, error => {
+            console.log(error)
+        });
+        // filter presensi
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+
+            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
+            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
+            const nama = filterForm['filter-nama'].value.split(";")[0];
+            const username = filterForm['filter-nama'].value.split(";")[1];
+            if (nama) {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("username", "==", username).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let html = '';
+                    let row = 1;
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        let date = presensiData.waktu.toDate();
+                        let dd = date.getDate();
+                        let mm = date.getMonth() + 1;
+                        let yyyy = date.getFullYear();
+                        let hh = date.getHours();
+                        let mi = date.getMinutes();
+                        let se = date.getSeconds();
+                        date = dd + '/' + mm + '/' + yyyy;
+                        hour = hh + ':' + mi + ':' + se;
+                        if (presensiData.foto == 'i') {
+                            tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        } else {
+                            tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        };
+                        const tr = `
+                            <tr>
+                                <th scope="row">${row}</th>
+                                <td>${date}</td>
+                                <td>${presensiData.username}</td>
+                                <td>${presensiData.nama}</td>
+                                <td>${presensiData.nip}</td>
+                                <td>${hour}</td>
+                                ${tdfoto}
+                            </tr>
+                            `;
+                        html += tr;
+                        row++;
+                    });
+                    allPresensi.innerHTML = html;
+                }, error => {
+                    console.log(error)
+                });
+            } else {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let html = '';
+                    let row = 1;
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        let date = presensiData.waktu.toDate();
+                        let dd = date.getDate();
+                        let mm = date.getMonth() + 1;
+                        let yyyy = date.getFullYear();
+                        let hh = date.getHours();
+                        let mi = date.getMinutes();
+                        let se = date.getSeconds();
+                        date = dd + '/' + mm + '/' + yyyy;
+                        hour = hh + ':' + mi + ':' + se;
+                        if (presensiData.foto == 'i') {
+                            tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        } else {
+                            tdfoto = `<td><img src="${presensiData.foto}" class="foto-foto-presensi"
+                                data-toggle="modal" data-target="#modal-all-presensi" alt="foto presensi"
+                                loading="lazy" width="50" height="50" onclick="allFotoPresensiClick(this.src)"></td>`
+                        };
+                        const tr = `
+                            <tr>
+                                <th scope="row">${row}</th>
+                                <td>${date}</td>
+                                <td>${presensiData.username}</td>
+                                <td>${presensiData.nama}</td>
+                                <td>${presensiData.nip}</td>
+                                <td>${hour}</td>
+                                ${tdfoto}
+                            </tr>
+                            `;
+                        html += tr;
+                        row++;
+                    });
+                    allPresensi.innerHTML = html;
+                }, error => {
+                    console.log(error)
+                });
+            }
+        });
+    }
+
+    if (perizinan) {
+        waktuSekarang = firebase.firestore.Timestamp.now();
+        let date = waktuSekarang.toDate();
+        let dd = date.getDate();
+        let mm = date.getMonth() + 1;
+        let yyyy = date.getFullYear();
+        let waktuSekarangString = yyyy + '/' + mm + '/' + dd;
+        let awal = new Date(yyyy + '/' + mm + '/' + dd + '/ 00:00:00');
+        let akhir = new Date(yyyy + '/' + mm + '/' + dd + '/ 23:59:59');
+        let daftarAkun = [];
+
+        db.collection('users').orderBy("username").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                daftarAkun.push(userData.username);
+            });
+        }, error => {
+            console.log(error)
+        });
+
+        let daftarAkunTidakHadir = daftarAkun;
+        db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).onSnapshot(docs => {
+            docs.forEach(presensi => {
+                const presensiData = presensi.data();
+                if (daftarAkun.includes(presensiData.username)) {
+                    daftarAkunTidakHadir = daftarAkunTidakHadir.filter(e => e !== presensiData.username);
+                }
+            });
+        }, error => {
+            console.log(error)
+        });
+
+        db.collection('users').orderBy("username").onSnapshot(docs => {
+            let html = '';
+            if (row === null) {
+                row = 1;
+            }
+            docs.forEach(account => {
+                let accountData = account.data();
+                if (daftarAkunTidakHadir.includes(accountData.username)) {
+                    html += `
+                    <tr>
+                        <th scope="row">${row}</th>
+                        <td>${accountData.nama}</td>
+                        <td>${accountData.username}</td>
+                        <td>${accountData.nip}</td>
+                        <td class="text-center">
+                            <button class="btn btn-info" onclick="izinkanHadir('${accountData.username}')">Izinkan</button> 
+                        </td>
+                    </tr>
+                    `;
+                    row++;
+                }
+            });
+            tabelBelumHadir.innerHTML += html;
+
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['Hadir / Izin', (daftarAkun.length - daftarAkunTidakHadir.length)],
+                    ['Belum Hadir', daftarAkunTidakHadir.length],
+                ]);
+                var options = {
+                    title: 'Tanggal : ' + waktuSekarangString + '; Jumlah Pegawai : ' + daftarAkun.length
+                };
+                var chart = new google.visualization.PieChart(document.getElementById('chartPerizinan'));
+                chart.draw(data, options);
+            }
+            $(window).resize(function () {
+                drawChart();
+            });
+        }, error => {
+            console.log(error)
+        });
+    }
+
+    if (statistik) {
+        let jumlahPegawai = 0;
+        // Drop down select
+        db.collection('users').orderBy("nama").onSnapshot(docs => {
+            docs.forEach(account => {
+                const userData = account.data();
+                const option = `
+                            <option value="${userData.nama};${userData.username}">${userData.nama}; ${userData.username}</option>
+                        `;
+                filterNama.innerHTML += option;
+                jumlahPegawai += 1;
+            });
+        }, error => {
+            console.log(error)
+        });
+        // filter statistik
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.removeEventListener('scroll', handleScroll);
+
+            const awal = new Date(filterForm['filter-awal'].value + '/ 00:00:00');
+            const akhir = new Date(filterForm['filter-akhir'].value + '/ 23:59:59');
+            const nama = filterForm['filter-nama'].value.split(";")[0];
+            const username = filterForm['filter-nama'].value.split(";")[1];
+            document.getElementById("tanggalStatistik").innerHTML = 'Tanggal : ' + awal.getDate() + '/' + awal.getMonth() + '/' + awal.getFullYear() + ' ~ ' + akhir.getDate() + '/' + akhir.getMonth() + '/' + akhir.getFullYear();
+
+            if (nama) {
+                document.getElementById("namaStatistik").innerHTML = 'Nama (Username) : ' + nama + ' (' + username + ')';
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).where("nama", "==", nama).where("username", "==", username).orderBy("waktu", "desc").onSnapshot(docs => {
+                    let minggu = 0;
+                    let senin = 0;
+                    let selasa = 0;
+                    let rabu = 0;
+                    let kamis = 0;
+                    let jumat = 0;
+                    let sabtu = 0;
+
+                    let jumlahHari = akhir - awal;
+                    jumlahHari = Math.round(jumlahHari / (1000 * 3600 * 24));
+
+                    let hadir = 0;
+                    let izin = 0;
+                    let absen = 0;
+
+                    let jam0 = 0;
+                    let jam2 = 0;
+                    let jam4 = 0;
+                    let jam6 = 0;
+                    let jam8 = 0;
+                    let jam10 = 0;
+                    let jam12 = 0;
+                    let jam14 = 0;
+                    let jam16 = 0;
+                    let jam18 = 0;
+                    let jam20 = 0;
+                    let jam22 = 0;
+
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        switch (presensiData.waktu.toDate().getDay()) {
+                            case 0:
+                                minggu += 1;
+                                break;
+                            case 1:
+                                senin += 1;
+                                break;
+                            case 2:
+                                selasa += 1;
+                                break;
+                            case 3:
+                                rabu += 1;
+                                break;
+                            case 4:
+                                kamis += 1;
+                                break;
+                            case 5:
+                                jumat += 1;
+                                break;
+                            case 6:
+                                sabtu += 1;
+                        }
+                        if (presensiData.foto === 'i') {
+                            izin += 1;
+                        } else {
+                            hadir += 1;
+                        }
+                        if ((presensiData.waktu.toDate().getHours() >= 0) && (presensiData.waktu.toDate().getHours() < 2)) {
+                            jam0 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 2) && (presensiData.waktu.toDate().getHours() < 4)) {
+                            jam2 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 4) && (presensiData.waktu.toDate().getHours() < 6)) {
+                            jam4 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 6) && (presensiData.waktu.toDate().getHours() < 8)) {
+                            jam6 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 8) && (presensiData.waktu.toDate().getHours() < 10)) {
+                            jam8 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 10) && (presensiData.waktu.toDate().getHours() < 12)) {
+                            jam10 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 12) && (presensiData.waktu.toDate().getHours() < 14)) {
+                            jam12 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 14) && (presensiData.waktu.toDate().getHours() < 16)) {
+                            jam14 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 16) && (presensiData.waktu.toDate().getHours() < 18)) {
+                            jam16 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 18) && (presensiData.waktu.toDate().getHours() < 20)) {
+                            jam18 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 20) && (presensiData.waktu.toDate().getHours() < 22)) {
+                            jam20 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 22) && (presensiData.waktu.toDate().getHours() < 0)) {
+                            jam22 += 1;
+                        }
+                    });
+                    absen = jumlahHari - hadir - izin;
+
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(drawChart);
+                    google.charts.setOnLoadCallback(drawChart2);
+                    google.charts.setOnLoadCallback(drawChart3);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Hari', 'Jumlah', {
+                                role: 'style'
+                            }],
+                            ['Senin', senin, 'red'],
+                            ['Selasa', selasa, 'orange'],
+                            ['rabu', rabu, 'yellow'],
+                            ['kamis', kamis, 'green'],
+                            ['jumat', jumat, 'blue'],
+                            ['sabtu', sabtu, 'indigo'],
+                            ['minggu', minggu, 'violet']
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Presensi per Hari'
+                        };
+
+                        var chart = new google.visualization.ColumnChart(document.getElementById('chartPresensiPerHari'));
+                        chart.draw(data, options);
+                    }
+
+                    function drawChart2() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Keterangan', 'Jumlah'],
+                            ['Hadir', hadir],
+                            ['Izin', izin],
+                            ['Absen', absen]
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Kehadiran',
+                            colors: ['blue', 'silver', 'red']
+                        };
+
+                        var chart = new google.visualization.PieChart(document.getElementById('chartJumlahKehadiran'));
+                        chart.draw(data, options);
+                    }
+
+                    function drawChart3() {
+                        // Set Data
+                        var data = google.visualization.arrayToDataTable([
+                            ['Waktu', 'Jumlah'],
+                            ['00:00', jam0],
+                            ['02:00', jam2],
+                            ['04:00', jam4],
+                            ['06:00', jam6],
+                            ['08:00', jam8],
+                            ['10:00', jam10],
+                            ['12:00', jam12],
+                            ['14:00', jam14],
+                            ['16:00', jam16],
+                            ['18:00', jam18],
+                            ['20:00', jam20],
+                            ['22:00', jam22]
+                        ]);
+                        // Set Options
+                        var options = {
+                            title: 'Waktu Presensi',
+                            hAxis: {
+                                title: 'Waktu'
+                            },
+                            vAxis: {
+                                title: 'Jumlah'
+                            },
+                            legend: 'none',
+                        };
+                        // Draw Chart
+                        var chart = new google.visualization.LineChart(document.getElementById('chartWaktuKehadiran'));
+                        chart.draw(data, options);
+                    }
+
+                    $(window).resize(function () {
+                        drawChart();
+                        drawChart2();
+                        drawChart3();
+                    });
+
+                }, error => {
+                    console.log(error)
+                });
+            } else {
+                db.collection("presensi").where("waktu", ">=", awal).where("waktu", "<=", akhir).orderBy("waktu", "desc").onSnapshot(docs => {
+                    document.getElementById("namaStatistik").innerHTML = 'Data seluruh pegawai (' + jumlahPegawai + ' orang )';
+                    let minggu = 0;
+                    let senin = 0;
+                    let selasa = 0;
+                    let rabu = 0;
+                    let kamis = 0;
+                    let jumat = 0;
+                    let sabtu = 0;
+
+                    let jumlahHari = akhir - awal;
+                    jumlahHari = Math.round(jumlahHari / (1000 * 3600 * 24)) * jumlahPegawai;
+
+                    let hadir = 0;
+                    let izin = 0;
+                    let absen = 0;
+
+                    let jam0 = 0;
+                    let jam2 = 0;
+                    let jam4 = 0;
+                    let jam6 = 0;
+                    let jam8 = 0;
+                    let jam10 = 0;
+                    let jam12 = 0;
+                    let jam14 = 0;
+                    let jam16 = 0;
+                    let jam18 = 0;
+                    let jam20 = 0;
+                    let jam22 = 0;
+
+                    docs.forEach(presensi => {
+                        const presensiData = presensi.data();
+                        switch (presensiData.waktu.toDate().getDay()) {
+                            case 0:
+                                minggu += 1;
+                                break;
+                            case 1:
+                                senin += 1;
+                                break;
+                            case 2:
+                                selasa += 1;
+                                break;
+                            case 3:
+                                rabu += 1;
+                                break;
+                            case 4:
+                                kamis += 1;
+                                break;
+                            case 5:
+                                jumat += 1;
+                                break;
+                            case 6:
+                                sabtu += 1;
+                        }
+                        if (presensiData.foto === 'i') {
+                            izin += 1;
+                        } else {
+                            hadir += 1;
+                        }
+                        if ((presensiData.waktu.toDate().getHours() >= 0) && (presensiData.waktu.toDate().getHours() < 2)) {
+                            jam0 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 2) && (presensiData.waktu.toDate().getHours() < 4)) {
+                            jam2 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 4) && (presensiData.waktu.toDate().getHours() < 6)) {
+                            jam4 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 6) && (presensiData.waktu.toDate().getHours() < 8)) {
+                            jam6 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 8) && (presensiData.waktu.toDate().getHours() < 10)) {
+                            jam8 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 10) && (presensiData.waktu.toDate().getHours() < 12)) {
+                            jam10 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 12) && (presensiData.waktu.toDate().getHours() < 14)) {
+                            jam12 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 14) && (presensiData.waktu.toDate().getHours() < 16)) {
+                            jam14 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 16) && (presensiData.waktu.toDate().getHours() < 18)) {
+                            jam16 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 18) && (presensiData.waktu.toDate().getHours() < 20)) {
+                            jam18 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 20) && (presensiData.waktu.toDate().getHours() < 22)) {
+                            jam20 += 1;
+                        } else if ((presensiData.waktu.toDate().getHours() >= 22) && (presensiData.waktu.toDate().getHours() < 0)) {
+                            jam22 += 1;
+                        }
+                    });
+                    absen = jumlahHari - hadir - izin;
+
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(drawChart);
+                    google.charts.setOnLoadCallback(drawChart2);
+                    google.charts.setOnLoadCallback(drawChart3);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Hari', 'Jumlah', {
+                                role: 'style'
+                            }],
+                            ['Senin', senin, 'red'],
+                            ['Selasa', selasa, 'orange'],
+                            ['rabu', rabu, 'yellow'],
+                            ['kamis', kamis, 'green'],
+                            ['jumat', jumat, 'blue'],
+                            ['sabtu', sabtu, 'indigo'],
+                            ['minggu', minggu, 'violet']
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Presensi per Hari'
+                        };
+
+                        var chart = new google.visualization.ColumnChart(document.getElementById('chartPresensiPerHari'));
+                        chart.draw(data, options);
+                    }
+
+                    function drawChart2() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Keterangan', 'Jumlah'],
+                            ['Hadir', hadir],
+                            ['Izin', izin],
+                            ['Absen', absen]
+                        ]);
+
+                        var options = {
+                            title: 'Jumlah Kehadiran',
+                            colors: ['blue', 'silver', 'red']
+                        };
+
+                        var chart = new google.visualization.PieChart(document.getElementById('chartJumlahKehadiran'));
+                        chart.draw(data, options);
+                    }
+
+                    function drawChart3() {
+                        // Set Data
+                        var data = google.visualization.arrayToDataTable([
+                            ['Waktu', 'Jumlah'],
+                            ['00:00', jam0],
+                            ['02:00', jam2],
+                            ['04:00', jam4],
+                            ['06:00', jam6],
+                            ['08:00', jam8],
+                            ['10:00', jam10],
+                            ['12:00', jam12],
+                            ['14:00', jam14],
+                            ['16:00', jam16],
+                            ['18:00', jam18],
+                            ['20:00', jam20],
+                            ['22:00', jam22]
+                        ]);
+                        // Set Options
+                        var options = {
+                            title: 'Waktu Presensi',
+                            hAxis: {
+                                title: 'Waktu'
+                            },
+                            vAxis: {
+                                title: 'Jumlah'
+                            },
+                            legend: 'none',
+                        };
+                        // Draw Chart
+                        var chart = new google.visualization.LineChart(document.getElementById('chartWaktuKehadiran'));
+                        chart.draw(data, options);
+                    }
+
+                    $(window).resize(function () {
+                        drawChart();
+                        drawChart2();
+                        drawChart3();
+                    });
+
+                }, error => {
+                    console.log(error)
+                });
+            }
+        });
+    }
+};
+
+function izinkanHadir(username) {
+    document.getElementById("loader").style.display = "block";
+    document.getElementById("bg-loader").style.display = "block";
+    waktuSekarang = firebase.firestore.Timestamp.now();
+    db.collection('users').where("username", '==', username).onSnapshot(docs => {
+        docs.forEach(account => {
+            const userData = account.data();
+            db.collection('presensi').add({
+                username: userData.username,
+                foto: 'i',
+                nama: userData.nama,
+                nip: userData.nip,
+                waktu: waktuSekarang
+            }).then(() => location.reload());
+        });
+    }, error => {
+        console.log(error)
+    });
+}
+
+
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(",");
+}
+
+function deleteAccount(id) {
+    var con = confirm("Apakah anda yakin akan menghapus user?");
+    if (con == true) {
+        db.collection("users").doc(id).delete().then(() => {
+            document.querySelector('#pesan-signup').innerHTML = "Akun berhasil dihapus";
+            document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+            document.getElementById("alert-signup").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("alert-signup").style.display = "none";
+            }, 3000);
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
+};
+
+function updateAccount(id) {
+    db.collection("users").doc(id).get().then(doc => {
+        username_update = doc.data().username;
+        id_update = doc.id;
+        document.getElementById("update-username").value = doc.data().username;
+        document.getElementById("update-nama").value = doc.data().nama;
+        document.getElementById("update-nip").value = doc.data().nip;
+        document.getElementById("update-password").value = doc.data().password;
+        document.getElementById("update-level").value = doc.data().level;
+    }).catch(function (error) {
+        console.log("Error getting document:", error);
+    });
+};
+if (update_button) {
+    update_button.addEventListener("click", (e) => {
+        e.preventDefault();
+        db.collection("users").where("username", "==", updateForm['update-username'].value).get().then(doc => {
+            if ((doc.size > 0) && (username_update != updateForm['update-username'].value)) {
+                $('#updateModal').modal('hide');
+                document.querySelector('#pesan-signup').innerHTML = "Maaf Username sudah digunakan";
+                document.getElementById("alert-signup").className = "alert alert-danger mx-auto";
+                document.getElementById("alert-signup").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("alert-signup").style.display = "none";
+                }, 3000);
+            } else {
+                db.collection("users").doc(id_update).update({
+                    username: updateForm['update-username'].value,
+                    nama: updateForm['update-nama'].value,
+                    nip: updateForm['update-nip'].value,
+                    password: updateForm['update-password'].value,
+                    level: updateForm['update-level'].value
+                }).then(() => {
+                    $('#updateModal').modal('hide');
+                    document.querySelector('#pesan-signup').innerHTML = "Data akun berhasil diperbarui";
+                    document.getElementById("alert-signup").className = "alert alert-success mx-auto";
+                    document.getElementById("alert-signup").style.display = "block";
+                    setTimeout(() => {
+                        document.getElementById("alert-signup").style.display = "none";
+                    }, 3000);
+                }).catch((error) => {
+                    console.error("Error editing document: ", error);
+                });
+            }
+        })
+    })
+}
+
+// Export to CSV
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+    // CSV file
+    csvFile = new Blob([csv], {
+        type: "text/csv"
+    });
+    // Download link
+    downloadLink = document.createElement("a");
+    // File name
+    downloadLink.download = filename;
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    // Hide download link
+    downloadLink.style.display = "none";
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+    // Click download link
+    downloadLink.click();
+}
+
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    for (var i = 0; i < rows.length; i++) {
+        var row = [],
+            cols = rows[i].querySelectorAll("td, th");
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+        csv.push(row.join(","));
+    }
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+
+// export to pdf
+if (print_pdf) {
+    print_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("tabel_presensi");
+        var opt = {
+            margin: 0.3,
+            filename: 'daftar-presensi.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
+}
+if (print_hitung_pdf) {
+    print_hitung_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("hasil_hitung_jaspel");
+        var opt = {
+            margin: 0.3,
+            filename: 'hasil_hitung_jaspel.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'landscape'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
+}
+if (print_statistik_pdf) {
+    print_statistik_pdf.addEventListener("click", () => {
+        const invoice = this.document.getElementById("statistik");
+        var opt = {
+            margin: 0.3,
+            filename: 'statistik_presensi.pdf',
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        };
+        html2pdf().set(opt).from(invoice).save();
+    })
+}
+
+// store last document
+let latestDoc = firebase.firestore.Timestamp.now();
+// Infinite scroll pagination
+const getNextPresensi = () => {
+    // get data presensi
+    if (presensiList) {
+        // presensi_loader.classList.add('active');
+        document.getElementById("loader").style.display = "block";
+
+        const query = db.collection('presensi')
+            .where("username", "==", localStorage.getItem("Username"))
+            .orderBy("waktu", "desc")
+            .startAfter(latestDoc)
+            .limit(20);
+
+        // output docs
+        query.onSnapshot(data => {
+            let html = '';
+            // let row = 1;
+            data.forEach(doc => {
+                const presensi = doc.data();
+
+                let date = presensi.waktu.toDate();
+                let dd = date.getDate();
+                let mm = date.getMonth() + 1;
+                let yyyy = date.getFullYear();
+                let hh = date.getHours();
+                let mi = date.getMinutes();
+                let se = date.getSeconds();
+                date = dd + '/' + mm + '/' + yyyy;
+                hour = hh + ':' + mi + ':' + se;
+                // <td>${presensi.waktu.toDate().toLocaleTimeString('id-ID')}</td>
+                if (presensi.foto == 'i') {
+                    tdfoto = `<td><img src="img/izin.png" class="foto-foto-presensi"
+                    alt="foto presensi" loading="lazy" width="50" height="50"
+                    data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>`
+                } else {
+                    tdfoto = `<td><img src="${presensi.foto}" class="foto-foto-presensi"
+                    alt="foto presensi" loading="lazy" width="50" height="50"
+                    data-toggle="modal" data-target="#modal-presensi" onclick="fotoPresensiClick(this.src)"></td>`
+                };
+                html += `
+                <tr>
+                    <td>${date}</td>
+                    <td>${hour}</td>
+                    ${tdfoto}
+                </tr>`;
+                // row++;
+            });
+            presensiList.innerHTML += html;
+            // presensi_loader.classList.remove('active');
+            document.getElementById("loader").style.display = "none";
+
+            // update latest doc
+            latestDoc = data.docs[data.docs.length - 1];
+
+            // unattach event listener if no more docs
+            if (data.empty) {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }, error => {
+            console.log(error)
+        });
+    }
+}
+
+function fotoPresensiClick(src) {
+    document.getElementById("modal-foto-presensi").src = src;
+}
+
+function allFotoPresensiClick(src) {
+    document.getElementById("modal-all-foto-presensi").src = src;
+}
+
+// wait DOM content to load
+window.addEventListener('DOMContentLoaded', () => getNextPresensi());
+window.addEventListener('DOMContentLoaded', () => getNextAllPresensi());
+
+// load more docs (scroll)
+const handleScroll = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    if (Math.ceil(scrolled) == scrollable) {
+        getNextPresensi();
+        getNextAllPresensi();
+    }
+}
+window.addEventListener('scroll', handleScroll);
