@@ -27,7 +27,9 @@ let username_update = null;
 // menampilkan nama dan detail akun
 if (localStorage.getItem("Username")) {
     // mem buka block tampilan index.html untuk pengguna yg sudah login
-    document.getElementById("blocked").style.display = "none";
+    if (document.getElementById("blocked")) {
+        document.getElementById("blocked").style.display = "none";
+    };
 
     if (nameNavbar) {
         nameNavbar.innerHTML = `Selamat Datang, <span class="text-success">${localStorage.getItem("Username")}</span>`;
